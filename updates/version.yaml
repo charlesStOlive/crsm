@@ -1,1 +1,10 @@
-1.0.1: First version of crsm
+1.0.1: 
+  - 'First version of crsm'
+  - create_clients_table.php
+  - create_countries_table.php
+  - create_sectors_table.php
+  - extend_users_table.php
+  - create_types_table.php
+  - seed_tables.php
+
+  

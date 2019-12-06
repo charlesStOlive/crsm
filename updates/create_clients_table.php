@@ -11,6 +11,23 @@ class CreateClientsTable extends Migration
         Schema::create('waka_crsm_clients', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
+            //
+            $table->string('name');
+            $table->string('slug');
+            $table->integer('sector_id')->unsigned();
+            $table->integer('type_id')->unsigned();
+            //
+            $table->string('logo')->nullable();
+            $table->string('primary_color')->nullable();
+            $table->string('secondary_color')->nullable();
+            $table->text('description')->nullable();
+            //
+            $table->string('address')->nullable();
+            $table->string('cp')->nullable();
+            $table->string('city')->nullable();
+            $table->integer('country_id')->unsigned();
+            //
+            $table->softDeletes();
             $table->timestamps();
         });
     }

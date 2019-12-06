@@ -3,21 +3,16 @@
 use Model;
 
 /**
- * Sector Model
+ * Country Model
  */
-class Sector extends Model
+class Country extends Model
 {
     use \October\Rain\Database\Traits\Validation;
-<<<<<<< HEAD
-    use \October\Rain\Database\Traits\SoftDelete;
-    use \October\Rain\Database\Traits\NestedTree;
-=======
->>>>>>> master
 
     /**
      * @var string The database table used by the model.
      */
-    public $table = 'waka_crsm_sectors';
+    public $table = 'waka_crsm_countries';
 
     /**
      * @var array Guarded fields
@@ -54,30 +49,19 @@ class Sector extends Model
      */
     protected $hidden = [];
 
+    public $timestamps = false;
+
     /**
      * @var array Attributes to be cast to Argon (Carbon) instances
      */
-    protected $dates = [
-        'created_at',
-<<<<<<< HEAD
-        'updated_at',
-        'deleted_at',
-=======
-        'updated_at'
->>>>>>> master
-    ];
 
     /**
      * @var array Relations
      */
     public $hasOne = [];
-<<<<<<< HEAD
     public $hasMany = [
         'clients' => 'waka\crsm\Models\Client'
     ];
-=======
-    public $hasMany = [];
->>>>>>> master
     public $belongsTo = [];
     public $belongsToMany = [];
     public $morphTo = [];

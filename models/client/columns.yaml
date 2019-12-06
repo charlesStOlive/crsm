@@ -3,6 +3,28 @@
 # ===================================
 
 columns:
+<<<<<<< HEAD
+    name:
+        label: waka.crsm::lang.client.name
+        searchable: true
+    sector:
+        label: waka.crsm::lang.client.sector
+        relation: sector
+        select: name
+        searchable: true
+    logo:
+        label: waka.crsm::lang.client.logo
+        type: partial
+        path: $/waka/crsm/models/client/_column_image.htm
+    primary_color:
+        label: waka.crsm::lang.client.primary_color 
+        type: colorpicker
+        clickable: false
+    updated_at:
+        label: waka.crsm::lang.client.updated_at
+        type: timetense
+=======
     id:
         label: ID
         searchable: true
+>>>>>>> master

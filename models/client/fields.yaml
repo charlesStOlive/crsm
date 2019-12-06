@@ -3,6 +3,69 @@
 # ===================================
 
 fields:
+<<<<<<< HEAD
+    name:
+        label: waka.crsm::lang.client.name
+        span: auto
+    slug:
+        label: waka.crsm::lang.global.slug
+        preset: name
+        span: auto
+    sector:
+            label: waka.crsm::lang.client.sector
+            span: auto 
+            type: relation
+            defaultFrom: defaultCountry
+    type:
+            label: waka.crsm::lang.client.type
+            span: auto 
+            type: relation
+            defaultFrom: defaultCountry
+
+tabs:
+    stretch: true
+    icons:
+        backend::waka.crsm::lang.global.colors: icon-user
+        backend::waka.crsm::lang.global.details: icon-group
+    fields:
+        logo:
+            tab: waka.crsm::lang.global.colors
+            label: waka.crsm::lang.client.logo
+            type: mediafinder
+            mode: image
+            imageWidth: 150
+            imageHeight: 150
+        primary_color:
+            tab: waka.crsm::lang.global.colors
+            label: waka.crsm::lang.client.primary_color
+            type: colorpicker
+            span: auto
+        secondary_color:
+            tab: waka.crsm::lang.global.colors
+            label: waka.crsm::lang.client.secondary_color
+            type: colorpicker
+            span: auto
+        
+        address:
+            tab: waka.crsm::lang.global.details
+            label: waka.crsm::lang.client.address
+            span: auto
+        cp:
+            tab: waka.crsm::lang.global.details
+            label: waka.crsm::lang.client.cp
+            span: auto 
+        city:
+            tab: waka.crsm::lang.global.details
+            label: waka.crsm::lang.client.city
+            span: auto 
+        country:
+            tab: waka.crsm::lang.global.details
+            label: waka.crsm::lang.client.country
+            span: auto 
+            type: relation
+            defaultFrom: defaultCountry
+=======
     id:
         label: ID
         disabled: true
+>>>>>>> master
