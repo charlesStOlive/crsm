@@ -4,7 +4,9 @@ return [
     'global' => [
         'colors' => 'Couleurs',
         'details' => 'Détails',
-        'slug' => 'Slug'
+        'slug' => 'Slug',
+        'updated_at' => 'MAJ',
+        'placeholder' => '--Choisissez--'
     ],
     'client' => [
         'name' => 'Nom du client',
@@ -19,7 +21,19 @@ return [
         'country' => 'Pays',
         'placeholder' => '--Choisissez--',
         'sector' => 'Secteur',
-        'type' => 'Type de client'
+        'type' => 'Type de client',
+        'clients' => 'Clients'
+    ],
+    'contact' => [
+        'name' => 'Nom',
+        'surname' => 'Nom de famille',
+        'contacts' => 'Contacts',
+        'email' => 'E-mail',
+        'client' => 'Client',
+        'key' => 'Clé unique',
+        'tel1' => 'Téléphone',
+        'tel2' => 'Téléphone secondaire',
+
     ],
     'settings' => [
         'label' => 'CRM',

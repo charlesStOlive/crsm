@@ -1,20 +1,22 @@
 <?php namespace Waka\Crsm\Models;
 
 use Model;
-use Config;
-use \ToughDeveloper\ImageResizer\Classes\Image;
+
 /**
- * Client Model
+ * Contact Model
  */
-class Client extends Model
+class Contact extends Model
 {
     use \October\Rain\Database\Traits\Validation;
     use \October\Rain\Database\Traits\SoftDelete;
 
+    public $rules = [
+    ];
+
     /**
      * @var string The database table used by the model.
      */
-    public $table = 'waka_crsm_clients';
+    public $table = 'waka_crsm_contacts';
 
     /**
      * @var array Guarded fields
@@ -24,15 +26,11 @@ class Client extends Model
     /**
      * @var array Fillable fields
      */
-    protected $fillable = [];
+    protected $fillable = ['name', 'surname', 'email'];
 
     /**
      * @var array Validation rules for attributes
      */
-    public $rules = [
-        'name' => 'required|between:4,16',
-        'slug' => 'required|unique:waka_crsm_clients',
-    ];
 
     /**
      * @var array Attributes to be cast to native types
@@ -60,20 +58,16 @@ class Client extends Model
     protected $dates = [
         'created_at',
         'updated_at',
-        'deleted_at',
+        'deleted_at'
     ];
 
     /**
      * @var array Relations
      */
     public $hasOne = [];
-    public $hasMany = [
-        'users' => 'Rainlab\User\Models\User',
-    ];
+    public $hasMany = [];
     public $belongsTo = [
-        'sector' => 'Waka\Crsm\Models\Sector',
-        'country' => 'Waka\Crsm\Models\Country',
-        'type' => 'Waka\Crsm\Models\Type',
+       'client' => ['Waka\Crsm\Models\Client', 'softDelete' => true],
     ];
     public $belongsToMany = [];
     public $morphTo = [];
@@ -83,24 +77,11 @@ class Client extends Model
     public $attachMany = [];
 
     /**
-     * Attribute
+     * MODEL EVENT
      */
-    public function getLogoAfficheAttribute()
-    {
-        $mediaUrl = url(Config::get('cms.storage.media.path'));
-        $image = new Image($mediaUrl . '/' . $this->logo);
-        return '<img src="' . $image->resize(50, 50, ['mode' => 'auto']) . '">';
-    }
-    public function getDefaultCountryAttribute()
-    {
-        return Settings::get('country');
-    }
-    public function getDefaultTypesAttribute()
-    {
-        return Settings::get('type');
-    }
-    public function getDefaultSectorAttribute()
-    {
-        return Settings::get('sector');
+    public function beforeSave() {
+        if(!$this->key) {
+            $this->key = str_Random(15);
+        }
     }
 }

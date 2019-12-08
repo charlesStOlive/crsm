@@ -50,54 +50,7 @@ class Plugin extends PluginBase
      */
     public function boot()
     {
-        UserModel::extend(function($model) {
-            $model->belongsTo['client'] = ['Waka\Crsm\Models\Client'];
-        });
-
-        UsersController::extend(function($controller) {
-
-            // Implement behavior if not already implemented
-            if (!$controller->isClassExtendedWith('Backend.Behaviors.RelationController')) {
-                $controller->implement[] = 'Backend.Behaviors.RelationController';
-            }
         
-            // Define property if not already defined
-            if (!isset($controller->relationConfig)) {
-                $controller->addDynamicProperty('relationConfig');
-            }
-        
-            // Splice in configuration safely
-            $myConfigPath = '$/waka/crsm/controllers/users/config_relation.yaml';
-        
-            $controller->relationConfig = $controller->mergeConfig(
-                $controller->relationConfig,
-                $myConfigPath
-            );
-        
-        });
-
-        Event::listen('backend.form.extendFields', function($widget) {
-
-            // Only for the User controller
-            if (!$widget->getController() instanceof UsersController) {
-                return;
-            }
-
-            // Only for the User model
-            if (!$widget->model instanceof UserModel) {
-                return;
-            }
-
-            // Add an extra birthday field
-            $widget->addTabFields([
-                'client' => [
-                    'label'   => 'Client',
-                    'path' => '$/waka/crsm/controllers/users/_field_client.htm',
-                    'type'    => 'partial',
-                    'tab' => 'Client'
-                ]
-            ]);
-        });
 
     }
 
@@ -146,6 +99,18 @@ class Plugin extends PluginBase
                 'icon' => 'icon-leaf',
                 'permissions' => ['waka.crsm.*'],
                 'order' => 001,
+                'sideMenu' => [
+                    'side-menu-clients' => [
+                        'label'       => Lang::get('waka.crsm::lang.client.clients'),
+                        'icon'        => 'icon-building',
+                        'url'         => Backend::url('waka/crsm/clients'),
+                    ],
+                    'side-menu-contacts' => [
+                        'label'       => Lang::get('waka.crsm::lang.contact.contacts'),
+                        'icon'        => 'icon-users',
+                        'url'         => Backend::url('waka/crsm/contacts'),
+                    ],
+                ],
             ],
         ];
     }

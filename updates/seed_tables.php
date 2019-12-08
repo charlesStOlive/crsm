@@ -2,6 +2,7 @@
 
 use Excel;
 use Seeder;
+use DB;
 use Waka\Crsm\Classes\CountryImport;
 use Waka\Crsm\Models\Sector;
 use Waka\Crsm\Models\Type;
@@ -26,8 +27,8 @@ class SeedAllTable extends Seeder
             'slug'                 => 'client'
         ]);
         //
-        //$sql = plugins_path('waka/crsm/updates/sql/settings.xlsx');
-        //DB::unprepared(file_get_contents($sql));
+        $sql = plugins_path('waka/crsm/updates/sql/settings.sql');
+        DB::unprepared(file_get_contents($sql));
         
     }
 }
