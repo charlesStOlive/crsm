@@ -3,11 +3,6 @@
 # ===================================
 
 columns:
-<<<<<<< HEAD
     name:
         label: waka.crsm::lang.country.name
-=======
-    id:
-        label: ID
->>>>>>> master
         searchable: true

@@ -3,7 +3,6 @@
 # ===================================
 
 fields:
-<<<<<<< HEAD
     name:
         label: waka.crsm::lang.client.name
         span: auto
@@ -64,8 +63,3 @@ tabs:
             span: auto 
             type: relation
             defaultFrom: defaultCountry
-=======
-    id:
-        label: ID
-        disabled: true
->>>>>>> master

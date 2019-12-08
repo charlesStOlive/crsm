@@ -3,7 +3,6 @@
 # ===================================
 
 columns:
-<<<<<<< HEAD
     name:
         label: waka.crsm::lang.client.name
         searchable: true
@@ -23,8 +22,3 @@ columns:
     updated_at:
         label: waka.crsm::lang.client.updated_at
         type: timetense
-=======
-    id:
-        label: ID
-        searchable: true
->>>>>>> master

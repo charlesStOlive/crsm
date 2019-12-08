@@ -11,7 +11,6 @@ class CreateSectorsTable extends Migration
         Schema::create('waka_crsm_sectors', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
-<<<<<<< HEAD
             $table->integer('parent_id')->unsigned()->nullable();
             $table->integer('nest_left')->unsigned()->nullable();
             $table->integer('nest_right')->unsigned()->nullable();
@@ -20,8 +19,6 @@ class CreateSectorsTable extends Migration
             $table->string('slug')->nullable();
             $table->text('description')->nullable();
             $table->softDeletes();
-=======
->>>>>>> master
             $table->timestamps();
         });
     }

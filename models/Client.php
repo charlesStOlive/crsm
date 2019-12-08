@@ -1,22 +1,15 @@
 <?php namespace Waka\Crsm\Models;
 
 use Model;
-<<<<<<< HEAD
 use Config;
 use \ToughDeveloper\ImageResizer\Classes\Image;
-=======
-
->>>>>>> master
 /**
  * Client Model
  */
 class Client extends Model
 {
     use \October\Rain\Database\Traits\Validation;
-<<<<<<< HEAD
     use \October\Rain\Database\Traits\SoftDelete;
-=======
->>>>>>> master
 
     /**
      * @var string The database table used by the model.
@@ -36,14 +29,10 @@ class Client extends Model
     /**
      * @var array Validation rules for attributes
      */
-<<<<<<< HEAD
     public $rules = [
         'name' => 'required|between:4,16',
         'slug' => 'required|unique:waka_crsm_clients',
     ];
-=======
-    public $rules = [];
->>>>>>> master
 
     /**
      * @var array Attributes to be cast to native types
@@ -70,19 +59,14 @@ class Client extends Model
      */
     protected $dates = [
         'created_at',
-<<<<<<< HEAD
         'updated_at',
         'deleted_at',
-=======
-        'updated_at'
->>>>>>> master
     ];
 
     /**
      * @var array Relations
      */
     public $hasOne = [];
-<<<<<<< HEAD
     public $hasMany = [
         'users' => 'Rainlab\User\Models\User',
     ];
@@ -91,17 +75,12 @@ class Client extends Model
         'country' => 'waka\crsm\Models\Country',
         'type' => 'waka\crsm\Models\Type',
     ];
-=======
-    public $hasMany = [];
-    public $belongsTo = [];
->>>>>>> master
     public $belongsToMany = [];
     public $morphTo = [];
     public $morphOne = [];
     public $morphMany = [];
     public $attachOne = [];
     public $attachMany = [];
-<<<<<<< HEAD
 
     /**
      * Attribute
@@ -124,6 +103,4 @@ class Client extends Model
     {
         return Settings::get('sector');
     }
-=======
->>>>>>> master
 }

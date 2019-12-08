@@ -3,14 +3,8 @@
 # ===================================
 
 fields:
-<<<<<<< HEAD
     name:
         label: waka.crsm::lang.sector.name
     slug:
         label: waka.crsm::lang.global.slug
         preset: name
-=======
-    id:
-        label: ID
-        disabled: true
->>>>>>> master
