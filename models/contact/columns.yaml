@@ -32,9 +32,9 @@ columns:
         select: name
         searchable: true
         
-
     key:
         label: waka.crsm::lang.contact.key
+        invisible: true
     
     updated_at:
         label: waka.crsm::lang.global.updated_at

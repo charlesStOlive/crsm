@@ -20,7 +20,8 @@ class Plugin extends PluginBase
     //
     public $require = [
         'Rainlab.User',
-        'Toughdeveloper.Imageresizer'
+        'Toughdeveloper.Imageresizer',
+        'Waka.Utils',
         ];
     //
     public function pluginDetails()

@@ -11,6 +11,9 @@ class Contact extends Model
     use \October\Rain\Database\Traits\SoftDelete;
 
     public $rules = [
+        'name'                  => 'required',
+        'surname'                 => 'required',
+        'key'                 => '|unique:waka_crsm_contacts',
     ];
 
     /**
