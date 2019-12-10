@@ -1,19 +1,15 @@
 <?php
 
 return [
-    'global' => [
-        'colors' => 'Couleurs',
-        'details' => 'Détails',
-        'slug' => 'Slug',
-        'updated_at' => 'MAJ',
-        'placeholder' => '--Choisissez--'
-    ],
     'client' => [
         'name' => 'Nom du client',
         'logo' => 'Logo',
         'strate' => 'Strate',
         'primary_color' => 'Couleur primaire',
         'secondary_color' => 'Couleur secondaire',
+        'colors' => 'Couleurs',
+        'color' => 'Couleur',
+        'details' => 'Détails',
         'description' => 'description',
         'address' => 'Adresse',
         'cp' => 'Code Postal',

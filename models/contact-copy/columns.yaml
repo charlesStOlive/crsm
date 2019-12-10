@@ -1,0 +1,41 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    email:
+        label: waka.crsm::lang.contact.email
+
+    # campaigns:
+    #     label: Actions
+    #     clickable: false
+    #     searchable: false
+    #     sortable: false
+    #     width: 50px
+    #     type: 'partial'
+    #     path: "$/charles/mailgun/widget/_sendUnique.htm"
+    
+    name:
+        label: waka.crsm::lang.contact.name
+        searchable: true
+
+    surname:
+        label: waka.crsm::lang.contact.surname
+        searchable: true
+
+    # cv_existe:
+    #     label: CV existe
+
+    client:
+        label: waka.crsm::lang.contact.client
+        relation: client
+        select: name
+        searchable: true
+        
+    key:
+        label: waka.crsm::lang.contact.key
+        invisible: true
+    
+    updated_at:
+        label: waka.utils::lang.global.updated_at
+        type: timetense

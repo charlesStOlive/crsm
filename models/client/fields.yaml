@@ -7,7 +7,7 @@ fields:
         label: waka.crsm::lang.client.name
         span: auto
     slug:
-        label: waka.crsm::lang.global.slug
+        label: waka.utils::lang.global.slug
         preset: name
         span: auto
     sector:
@@ -24,41 +24,41 @@ fields:
 tabs:
     stretch: true
     icons:
-        backend::waka.crsm::lang.global.colors: icon-user
-        backend::waka.crsm::lang.global.details: icon-group
+        backend::waka.crsm::lang.client.colors: icon-user
+        backend::waka.crsm::lang.client.details: icon-group
     fields:
         logo:
-            tab: waka.crsm::lang.global.colors
+            tab: waka.crsm::lang.client.colors
             label: waka.crsm::lang.client.logo
             type: mediafinder
             mode: image
             imageWidth: 150
             imageHeight: 150
         primary_color:
-            tab: waka.crsm::lang.global.colors
+            tab: waka.crsm::lang.client.colors
             label: waka.crsm::lang.client.primary_color
             type: colorpicker
             span: auto
         secondary_color:
-            tab: waka.crsm::lang.global.colors
+            tab: waka.crsm::lang.client.colors
             label: waka.crsm::lang.client.secondary_color
             type: colorpicker
             span: auto
         
         address:
-            tab: waka.crsm::lang.global.details
+            tab: waka.crsm::lang.client.details
             label: waka.crsm::lang.client.address
             span: auto
         cp:
-            tab: waka.crsm::lang.global.details
+            tab: waka.crsm::lang.client.details
             label: waka.crsm::lang.client.cp
             span: auto 
         city:
-            tab: waka.crsm::lang.global.details
+            tab: waka.crsm::lang.client.details
             label: waka.crsm::lang.client.city
             span: auto 
         country:
-            tab: waka.crsm::lang.global.details
+            tab: waka.crsm::lang.client.details
             label: waka.crsm::lang.client.country
             span: auto 
             type: relation

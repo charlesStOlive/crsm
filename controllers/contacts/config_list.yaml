@@ -12,7 +12,7 @@ modelClass: Waka\Crsm\Models\Contact
 title: Manage Contacts
 
 # Link URL for each record
-recordUrl: waka/crsm/contacts/update/:id
+recordUrl: waka/crsm/contacts/preview/:id
 
 # Message to display if the list is empty
 noRecordsMessage: backend::lang.list.no_records

@@ -3,31 +3,30 @@
 # ===================================
 
 
-fields:
-    name:
-        label: waka.crsm::lang.contact.name
-        span: storm
-        cssClass: col-md-4 col-xs-12
-    surname:
-        label: waka.crsm::lang.contact.surname
-        span: storm
-        cssClass: col-md-4 col-xs-12
-    client:
-        type: relation
-        label: waka.crsm::lang.client.name
-        placeholder: waka.crsm::lang.global.placeholder
-        span: storm
-        cssClass: col-md-4 col-xs-12
-    email:
-        label: waka.crsm::lang.contact.email
-        span: storm
-        cssClass: col-md-4 col-xs-12
-    tel1:
-        label: waka.crsm::lang.contact.tel1
-        span: storm
-        cssClass: col-md-4 col-xs-12
-    tel2:
-        label: waka.crsm::lang.contact.tel2
-        span: storm
-        cssClass: col-md-4 col-xs-12
 
+tabs:
+    stretch: true
+    icons:
+        backend::waka.crsm::lang.client.colors: icon-user
+        backend::waka.crsm::lang.client.details: icon-group
+    fields:
+        name:
+            tab: waka.crsm::lang.client.details
+            label: waka.crsm::lang.contact.name
+            span: auto
+
+secondaryTabs: 
+    fields:
+        name:
+            label: waka.crsm::lang.contact.name
+
+        surname:
+            label: waka.crsm::lang.contact.surname
+
+        email:
+            label: waka.crsm::lang.contact.email
+
+        client:
+            type: relation
+            label: waka.crsm::lang.client.name
+            placeholder: waka.crsm::lang.contact.surname

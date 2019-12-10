@@ -8,8 +8,14 @@ use Model;
 class Contact extends Model
 {
     use \October\Rain\Database\Traits\Validation;
-            use \October\Rain\Database\Traits\SoftDelete;
-        
+    use \October\Rain\Database\Traits\SoftDelete;
+
+    public $rules = [
+        'name'                  => 'required',
+        'surname'                 => 'required',
+        'key'                 => '|unique:waka_crsm_contacts',
+    ];
+
     /**
      * @var string The database table used by the model.
      */
@@ -23,12 +29,11 @@ class Contact extends Model
     /**
      * @var array Fillable fields
      */
-    protected $fillable = [];
+    protected $fillable = ['name', 'surname', 'email'];
 
     /**
      * @var array Validation rules for attributes
      */
-    public $rules = [];
 
     /**
      * @var array Attributes to be cast to native types
@@ -56,8 +61,8 @@ class Contact extends Model
     protected $dates = [
         'created_at',
         'updated_at',
-                'deleted_at',
-            ];
+        'deleted_at'
+    ];
 
     /**
      * @var array Relations
@@ -65,7 +70,7 @@ class Contact extends Model
     public $hasOne = [];
     public $hasMany = [];
     public $belongsTo = [
-        'client' => ['Waka\Crsm\Models\Client', 'softDelete' => true],
+       'client' => ['Waka\Crsm\Models\Client', 'softDelete' => true],
     ];
     public $belongsToMany = [];
     public $morphTo = [];

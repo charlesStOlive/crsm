@@ -1,56 +1,45 @@
-<?php Block::put('breadcrumb') ?>
-    <ul>
-        <li><a href="<?= Backend::url('waka/crsm/contacts') ?>">Contacts</a></li>
-        <li><?= e($this->pageTitle) ?></li>
-    </ul>
+<!-- Primary content -->
+<?php Block::put('form-contents') ?>
+<div class="layout-row min-size">
+    <?= $this->formRenderOutsideFields() ?>
+</div>
+
+<div class="layout-row">
+    <?= $this->formRenderPrimaryTabs() ?>
+</div>
+
 <?php Block::endPut() ?>
 
-<?php if (!$this->fatalError): ?>
-
-    <?= Form::open(['class' => 'layout']) ?>
-
-        <div class="layout-row">
-            <?= $this->formRender() ?>
+<!-- Complimentary sidebar -->
+<?php Block::put('form-sidebar') ?>
+<div class="hide-tabs">
+    <?= $this->formRenderSecondaryTabs() ?>
+    <div class="form-buttons">
+        <div class="loading-indicator-container">
+            <button type="submit" data-request="onSave" data-request-data="redirect:0" data-hotkey="ctrl+s, cmd+s"
+                data-load-indicator="Saving Contact..." class="btn btn-primary">
+                <?= e(trans('waka.utils::lang.global.save')) ?>
+            </button>
+            <button type="button" data-request="onSave" data-request-data="close:1" data-hotkey="ctrl+enter, cmd+enter"
+                data-load-indicator="Saving Contact..." class="btn btn-default">
+                <?= e(trans('waka.utils::lang.global.save_close')) ?>
+            </button>
+            <?= $this->fireViewEvent('backend.top.update') ?>
+            <button type="button" class="oc-icon-trash-o btn-icon danger pull-right" data-request="onDelete"
+                data-load-indicator="Deleting Contact..." data-request-confirm="Delete this contact?">
+            </button>
+            <span class="btn-text">
+                <?= e(trans('waka.utils::lang.global.or')) ?> <a
+                    href="<?= Backend::url('waka/crsm/contacts') ?>"><?= e(trans('waka.utils::lang.global.cancel')) ?></a>
+            </span>
         </div>
+    </div>
+</div>
+<?php Block::endPut() ?>
 
-        <div class="form-buttons">
-            <div class="loading-indicator-container">
-                <button
-                    type="submit"
-                    data-request="onSave"
-                    data-request-data="redirect:0"
-                    data-hotkey="ctrl+s, cmd+s"
-                    data-load-indicator="Saving Contact..."
-                    class="btn btn-primary">
-                    <u>S</u>ave
-                </button>
-                <button
-                    type="button"
-                    data-request="onSave"
-                    data-request-data="close:1"
-                    data-hotkey="ctrl+enter, cmd+enter"
-                    data-load-indicator="Saving Contact..."
-                    class="btn btn-default">
-                    Save and Close
-                </button>
-                <button
-                    type="button"
-                    class="oc-icon-trash-o btn-icon danger pull-right"
-                    data-request="onDelete"
-                    data-load-indicator="Deleting Contact..."
-                    data-request-confirm="Delete this contact?">
-                </button>
-                <span class="btn-text">
-                    or <a href="<?= Backend::url('waka/crsm/contacts') ?>">Cancel</a>
-                </span>
-            </div>
-        </div>
-
-    <?= Form::close() ?>
-
-<?php else: ?>
-
-    <p class="flash-message static error"><?= e($this->fatalError) ?></p>
-    <p><a href="<?= Backend::url('waka/crsm/contacts') ?>" class="btn btn-default">Return to contacts list</a></p>
-
-<?php endif ?>
+<!-- Layout execution -->
+<?php Block::put('body') ?>
+<?= Form::open(['class'=>'layout stretch']) ?>
+<?= $this->makeLayout('form-first-side-bar') ?>
+<?= Form::close() ?>
+<?php Block::endPut() ?>
