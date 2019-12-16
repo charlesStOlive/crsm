@@ -95,21 +95,26 @@ class Plugin extends PluginBase
     {
         return [
             'crsm' => [
-                'label' => 'CRM',
+                'label' => Lang::get('waka.crsm::lang.menu.title'),
                 'url' => Backend::url('waka/crsm/clients'),
                 'icon' => 'icon-leaf',
                 'permissions' => ['waka.crsm.*'],
                 'order' => 001,
                 'sideMenu' => [
                     'side-menu-clients' => [
-                        'label'       => Lang::get('waka.crsm::lang.client.clients'),
+                        'label'       => Lang::get('waka.crsm::lang.menu.clients'),
                         'icon'        => 'icon-building',
                         'url'         => Backend::url('waka/crsm/clients'),
                     ],
                     'side-menu-contacts' => [
-                        'label'       => Lang::get('waka.crsm::lang.contact.contacts'),
+                        'label'       => Lang::get('waka.crsm::lang.menu.contacts'),
                         'icon'        => 'icon-users',
                         'url'         => Backend::url('waka/crsm/contacts'),
+                    ],
+                    'side-menu-sectors' => [
+                        'label'       => Lang::get('waka.crsm::lang.menu.sectors'),
+                        'icon'        => 'icon-users',
+                        'url'         => Backend::url('waka/crsm/sectors'),
                     ],
                 ],
             ],

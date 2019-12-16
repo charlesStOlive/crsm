@@ -1,6 +1,12 @@
 <?php
 
 return [
+    'menu' => [
+        'title' => 'CRM',
+        'clients' => 'Clients',
+        'contacts' => 'Contacts',
+        'sectors' => 'Secteurs',
+    ],
     'client' => [
         'name' => 'Nom du client',
         'logo' => 'Logo',

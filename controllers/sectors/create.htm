@@ -21,7 +21,7 @@
                     data-hotkey="ctrl+s, cmd+s"
                     data-load-indicator="Creating Sector..."
                     class="btn btn-primary">
-                    Create
+                    <?= e(trans('waka.utils::lang.global.create')) ?>
                 </button>
                 <button
                     type="button"
@@ -30,10 +30,10 @@
                     data-hotkey="ctrl+enter, cmd+enter"
                     data-load-indicator="Creating Sector..."
                     class="btn btn-default">
-                    Create and Close
+                    <?= e(trans('waka.utils::lang.global.create_close')) ?>
                 </button>
                 <span class="btn-text">
-                    or <a href="<?= Backend::url('waka/crsm/sectors') ?>">Cancel</a>
+                    or <a href="<?= Backend::url('waka/crsm/sectors') ?>"><?= e(trans('waka.utils::lang.global.cancel')) ?></a>
                 </span>
             </div>
         </div>
