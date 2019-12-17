@@ -14,10 +14,6 @@ class SeedAllTable extends Seeder
     public function run()
     {
         Excel::import(new CountryImport, plugins_path('waka/crsm/updates/excels/country.xlsx'));
-        $sector = Sector::create([
-            'name'                 => 'Défaut',
-            'slug'                 => 'defaut'
-        ]);
         $type = Type::create([
             'name'                 => 'Prospect',
             'slug'                 => 'prospet'
@@ -28,6 +24,9 @@ class SeedAllTable extends Seeder
         ]);
         //
         $sql = plugins_path('waka/crsm/updates/sql/settings.sql');
+        DB::unprepared(file_get_contents($sql));
+        //
+        $sql = plugins_path('waka/crsm/updates/sql/waka_crsm_sectors.sql');
         DB::unprepared(file_get_contents($sql));
         
     }
