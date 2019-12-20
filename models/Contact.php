@@ -48,7 +48,12 @@ class Contact extends Model
     /**
      * @var array Attributes to be removed from the API representation of the model (ex. toArray())
      */
-    protected $hidden = [];
+    protected $hidden = ['client_id', 'deleted_at'];
+
+    /**
+     * @var array Attributes to be removed from publication
+     */
+    //public $notPublishable = ['id','client_id', 'deleted_at'];
 
     /**
      * @var array Attributes to be cast to Argon (Carbon) instances

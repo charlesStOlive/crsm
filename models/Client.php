@@ -24,7 +24,7 @@ class Client extends Model
     /**
      * @var array Fillable fields
      */
-    protected $fillable = [];
+    protected $fillable = [''];
 
     /**
      * @var array Validation rules for attributes
@@ -52,7 +52,7 @@ class Client extends Model
     /**
      * @var array Attributes to be removed from the API representation of the model (ex. toArray())
      */
-    protected $hidden = [];
+    protected $hidden = ['id', 'country_id', 'sector_id', 'type_id', 'deleted_at'];
 
     /**
      * @var array Attributes to be cast to Argon (Carbon) instances

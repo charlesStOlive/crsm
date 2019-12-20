@@ -11,7 +11,8 @@ class Contacts extends Controller
     public $implement = [
         'Backend.Behaviors.FormController',
         'Backend.Behaviors.ListController',
-        'Waka.Utils.Behaviors.DuplicateModel'
+        'Waka.Utils.Behaviors.DuplicateModel',
+        'Waka.Utils.Behaviors.PopupActions',
     ];
 
     public $formConfig = 'config_form.yaml';

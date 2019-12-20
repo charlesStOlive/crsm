@@ -49,7 +49,11 @@ class Sector extends Model
     /**
      * @var array Attributes to be removed from the API representation of the model (ex. toArray())
      */
-    protected $hidden = [];
+    protected $hidden = [
+        'created_at',
+        'updated_at',
+        'deleted_at',
+    ];
 
     /**
      * @var array Attributes to be cast to Argon (Carbon) instances
