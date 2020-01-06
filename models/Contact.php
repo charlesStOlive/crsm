@@ -76,6 +76,13 @@ class Contact extends Model
     public $morphTo = [];
     public $morphOne = [];
     public $morphMany = [];
+    public $morphToMany = [
+        'montages' => [
+            'Waka\Cloudis\Models\Montage',
+            'name' => 'montageable',
+            'table' => 'waka_cloudis_montageables'
+            ]
+    ];
     public $attachOne = [];
     public $attachMany = [];
 
@@ -86,5 +93,11 @@ class Contact extends Model
         if(!$this->key) {
             $this->key = str_Random(15);
         }
+    }
+    /**
+     * GETTER
+     */
+    public function getCompleteNameAttribute() {
+        return $this->name.' '.$this->surname;
     }
 }

@@ -16,12 +16,14 @@ class CreateClientsTable extends Migration
             $table->string('slug');
             $table->integer('sector_id')->unsigned();
             $table->integer('type_id')->unsigned();
-            //
-            $table->string('logo')->nullable();
+            
+            $table->boolean('cloudi_ready')->default(false);
+
             $table->string('primary_color')->nullable();
             $table->string('secondary_color')->nullable();
+
             $table->text('description')->nullable();
-            //
+            
             $table->string('address')->nullable();
             $table->string('cp')->nullable();
             $table->string('city')->nullable();

@@ -27,23 +27,38 @@ tabs:
         backend::waka.crsm::lang.client.colors: icon-user
         backend::waka.crsm::lang.client.details: icon-group
     fields:
-        logo:
+        logo_c:
             tab: waka.crsm::lang.client.colors
             label: waka.crsm::lang.client.logo
-            type: mediafinder
+            type: fileupload
             mode: image
             imageWidth: 150
             imageHeight: 150
+        # logo:
+        #     tab: waka.crsm::lang.client.colors
+        #     label: waka.crsm::lang.client.logo
+        #     type: mediafinder
+        #     mode: image
+        #     imageWidth: 150
+        #     imageHeight: 150
+        
         primary_color:
             tab: waka.crsm::lang.client.colors
             label: waka.crsm::lang.client.primary_color
-            type: colorpicker
+            type: colorpickeranalyser
             span: auto
+            colorsFrom: logo_c
+            #fromMedia: true
+            dependsOn: logo_c
+
         secondary_color:
             tab: waka.crsm::lang.client.colors
             label: waka.crsm::lang.client.secondary_color
-            type: colorpicker
+            type: colorpickeranalyser
             span: auto
+            colorsFrom: logo_c
+            #fromMedia: true
+            dependsOn: logo_c
         
         address:
             tab: waka.crsm::lang.client.details

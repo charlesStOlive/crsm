@@ -11,6 +11,11 @@ class Client extends Model
     use \October\Rain\Database\Traits\Validation;
     use \October\Rain\Database\Traits\SoftDelete;
 
+
+    use \Waka\Cloudis\Classes\Traits\CloudiTrait;
+    public $cloudiSlug = 'slug';
+    public $cloudiImages = ['logo_c'];
+
     /**
      * @var string The database table used by the model.
      */
@@ -79,17 +84,36 @@ class Client extends Model
     public $morphTo = [];
     public $morphOne = [];
     public $morphMany = [];
-    public $attachOne = [];
+    public $morphToMany = [
+        'montages' => [
+            'Waka\Cloudis\Models\Montage',
+            'name' => 'montageable',
+            'table' => 'waka_cloudis_montageables'
+            ]
+    ];
+    public $attachOne = [
+        'logo_c' => 'System\Models\File'
+    ];
     public $attachMany = [];
 
+
+    /**
+     * 
+     */
+    public function afterSave() {
+        $this->checkCloudisFilesChanges();
+    }
     /**
      * Attribute
      */
-    public function getLogoAfficheAttribute()
+    public function getCloudiThumbAttribute()
     {
-        $mediaUrl = url(Config::get('cms.storage.media.path'));
-        $image = new Image($mediaUrl . '/' . $this->logo);
-        return '<img src="' . $image->resize(50, 50, ['mode' => 'auto']) . '">';
+        if($this->getCloudiExiste('logo_c')) {
+            return '<img src="' . $this->getCloudiRowUrl('logo_c') . '">';
+        } else {
+            return "Pas d'image";
+        }
+        
     }
     public function getDefaultCountryAttribute()
     {
@@ -103,4 +127,5 @@ class Client extends Model
     {
         return Settings::get('sector');
     }
+
 }
