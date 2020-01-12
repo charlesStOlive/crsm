@@ -15,7 +15,6 @@ class Client extends Model
     use \Waka\Cloudis\Classes\Traits\CloudiTrait;
     public $cloudiSlug = 'slug';
     public $cloudiImages = ['logo_c'];
-
     /**
      * @var string The database table used by the model.
      */
