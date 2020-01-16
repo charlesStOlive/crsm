@@ -10,7 +10,9 @@ class Clients extends Controller
 {
     public $implement = [
         'Backend.Behaviors.FormController',
-        'Backend.Behaviors.ListController'
+        'Backend.Behaviors.ListController',
+        'Waka.Utils.Behaviors.PopupActions',
+        'Waka.Publisher.Behaviors.WordBehavior'
     ];
 
     public $formConfig = 'config_form.yaml';

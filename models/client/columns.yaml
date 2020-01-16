@@ -6,6 +6,13 @@ columns:
     name:
         label: waka.crsm::lang.client.name
         searchable: true
+    action:
+        type: waka-btn-actions
+        icon: icon-wrench
+        clickable: false
+        searchable: false
+        sortable: false
+        width: 25px
     sector:
         label: waka.crsm::lang.client.sector
         relation: sector

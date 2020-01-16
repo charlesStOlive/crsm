@@ -13,6 +13,7 @@ class Contacts extends Controller
         'Backend.Behaviors.ListController',
         'Waka.Utils.Behaviors.DuplicateModel',
         'Waka.Utils.Behaviors.PopupActions',
+        'Waka.Publisher.Behaviors.WordBehavior'
     ];
 
     public $formConfig = 'config_form.yaml';
@@ -25,5 +26,10 @@ class Contacts extends Controller
         parent::__construct();
 
         BackendMenu::setContext('Waka.Crsm', 'crsm', 'contacts');
+    }
+
+    public function update($id) {
+        $this->bodyClass = 'compact-container';
+        return $this->asExtension('FormController')->update($id);
     }
 }
