@@ -6,6 +6,10 @@
 
 <div class="layout-row">
     <div class="form-buttons">
+        <a type="submit" data-request="onParent" data-request-data="id:<?= $this->params[0] ?>, parent:'client'"
+            class="btn btn-primary">
+            Fiche client
+        </a>
         <?= $this->fireViewEvent('backend.top.update') ?>
     </div>
     <?= $this->formRenderPrimaryTabs() ?>

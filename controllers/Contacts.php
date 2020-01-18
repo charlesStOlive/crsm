@@ -2,6 +2,10 @@
 
 use BackendMenu;
 use Backend\Classes\Controller;
+use Excel;
+use Redirect;
+use Session;
+use \Waka\ImportExport\Models\ConfigImport;
 
 /**
  * Contacts Back-end Controller
@@ -13,7 +17,8 @@ class Contacts extends Controller
         'Backend.Behaviors.ListController',
         'Waka.Utils.Behaviors.DuplicateModel',
         'Waka.Utils.Behaviors.PopupActions',
-        'Waka.Publisher.Behaviors.WordBehavior'
+        'Waka.Publisher.Behaviors.WordBehavior',
+        'Waka.ImportExport.Behaviors.ExcelImport'
     ];
 
     public $formConfig = 'config_form.yaml';

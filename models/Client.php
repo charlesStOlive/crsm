@@ -9,7 +9,7 @@ use \ToughDeveloper\ImageResizer\Classes\Image;
 class Client extends Model
 {
     use \October\Rain\Database\Traits\Validation;
-    use \October\Rain\Database\Traits\SoftDelete;
+
 
 
     use \Waka\Cloudis\Classes\Traits\CloudiTrait;
@@ -23,7 +23,7 @@ class Client extends Model
     /**
      * @var array Guarded fields
      */
-    protected $guarded = ['*'];
+    protected $guarded = ['id'];
 
     /**
      * @var array Fillable fields
@@ -34,7 +34,7 @@ class Client extends Model
      * @var array Validation rules for attributes
      */
     public $rules = [
-        'name' => 'required|between:4,16',
+        'name' => 'required|between:3,32',
         'slug' => 'required|unique:waka_crsm_clients',
     ];
 
@@ -64,7 +64,6 @@ class Client extends Model
     protected $dates = [
         'created_at',
         'updated_at',
-        'deleted_at',
     ];
 
     /**

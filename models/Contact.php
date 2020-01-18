@@ -27,12 +27,15 @@ class Contact extends Model
     /**
      * @var array Fillable fields
      */
-    protected $fillable = [];
+    protected $fillable = ['name', 'surname'];
 
     /**
      * @var array Validation rules for attributes
      */
-    public $rules = [];
+    public $rules = [
+        'name' => 'required',
+        'surname' => 'required',
+    ];
 
     /**
      * @var array Attributes to be cast to native types
@@ -74,7 +77,7 @@ class Contact extends Model
     public $hasOne = [];
     public $hasMany = [];
     public $belongsTo = [
-        'client' => ['Waka\Crsm\Models\Client', 'softDelete' => true],
+        'client' => ['Waka\Crsm\Models\Client'],
     ];
     public $belongsToMany = [];
     public $morphTo = [];

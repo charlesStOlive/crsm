@@ -1,21 +1,18 @@
 <div data-control="toolbar">
-    <a
-        href="<?= Backend::url('waka/crsm/contacts/create') ?>"
-        class="btn btn-primary oc-icon-plus">
+    <a href="<?= Backend::url('waka/crsm/contacts/create') ?>" class="btn btn-primary oc-icon-plus">
         Nouveau Contact
     </a>
 
-    <button
-        class="btn btn-danger oc-icon-trash-o"
-        disabled="disabled"
+    <button class="btn btn-danger oc-icon-trash-o" disabled="disabled"
         onclick="$(this).data('request-data', { checked: $('.control-list').listWidget('getChecked') })"
-        data-request="onDelete"
-        data-request-confirm="Are you sure you want to delete the selected Contacts?"
-        data-trigger-action="enable"
-        data-trigger=".control-list input[type=checkbox]"
-        data-trigger-condition="checked"
-        data-request-success="$(this).prop('disabled', 'disabled')"
-        data-stripe-load-indicator>
+        data-request="onDelete" data-request-confirm="Are you sure you want to delete the selected Contacts?"
+        data-trigger-action="enable" data-trigger=".control-list input[type=checkbox]" data-trigger-condition="checked"
+        data-request-success="$(this).prop('disabled', 'disabled')" data-stripe-load-indicator>
         <?= e(trans('waka.utils::lang.global.delete_selected')) ?>
     </button>
-    </div>
+    <button type="button" data-request="onImport" data-request-data="close:1" data-hotkey="ctrl+enter, cmd+enter"
+        data-load-indicator="Saving Contact..." class="btn btn-default">
+        test import
+    </button>
+    <?= $this->fireViewEvent('backend.top.index') ?>
+</div>
