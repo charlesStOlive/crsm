@@ -79,7 +79,8 @@ tabs:
             type: relation
             defaultFrom: defaultCountry
         montages_list:
-            tab: montage photo
+            tab: waka.crsm::lang.client.montage_list
+            label: waka.crsm::lang.client.montage_list
             type: montagelist
             span: full
 

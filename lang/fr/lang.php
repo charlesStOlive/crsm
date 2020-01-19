@@ -24,7 +24,8 @@ return [
         'placeholder' => '--Choisissez--',
         'sector' => 'Secteur',
         'type' => 'Type de client',
-        'clients' => 'Clients'
+        'clients' => 'Clients',
+        'montage_list' => 'Montage photo client',
     ],
     'contact' => [
         'name' => 'Nom',
