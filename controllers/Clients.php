@@ -12,7 +12,9 @@ class Clients extends Controller
         'Backend.Behaviors.FormController',
         'Backend.Behaviors.ListController',
         'Waka.Utils.Behaviors.PopupActions',
-        'Waka.Publisher.Behaviors.WordBehavior'
+        'Waka.Publisher.Behaviors.WordBehavior',
+        'Waka.ImportExport.Behaviors.ExcelImport',
+        'Waka.ImportExport.Behaviors.ExcelExport'
     ];
 
     public $formConfig = 'config_form.yaml';

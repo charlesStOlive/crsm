@@ -18,7 +18,8 @@ class Contacts extends Controller
         'Waka.Utils.Behaviors.DuplicateModel',
         'Waka.Utils.Behaviors.PopupActions',
         'Waka.Publisher.Behaviors.WordBehavior',
-        'Waka.ImportExport.Behaviors.ExcelImport'
+        'Waka.ImportExport.Behaviors.ExcelImport',
+        'Waka.ImportExport.Behaviors.ExcelExport'
     ];
 
     public $formConfig = 'config_form.yaml';

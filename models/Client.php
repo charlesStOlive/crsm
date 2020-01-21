@@ -99,7 +99,12 @@ class Client extends Model
      * 
      */
     public function afterSave() {
-        $this->checkCloudisFilesChanges();
+        $this->checkModelCloudisFilesChanges();
+        $this->updateCloudiRelations('attach');
+    }
+    public function afterDelete() {
+        trace_log("afterDelete");
+        $this->clouderDeleteAll();
     }
     /**
      * Attribute

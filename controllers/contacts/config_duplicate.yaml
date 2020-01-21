@@ -23,7 +23,11 @@ duplication:
     #Les champs qui seront modifié dans le formulaire du popup 
     fields:
         name:
-          label: intitulé de la campagne
+          label: Nouveau nom
+        surname:
+          label: Nouveau prénom
+        email:
+          label: Nouvel email
 
         # _keep:
         #   label: Dupliquer dans ce projet

@@ -6,3 +6,8 @@ columns:
     name:
         label: waka.crsm::lang.country.name
         searchable: true
+    slug:
+        label: waka.utils::lang.global.slug
+        clickable: false
+
+
