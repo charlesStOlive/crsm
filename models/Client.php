@@ -72,6 +72,7 @@ class Client extends Model
     public $hasOne = [];
     public $hasMany = [
         'users' => 'Rainlab\User\Models\User',
+        'contacts' => 'Waka\Crsm\Models\Contact',
     ];
     public $belongsTo = [
         'sector' => 'Waka\Crsm\Models\Sector',

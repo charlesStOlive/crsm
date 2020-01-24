@@ -1,0 +1,52 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+fields:
+    information:
+        labelFrom: completeName
+        headingLevel: h2
+        class: br-a
+        type: title
+
+    listContact:
+        label: Contact
+        headingLevel: h4
+        type: info_list
+        icon: icon-id-card
+        fields:
+            name:
+                label: Prénom
+            surname:
+                label: Nom
+            email:
+                label: Email
+    listCLient:
+        label: Client
+        headingLevel: h4
+        type: info_list
+        icon: icon-building
+        fields:
+            client.name:
+                type: label_attribute
+            client.country.name:
+                label: Pays
+    buttonClient:
+        label: Aller à la fiche client
+        type: button_url
+        url: waka/crsm/clients/update/
+        modelid: client.id
+        icon: icon-external-link-square
+        class: btn-xs
+
+    montages:
+        type: model_list
+        headingLevel: h4
+        icon: icon-object-group
+        label: Montage photo
+        dataHandler: onCallPopupModelCloudis
+        modelId: id
+        
+
+
+

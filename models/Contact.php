@@ -11,6 +11,9 @@ class Contact extends Model
     use \October\Rain\Database\Traits\SoftDelete;
 
     use \Waka\Cloudis\Classes\Traits\CloudiTrait;
+
+    use \Waka\Informer\Classes\Traits\InformerTrait;
+
     public $cloudiSlug = 'slug';
     public $cloudiImages = [];
         
@@ -82,13 +85,15 @@ class Contact extends Model
     public $belongsToMany = [];
     public $morphTo = [];
     public $morphOne = [];
-    public $morphMany = [];
+    public $morphMany = [
+        'informs' => ['Waka\Informer\Models\Inform', 'name' => 'informeable']
+    ];
     public $morphToMany = [
         'montages' => [
             'Waka\Cloudis\Models\Montage',
             'name' => 'montageable',
             'table' => 'waka_cloudis_montageables'
-            ]
+        ],
     ];
     public $attachOne = [];
     public $attachMany = [];

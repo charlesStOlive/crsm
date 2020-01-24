@@ -26,6 +26,7 @@ return [
         'type' => 'Type de client',
         'clients' => 'Clients',
         'montage_list' => 'Montage photo client',
+        'contacts' => 'Contacts',
     ],
     'contact' => [
         'name' => 'Nom',

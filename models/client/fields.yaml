@@ -5,28 +5,44 @@
 fields:
     name:
         label: waka.crsm::lang.client.name
-        span: auto
+        span: storm
+        cssClass: col-sm-6 col-xs-12
     slug:
         label: waka.utils::lang.global.slug
         preset: name
-        span: auto
+        span: storm
+        cssClass: col-sm-6 col-xs-12
     sector:
-            label: waka.crsm::lang.client.sector
-            span: auto 
-            type: relation
-            defaultFrom: defaultCountry
+        label: waka.crsm::lang.client.sector
+        span: storm
+        cssClass: col-sm-6 col-xs-12
+        type: relation
+        defaultFrom: defaultCountry
     type:
-            label: waka.crsm::lang.client.type
-            span: auto 
-            type: relation
-            defaultFrom: defaultCountry
+        label: waka.crsm::lang.client.type
+        span: storm
+        cssClass: col-sm-6 col-xs-12
+        type: relation
+        defaultFrom: defaultCountry
 
 tabs:
-    stretch: true
     icons:
-        backend::waka.crsm::lang.client.colors: icon-user
-        backend::waka.crsm::lang.client.details: icon-group
+        waka.crsm::lang.client.contacts: icon-address-book
+        waka.crsm::lang.client.colors: icon-magic
+        waka.crsm::lang.client.details: icon-building
     fields:
+        contacts@update:
+            tab: waka.crsm::lang.client.contacts
+            type: partial
+            path: field_contacts
+
+
+        montages_list:
+            tab: waka.crsm::lang.client.colors
+            label: waka.crsm::lang.client.montage_list
+            type: montagelist
+            span: full
+        
         logo_c:
             tab: waka.crsm::lang.client.colors
             label: waka.crsm::lang.client.logo
@@ -34,19 +50,15 @@ tabs:
             mode: image
             imageWidth: 150
             imageHeight: 150
-        # logo:
-        #     tab: waka.crsm::lang.client.colors
-        #     label: waka.crsm::lang.client.logo
-        #     type: mediafinder
-        #     mode: image
-        #     imageWidth: 150
-        #     imageHeight: 150
+            span: storm
+            cssClass: col-sm-4 col-xs-12
         
         primary_color:
             tab: waka.crsm::lang.client.colors
             label: waka.crsm::lang.client.primary_color
             type: colorpickeranalyser
-            span: auto
+            span: storm
+            cssClass: col-sm-4 col-xs-12
             colorsFrom: logo_c
             #fromMedia: true
             dependsOn: logo_c
@@ -55,10 +67,13 @@ tabs:
             tab: waka.crsm::lang.client.colors
             label: waka.crsm::lang.client.secondary_color
             type: colorpickeranalyser
-            span: auto
+            span: storm
+            cssClass: col-sm-4 col-xs-12
             colorsFrom: logo_c
             #fromMedia: true
             dependsOn: logo_c
+        
+        
         
         address:
             tab: waka.crsm::lang.client.details
@@ -78,9 +93,5 @@ tabs:
             span: auto 
             type: relation
             defaultFrom: defaultCountry
-        montages_list:
-            tab: waka.crsm::lang.client.montage_list
-            label: waka.crsm::lang.client.montage_list
-            type: montagelist
-            span: full
+        
 

@@ -7,26 +7,25 @@
 tabs:
     stretch: true
     icons:
-        backend::waka.crsm::lang.client.colors: icon-user
-        backend::waka.crsm::lang.client.details: icon-group
+        waka.crsm::lang.client.colors: icon-user
+        waka.crsm::lang.client.details: icon-id-card
     fields:
         name:
+            label: waka.crsm::lang.contact.name
             tab: waka.crsm::lang.client.details
-            label: waka.crsm::lang.contact.name
-            span: auto
-
-secondaryTabs: 
-    fields:
-        name:
-            label: waka.crsm::lang.contact.name
 
         surname:
             label: waka.crsm::lang.contact.surname
+            tab: waka.crsm::lang.client.details
 
         email:
             label: waka.crsm::lang.contact.email
+            tab: waka.crsm::lang.client.details
 
         client:
             type: relation
             label: waka.crsm::lang.client.name
             placeholder: waka.crsm::lang.contact.surname
+            tab: waka.crsm::lang.client.details 
+    
+        

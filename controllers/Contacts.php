@@ -15,16 +15,19 @@ class Contacts extends Controller
     public $implement = [
         'Backend.Behaviors.FormController',
         'Backend.Behaviors.ListController',
+        'Waka.Utils.Behaviors.SidebarInfoBehavior',
         'Waka.Utils.Behaviors.DuplicateModel',
         'Waka.Utils.Behaviors.PopupActions',
         'Waka.Publisher.Behaviors.WordBehavior',
         'Waka.ImportExport.Behaviors.ExcelImport',
-        'Waka.ImportExport.Behaviors.ExcelExport'
+        'Waka.ImportExport.Behaviors.ExcelExport',
+        'Waka.Cloudis.Behaviors.PopupCloudis',
     ];
 
     public $formConfig = 'config_form.yaml';
     public $listConfig = 'config_list.yaml';
     public $duplicateConfig = 'config_duplicate.yaml'; 
+    public $sidebarInfoConfig = 'config_sidebar_info.yaml'; 
 
 
     public function __construct()

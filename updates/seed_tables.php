@@ -7,6 +7,7 @@ use Waka\Crsm\Classes\CountryImport;
 use Waka\Crsm\Models\Sector;
 use Waka\Crsm\Models\Type;
 use Waka\Crsm\Models\strate;
+use Backend\Models\User;
 
 
 class SeedAllTable extends Seeder
@@ -28,6 +29,17 @@ class SeedAllTable extends Seeder
         //
         $sql = plugins_path('waka/crsm/updates/sql/waka_crsm_sectors.sql');
         DB::unprepared(file_get_contents($sql));
+
+        $user = User::create([
+            'email'                 => 'your@email.de',
+            'login'                 => 'loginname',
+            'password'              => 'password',
+            'password_confirmation' => 'password',
+            'first_name'            => 'firstname',
+            'last_name'             => 'lastname',
+            'permissions'           => ['superuser' => 1],
+            'is_activated'          => true
+        ]);
         
     }
 }

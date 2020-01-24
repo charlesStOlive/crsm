@@ -14,8 +14,12 @@ class ExtendUsersTable extends Migration
 
     public function down()
     {
+        
         Schema::table('users', function ($table) {
-            $table->dropColumn('client_id');
+            if (Schema::hasColumn('client_id'))
+                {
+                    $table->dropColumn('client_id');
+                }
         });
     }
 }
