@@ -15,7 +15,7 @@ class CreateClientsTable extends Migration
             $table->string('name');
             $table->string('slug');
             $table->integer('sector_id')->unsigned();
-            $table->integer('type_id')->unsigned();
+            $table->integer('type_id')->unsigned()->nullable();
             
             $table->boolean('cloudi_ready')->default(false);
 
