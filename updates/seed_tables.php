@@ -24,6 +24,8 @@ class SeedAllTable extends Seeder
 
         $this->call('Waka\Crsm\Updates\Seeders\SeedProjectsMissions');
 
+        $this->call('Waka\Crsm\Updates\Seeders\SeedImportExport');
+
         $this->call('Waka\Crsm\Updates\Seeders\SeedContactsClients');
 
     }

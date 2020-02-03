@@ -8,9 +8,10 @@ class SeedSettings extends Seeder
 {
     public function run()
     {
+        
         Excel::import(new \Waka\Crsm\Classes\Imports\CountryImport, plugins_path('waka/crsm/updates/excels/country.xlsx'));
         //
-        $sql = plugins_path('waka/crsm/updates/sql/settings.sql');
+        $sql = plugins_path('waka/crsm/updates/sql/system_settings.sql');
         DB::unprepared(file_get_contents($sql));
     }
 
