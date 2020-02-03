@@ -60,7 +60,7 @@ class Country extends Model
      */
     public $hasOne = [];
     public $hasMany = [
-        'clients' => 'waka\crsm\Models\Client'
+        'clients' => 'Waka\Crsm\Models\Client'
     ];
     public $belongsTo = [];
     public $belongsToMany = [];

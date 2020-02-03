@@ -69,8 +69,8 @@ class Sector extends Model
      */
     public $hasOne = [];
     public $hasMany = [
-        'clients' => 'waka\crsm\Models\Client',
-        'contents' => 'waka\publisher\Models\Content'
+        'clients' => 'Waka\Crsm\Models\Client',
+        'contents' => 'Waka\Publisher\Models\Content'
     ];
     public $belongsTo = [];
     public $belongsToMany = [];
