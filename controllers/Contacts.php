@@ -34,7 +34,7 @@ class Contacts extends Controller
     {
         parent::__construct();
 
-        BackendMenu::setContext('Waka.Crsm', 'crsm', 'contacts');
+        BackendMenu::setContext('Waka.Crsm', 'crsm', 'side-menu-contacts');
     }
 
     public function update($id) {

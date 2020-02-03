@@ -10,29 +10,29 @@ fields:
         type: title
 
     listContact:
-        label: Contact
+        label: waka.crsm::lang.contact.data_contact
         headingLevel: h4
         type: info_list
         icon: icon-id-card
         fields:
             name:
-                label: Prénom
+                label:  waka.crsm::lang.contact.name
             surname:
-                label: Nom
+                label: waka.crsm::lang.contact.surname
             email:
-                label: Email
+                label: waka.crsm::lang.contact.email
     listCLient:
-        label: Client
+        label: waka.crsm::lang.client.client
         headingLevel: h4
         type: info_list
         icon: icon-building
         fields:
             client.name:
-                type: label_attribute
+                label: waka.crsm::lang.client.name
             client.country.name:
-                label: Pays
+                label: waka.crsm::lang.client.country
     buttonClient:
-        label: Aller à la fiche client
+        label:  waka.crsm::lang.contact.goto_client_form
         type: button_url
         url: waka/crsm/clients/update/
         modelid: client.id
@@ -43,7 +43,7 @@ fields:
         type: model_list
         headingLevel: h4
         icon: icon-object-group
-        label: Montage photo
+        label: waka.crsm::lang.contact.photo_client
         dataHandler: onCallPopupModelCloudis
         modelId: id
         

@@ -20,6 +20,6 @@ class Types extends Controller
     {
         parent::__construct();
 
-        BackendMenu::setContext('Waka.Crsm', 'crsm', 'types');
+        BackendMenu::setContext('Waka.Crsm', 'crsm', 'side-menu-types');
     }
 }

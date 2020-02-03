@@ -1,0 +1,78 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    name@create:
+        label: waka.crsm::lang.project.name
+    
+    client@create:
+        label: waka.crsm::lang.project.name
+        type: relation
+        placeholder: waka.crsm::lang.project.client_placeholder
+
+    contact@create:
+        label: waka.crsm::lang.project.contact
+        type: dropdown
+        placeholder: waka.crsm::lang.project.contact
+        options: listContacts
+        dependsOn: client
+    
+    cp@create:
+        label: waka.crsm::lang.project.cp
+        type: relation
+        placeholder: waka.crsm::lang.project.cp_placeholder
+        select: first_name
+    
+    project_state@create:
+        label: waka.crsm::lang.project.project_state
+        type: balloon-selector
+        options: listProjectState
+
+    description@create:
+        type: richeditor
+        tab: waka.crsm::lang.project.description
+
+tabs:
+    icons:
+        waka.crsm::lang.project.description: icon-briefcase
+        waka.crsm::lang.project.team: icon-users
+        waka.crsm::lang.project.brief: icon-info-circle
+    fields:
+        name@update:
+            label: waka.crsm::lang.project.name
+            tab: waka.crsm::lang.project.description
+
+        missions@update:
+            type: partial
+            path: field_missions
+            tab: waka.crsm::lang.project.description
+
+        description@update:
+            label: waka.crsm::lang.project.description
+            type: richeditor
+            tab: waka.crsm::lang.project.brief
+
+
+        client@update:
+            label: waka.crsm::lang.client.name
+            type: relation
+            placeholder: waka.crsm::lang.project.client_placeholder
+            tab: waka.crsm::lang.project.team
+
+        contact@update:
+            label: waka.crsm::lang.project.contact
+            type: dropdown
+            placeholder: waka.crsm::lang.project.contact
+            options: listContacts
+            tab: waka.crsm::lang.project.team
+        
+        cp@update:
+            label: waka.crsm::lang.project.cp
+            type: relation
+            placeholder: waka.crsm::lang.project.cp_placeholder
+            select: first_name
+            tab: waka.crsm::lang.project.team
+        
+
+ 

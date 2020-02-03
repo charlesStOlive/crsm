@@ -30,11 +30,16 @@ tabs:
         waka.crsm::lang.client.contacts: icon-address-book
         waka.crsm::lang.client.colors: icon-magic
         waka.crsm::lang.client.details: icon-building
+        waka.crsm::lang.client.projects: icon-briefcase
     fields:
         contacts@update:
             tab: waka.crsm::lang.client.contacts
             type: partial
             path: field_contacts
+        projects@update:
+            tab: waka.crsm::lang.client.projects
+            type: partial
+            path: field_projects
 
 
         montages_list:

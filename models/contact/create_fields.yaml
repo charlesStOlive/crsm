@@ -18,4 +18,4 @@ fields:
     client:
         type: relation
         label: waka.crsm::lang.client.name
-        placeholder: waka.crsm::lang.contact.surname
+        placeholder: waka.crsm::lang.contact.plaeholder

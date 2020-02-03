@@ -27,6 +27,8 @@ class CreateClientsTable extends Migration
             $table->string('address')->nullable();
             $table->string('cp')->nullable();
             $table->string('city')->nullable();
+            $table->string('tel')->nullable();
+            $table->string('email')->nullable();
             $table->integer('country_id')->unsigned();
             //
             $table->softDeletes();

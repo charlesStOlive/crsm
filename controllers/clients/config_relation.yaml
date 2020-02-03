@@ -19,4 +19,12 @@ contacts:
             direction: asc
 
 
+projects:
+    label: waka.crsm::lang.project.name
+    view:
+        list: $/waka/crsm/models/project/columns.yaml
+        recordUrl: waka/crsm/projects/update/:id
+        toolbarButtons: create|delete
+
+
 

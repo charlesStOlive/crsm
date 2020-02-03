@@ -22,6 +22,10 @@ class Plugin extends PluginBase
         'Rainlab.User',
         'Toughdeveloper.Imageresizer',
         'Waka.Utils',
+        'Waka.ImportExport',
+        'Waka.Cloudis',
+        'Waka.Informer',
+        'Waka.Publisher',
         ];
     //
     public function pluginDetails()
@@ -51,6 +55,10 @@ class Plugin extends PluginBase
      */
     public function boot()
     {
+        \Waka\Publisher\Controllers\Documents::extend(function($controller) {
+                $controller->implement[] = 'Waka.Crsm.Contents.ContentProjectMission';
+        });
+
         
 
     }
@@ -111,10 +119,25 @@ class Plugin extends PluginBase
                         'icon'        => 'icon-users',
                         'url'         => Backend::url('waka/crsm/contacts'),
                     ],
+                    'side-menu-projects' => [
+                        'label'       => Lang::get('waka.crsm::lang.menu.projects'),
+                        'icon'        => 'icon-briefcase',
+                        'url'         => Backend::url('waka/crsm/projects'),
+                    ],
+                    'side-menu-missions' => [
+                        'label'       => Lang::get('waka.crsm::lang.menu.missions'),
+                        'icon'        => 'icon-road',
+                        'url'         => Backend::url('waka/crsm/missions'),
+                    ],
                     'side-menu-sectors' => [
                         'label'       => Lang::get('waka.crsm::lang.menu.sectors'),
                         'icon'        => 'icon-users',
                         'url'         => Backend::url('waka/crsm/sectors'),
+                    ],
+                    'side-menu-project_states' => [
+                        'label'       => Lang::get('waka.crsm::lang.menu.project_states'),
+                        'icon'        => 'icon-users',
+                        'url'         => Backend::url('waka/crsm/projectStates'),
                     ],
                 ],
             ],

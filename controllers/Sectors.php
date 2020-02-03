@@ -26,6 +26,6 @@ class Sectors extends Controller
     {
         parent::__construct();
 
-        BackendMenu::setContext('Waka.Crsm', 'crsm', 'sectors');
+        BackendMenu::setContext('Waka.Crsm', 'crsm', 'side-menu-sectors');
     }
 }

@@ -6,6 +6,9 @@
   - create_sectors_table.php
   - extend_users_table.php
   - create_types_table.php
+  - create_missions_table.php
+  - create_project_states_table.php
+  - create_projects_table.php
   - seed_tables.php
 
   

@@ -82,7 +82,6 @@ class Sector extends Model
 
     //
     //
-    //
     public Function findParentId($searchedId) {
         if($this->id == $searchedId ) {
             return $this;

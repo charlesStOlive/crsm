@@ -6,7 +6,9 @@ use DB;
 use Waka\Crsm\Classes\CountryImport;
 use Waka\Crsm\Models\Sector;
 use Waka\Crsm\Models\Type;
-use Waka\Crsm\Models\strate;
+use Waka\Crsm\Models\State;
+use Waka\Crsm\Models\Mission;
+use Waka\Crsm\Models\ProjectState;
 use Backend\Models\User;
 
 
@@ -14,32 +16,15 @@ class SeedAllTable extends Seeder
 {
     public function run()
     {
-        Excel::import(new CountryImport, plugins_path('waka/crsm/updates/excels/country.xlsx'));
-        $type = Type::create([
-            'name'                 => 'Prospect',
-            'slug'                 => 'prospet'
-        ]);
-        $type = Type::create([
-            'name'                 => 'Client',
-            'slug'                 => 'client'
-        ]);
-        //
-        $sql = plugins_path('waka/crsm/updates/sql/settings.sql');
-        DB::unprepared(file_get_contents($sql));
-        //
-        $sql = plugins_path('waka/crsm/updates/sql/waka_crsm_sectors.sql');
-        DB::unprepared(file_get_contents($sql));
+        $this->call('Waka\Crsm\Updates\Seeders\SeedSettings');
 
-        $user = User::create([
-            'email'                 => 'your@email.de',
-            'login'                 => 'loginname',
-            'password'              => 'password',
-            'password_confirmation' => 'password',
-            'first_name'            => 'firstname',
-            'last_name'             => 'lastname',
-            'permissions'           => ['superuser' => 1],
-            'is_activated'          => true
-        ]);
-        
+        $this->call('Waka\Crsm\Updates\Seeders\SeedDataSources');
+
+        $this->call('Waka\Crsm\Updates\Seeders\SeedPublishers');
+
+        $this->call('Waka\Crsm\Updates\Seeders\SeedProjectsMissions');
+
+        $this->call('Waka\Crsm\Updates\Seeders\SeedContactsClients');
+
     }
 }

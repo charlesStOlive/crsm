@@ -16,7 +16,7 @@ class Contact extends Model
 
     public $cloudiSlug = 'slug';
     public $cloudiImages = [];
-        
+
     /**
      * @var string The database table used by the model.
      */
@@ -71,8 +71,8 @@ class Contact extends Model
     protected $dates = [
         'created_at',
         'updated_at',
-                'deleted_at',
-            ];
+        'deleted_at',
+    ];
 
     /**
      * @var array Relations
@@ -86,13 +86,13 @@ class Contact extends Model
     public $morphTo = [];
     public $morphOne = [];
     public $morphMany = [
-        'informs' => ['Waka\Informer\Models\Inform', 'name' => 'informeable']
+        'informs' => ['Waka\Informer\Models\Inform', 'name' => 'informeable'],
     ];
     public $morphToMany = [
         'montages' => [
             'Waka\Cloudis\Models\Montage',
             'name' => 'montageable',
-            'table' => 'waka_cloudis_montageables'
+            'table' => 'waka_cloudis_montageables',
         ],
     ];
     public $attachOne = [];
@@ -101,15 +101,21 @@ class Contact extends Model
     /**
      * MODEL EVENT
      */
-    public function beforeSave() {
-        if(!$this->key) {
+    public function beforeSave()
+    {
+
+        if (!$this->key) {
             $this->key = str_Random(15);
         }
+    }
+    public function afterSave() {
+        $this->updateCloudiRelations('attach');
     }
     /**
      * GETTER
      */
-    public function getCompleteNameAttribute() {
-        return $this->name.' '.$this->surname;
+    public function getCompleteNameAttribute()
+    {
+        return $this->name . ' ' . $this->surname;
     }
 }

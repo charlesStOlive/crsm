@@ -1,0 +1,16 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    name:
+        label: waka.crsm::lang.mission.name
+    qty:
+        label: waka.crsm::lang.mission.qty
+        span: auto
+    amount:
+        label: waka.crsm::lang.mission.unit_amount
+        span: auto
+    description:
+        label: waka.crsm::lang.mission.description
+        type: richeditor

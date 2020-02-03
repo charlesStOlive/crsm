@@ -26,6 +26,6 @@ class Clients extends Controller
     {
         parent::__construct();
 
-        BackendMenu::setContext('Waka.Crsm', 'crsm', 'clients');
+        BackendMenu::setContext('Waka.Crsm', 'crsm', 'side-menu-clients');
     }
 }
