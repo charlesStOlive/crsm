@@ -25,11 +25,11 @@ class SeedPublishers extends Seeder
          * IMPORT DES FICHIERS D EXEMPLES PUBLISHER DEPUIS DOSSIER CRSM
          */
         $localDisk = new \Waka\Utils\Classes\WorkDirFiles();
-        $file = plugins_path('waka\crsm\updates\files\templates\lettre_entreprise_vide.docx');
+        $file = plugins_path('waka/crsm/updates/files/templates/lettre_entreprise_vide.docx');
         $localDisk->putFile($file, 'word/templates');
-        $file = plugins_path('waka\crsm\updates\files\templates\offre_service_v4.docx');
+        $file = plugins_path('waka/crsm/updates/files/templates/offre_service_v4.docx');
         $localDisk->putFile($file, 'word/templates');
-        $file = plugins_path('waka\crsm\updates\files\templates\projet.docx');
+        $file = plugins_path('waka/crsm/updates/files/templates/projet.docx');
         $localDisk->putFile($file, 'word/templates');
         // trace_log($localDisk->getFileUrl('test.png', 'word/caca'));
         // trace_log($localDisk->getFilePath('test.png', 'word/caca'));
@@ -59,11 +59,11 @@ class SeedPublishers extends Seeder
         ]);
 
         Db::table('waka_publisher_blocs')->truncate();
-        $sql = plugins_path('waka\publisher\updates\sql\waka_publisher_blocs.sql');
+        $sql = plugins_path('waka/publisher/updates/sql/waka_publisher_blocs.sql');
         DB::unprepared(file_get_contents($sql));
 
         Db::table('waka_publisher_contents')->truncate();
-        $sql = plugins_path('waka\publisher\updates\sql\waka_publisher_contents.sql');
+        $sql = plugins_path('waka/publisher/updates/sql/waka_publisher_contents.sql');
         DB::unprepared(file_get_contents($sql));
     }
 
