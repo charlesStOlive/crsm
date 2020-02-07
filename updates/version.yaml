@@ -14,7 +14,7 @@
   - seed_bases.php
 1.0.3:
   - 'injection clients'
-  - seed_clients.php
+  #- seed_clients.php
 1.0.4:
   - 'injection projets'
   - seed_projects.php
