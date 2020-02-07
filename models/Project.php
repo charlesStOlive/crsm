@@ -17,7 +17,7 @@ class Project extends Model
 
     use \Waka\Cloudis\Classes\Traits\CloudiTrait;
     public $cloudiSlug = 'slug';
-    public $cloudiImages = ['image1', 'image2', 'image3'];
+    public $cloudiImages = ['picture_1', 'picture_2', 'picture_3'];
 
     /**
      * @var string The database table used by the model.
@@ -101,9 +101,9 @@ class Project extends Model
         ],
     ];
     public $attachOne = [
-        'logo1' => 'System\Models\File',
-        'logo2' => 'System\Models\File',
-        'logo3' => 'System\Models\File',
+        'picture_1' => 'System\Models\File',
+        'picture_2' => 'System\Models\File',
+        'picture_3' => 'System\Models\File',
     ];
     public $attachMany = [];
 
@@ -115,6 +115,15 @@ class Project extends Model
         $rowAmount = $this->missions->lists('amount') ?? null;
         $rowQty = $this->missions->lists('qty') ?? null;
         if($rowAmount && $rowQty) $this->total = $calcul->operate2Rows($rowAmount, $rowQty);
+        //
+
+    }
+    public function afterSave() {
+        $this->checkModelCloudisFilesChanges();
+        $this->updateCloudiRelations('attach');
+    }
+    public function afterDelete() {
+        $this->clouderDeleteAll();
     }
 
     /**
@@ -122,9 +131,9 @@ class Project extends Model
      */
     public function listContacts()
     {
-        trace_log(\Backend\Models\User::lists('first_name', 'id'));
+       //trace_log(\Backend\Models\User::lists('first_name', 'id'));
         if ($this->client_id) {
-            trace_log($this->client_id);
+           //trace_log($this->client_id);
             return Contact::where('client_id', '=', $this->client_id)->lists('name', 'id');
         } else {
             return Contact::lists('name', 'id');

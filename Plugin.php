@@ -34,7 +34,7 @@ class Plugin extends PluginBase
             'name' => 'crsm',
             'description' => 'No description provided yet...',
             'author' => 'waka',
-            'icon' => 'icon-leaf',
+            'icon' => 'icon-handshake-o',
         ];
     }
 
@@ -105,7 +105,7 @@ class Plugin extends PluginBase
             'crsm' => [
                 'label' => Lang::get('waka.crsm::lang.menu.title'),
                 'url' => Backend::url('waka/crsm/clients'),
-                'icon' => 'icon-leaf',
+                'icon' => 'icon-handshake-o',
                 'permissions' => ['waka.crsm.*'],
                 'order' => 001,
                 'sideMenu' => [
@@ -128,11 +128,13 @@ class Plugin extends PluginBase
                         'label'       => Lang::get('waka.crsm::lang.menu.missions'),
                         'icon'        => 'icon-road',
                         'url'         => Backend::url('waka/crsm/missions'),
+                        'permissions' => ['waka.crsm.admin'],
                     ],
                     'side-menu-sectors' => [
                         'label'       => Lang::get('waka.crsm::lang.menu.sectors'),
                         'icon'        => 'icon-users',
                         'url'         => Backend::url('waka/crsm/sectors'),
+                        'permissions' => ['waka.crsm.admin'],
                     ],
                     'side-menu-project_states' => [
                         'label'       => Lang::get('waka.crsm::lang.menu.project_states'),
@@ -153,7 +155,7 @@ class Plugin extends PluginBase
                 'icon'        => 'icon-cog',
                 'class'       => 'Waka\Crsm\Models\Settings',
                 'order'       => 1,
-                'permissions' => ['waka.crsm.*'],
+                'permissions' => ['waka.crsm.admin'],
             ]
         ];
     }

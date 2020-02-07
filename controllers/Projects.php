@@ -48,7 +48,7 @@ class Projects extends Controller
     }
     public function relationExtendRefreshResults($field)
     {
-        trace_log("refesh");
+       //trace_log("refesh");
         // Make sure the field is the expected one
         // if ($field != 'myField')
         //     return;
@@ -97,7 +97,7 @@ class Projects extends Controller
     public function onAddMissionTemplates()
     {
         $manageId = post('manage_id');
-        trace_log("id = ".$manageId); 
+       //trace_log("id = ".$manageId); 
         $this->vars['manageId'] = $manageId;
         $this->vars['missionTemplatesListWidget'] = $this->missionTemplatesListWidget;
 
@@ -166,7 +166,7 @@ class Projects extends Controller
 
     public function onMissionTemplatesAdd()
     {
-        trace_log("onMissionTemplateAdd");
+       //trace_log("onMissionTemplateAdd");
         $modelId = post('_manageId');
         $model = \Waka\Crsm\Models\Project::find($modelId);
         $checked = post('checked');

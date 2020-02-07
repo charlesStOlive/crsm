@@ -21,6 +21,8 @@
             data-request-confirm="<?= e(trans('waka.utils::lang.global.confirm_delete')) ?>">
         </button>
         <?= $this->fireViewEvent('backend.top.update') ?>
+        <?= $this->fireViewEvent('backend.down.update') ?>
+
         <span class="btn-text">
             <?= e(trans('waka.utils::lang.global.or')) ?> <a
                 href="<?= Backend::url('waka/crsm/projects') ?>"><?= e(trans('waka.utils::lang.global.cancel')) ?></a>

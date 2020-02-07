@@ -38,7 +38,47 @@ tabs:
         waka.crsm::lang.project.description: icon-briefcase
         waka.crsm::lang.project.team: icon-users
         waka.crsm::lang.project.brief: icon-info-circle
+        waka.crsm::lang.project.crea: icon-magic
+    
     fields:
+        picture_1:
+            tab: waka.crsm::lang.project.crea
+            label: waka.crsm::lang.client.logo
+            type: fileupload
+            mode: image
+            thumbOptions:
+                mode: fit
+            imageWidth: 300
+            imageHeight: 150
+            span: storm
+            cssClass: col-sm-4 col-xs-12
+        picture_2:
+            tab: waka.crsm::lang.project.crea
+            label: waka.crsm::lang.client.logo
+            type: fileupload
+            mode: image
+            thumbOptions:
+                mode: fit
+            imageWidth: 300
+            imageHeight: 150
+            span: storm
+            cssClass: col-sm-4 col-xs-12
+        picture_3:
+            tab: waka.crsm::lang.project.crea
+            label: waka.crsm::lang.client.logo
+            type: fileupload
+            mode: image
+            thumbOptions:
+                mode: fit
+            imageWidth: 300
+            imageHeight: 150
+            span: storm
+            cssClass: col-sm-4 col-xs-12
+        montages_list:
+            tab: waka.crsm::lang.project.crea
+            label: waka.crsm::lang.client.montage_list
+            type: montagelist
+            span: full
         name@update:
             label: waka.crsm::lang.project.name
             tab: waka.crsm::lang.project.description
@@ -73,6 +113,9 @@ tabs:
             placeholder: waka.crsm::lang.project.cp_placeholder
             select: first_name
             tab: waka.crsm::lang.project.team
+
+        
+        
         
 
  

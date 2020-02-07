@@ -28,8 +28,7 @@ class ClientImport implements ToCollection, WithHeadingRow
             $client->sector_id = $row['sector_id'];
             $client->type_id = 1;
             $client->country_id = 74;
-            trace_log("MERDE");
-            trace_log(plugins_path('waka/crsm/updates/files/pictures/logos/'.$row['logo']));
+           //trace_log(plugins_path('waka/crsm/updates/files/pictures/logos/'.$row['logo']));
             $logo = new File();
             $logo->is_public = true;
             $logo->data = plugins_path('waka/crsm/updates/files/pictures/logos/'.$row['logo']);

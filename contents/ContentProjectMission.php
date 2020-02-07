@@ -14,7 +14,6 @@ class ContentProjectMission extends ControllerBehavior
 
     public function onLoadCreateProjectMissionForm()
     {
-        trace_log("fuck");
         $bloc = $this->controller->getBlocModel();
 
         $this->contentProjectMissionFormWidget->context = post('context');

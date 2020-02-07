@@ -13,4 +13,4 @@ fields:
         span: auto
     description:
         label: waka.crsm::lang.mission.description
-        type: richeditor
+        type: markdown

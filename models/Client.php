@@ -83,7 +83,12 @@ class Client extends Model
     public $belongsToMany = [];
     public $morphTo = [];
     public $morphOne = [];
-    public $morphMany = [];
+    public $morphMany = [
+        'cloudis_files' => [
+            'Waka\Cloudis\Models\CloudisFile',
+            'name' => 'cloudeable'
+        ] 
+    ];
     public $morphToMany = [
         'montages' => [
             'Waka\Cloudis\Models\Montage',
@@ -105,7 +110,6 @@ class Client extends Model
         $this->updateCloudiRelations('attach');
     }
     public function afterDelete() {
-        trace_log("afterDelete");
         $this->clouderDeleteAll();
     }
     /**
@@ -114,7 +118,7 @@ class Client extends Model
     public function getCloudiThumbAttribute()
     {
         if($this->getCloudiExiste('logo_c')) {
-            return '<img src="' . $this->getCloudiRowUrl('logo_c') . '">';
+            return '<img src="' . $this->getCloudiBaseUrl('logo_c') . '">';
         } else {
             return "Pas d'image";
         }

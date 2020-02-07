@@ -64,6 +64,7 @@ return [
         'team' => "L'équipe",
         'theproject' => "Le projet",
         'closed_at' => 'Date fin',
+        'crea' => 'Création',
     ],
     'mission' => [
         'name' => "Nom de la mission",

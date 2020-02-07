@@ -6,3 +6,4 @@ INSERT INTO `waka_importexport_types` (`id`, `name`, `class`, `import`, `created
 INSERT INTO `waka_importexport_types` (`id`, `name`, `class`, `import`, `created_at`, `updated_at`) VALUES (6, 'Import Mission', 'Waka\\Crsm\\Classes\\Imports\\MissionImport', 1, '2020-1-31 10:07:34', '2020-1-31 10:08:48');
 INSERT INTO `waka_importexport_types` (`id`, `name`, `class`, `import`, `created_at`, `updated_at`) VALUES (7, 'Import Etat Projet', 'Waka\\Crsm\\Classes\\Imports\\ProjectStateImport', 1, '2020-1-31 10:08:28', '2020-1-31 10:08:34');
 INSERT INTO `waka_importexport_types` (`id`, `name`, `class`, `import`, `created_at`, `updated_at`) VALUES (8, 'Import client', 'Waka\\Crsm\\Classes\\Imports\\ClientImport', 1, '2020-1-31 13:08:54', '2020-1-31 13:08:54');
+INSERT INTO `waka_importexport_types` (`id`, `name`, `class`, `import`, `created_at`, `updated_at`) VALUES (9, 'Import Need', 'Waka\\Wcms\\Classes\\Imports\\NeedImport', 1, '2020-2-4 22:23:13', '2020-2-4 22:23:13');
