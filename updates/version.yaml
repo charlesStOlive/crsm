@@ -18,7 +18,7 @@
 1.0.4:
   - 'injection des data cms'
   - seed_wcms.php
-1.0.4:
+1.0.5:
   - 'injection projets'
   - seed_projects.php
 

@@ -12,8 +12,8 @@ class SeedBases extends Seeder
         echo 'Chargement des Data Sources' . PHP_EOL;
         $this->call('Waka\Crsm\Updates\Seeders\SeedDataSources');
 
-        echo 'Chargement des Data Publishers' . PHP_EOL;
-        $this->call('Waka\Crsm\Updates\Seeders\SeedPublishers');
+        // echo 'Chargement des Data Compilator' . PHP_EOL;
+        // $this->call('Waka\Crsm\Updates\Seeders\SeedCompilator');
 
         echo 'Chargement des Data Seed Import Export' . PHP_EOL;
         $this->call('Waka\Crsm\Updates\Seeders\SeedImportExport');

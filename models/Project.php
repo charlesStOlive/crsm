@@ -75,7 +75,7 @@ class Project extends Model
      */
     public $hasOne = [];
     public $hasMany = [
-        "missions" => "Waka\Crsm\Models\Mission"
+        "missions" => "Waka\Crsm\Models\Mission",
     ];
     public $belongsTo = [
         'contact' => 'Waka\Crsm\Models\Contact',
@@ -92,7 +92,12 @@ class Project extends Model
     ];
     public $morphTo = [];
     public $morphOne = [];
-    public $morphMany = [];
+    public $morphMany = [
+        'cloudis_files' => [
+            'Waka\Cloudis\Models\CloudisFile',
+            'name' => 'cloudeable',
+        ],
+    ];
     public $morphToMany = [
         'montages' => [
             'Waka\Cloudis\Models\Montage',
@@ -110,19 +115,25 @@ class Project extends Model
     /**
      * EVENT
      */
-    public function beforeSave() {
+    public function beforeSave()
+    {
         $calcul = new \Waka\Utils\Classes\Aggregator();
         $rowAmount = $this->missions->lists('amount') ?? null;
         $rowQty = $this->missions->lists('qty') ?? null;
-        if($rowAmount && $rowQty) $this->total = $calcul->operate2Rows($rowAmount, $rowQty);
+        if ($rowAmount && $rowQty) {
+            $this->total = $calcul->operate2Rows($rowAmount, $rowQty);
+        }
+
         //
 
     }
-    public function afterSave() {
+    public function afterSave()
+    {
         $this->checkModelCloudisFilesChanges();
         $this->updateCloudiRelations('attach');
     }
-    public function afterDelete() {
+    public function afterDelete()
+    {
         $this->clouderDeleteAll();
     }
 
@@ -131,9 +142,9 @@ class Project extends Model
      */
     public function listContacts()
     {
-       //trace_log(\Backend\Models\User::lists('first_name', 'id'));
+        //trace_log(\Backend\Models\User::lists('first_name', 'id'));
         if ($this->client_id) {
-           //trace_log($this->client_id);
+            //trace_log($this->client_id);
             return Contact::where('client_id', '=', $this->client_id)->lists('name', 'id');
         } else {
             return Contact::lists('name', 'id');

@@ -79,9 +79,9 @@ class SeedCompilators extends Seeder
         $sql = plugins_path('waka/publisher/updates/sql/waka_publisher_blocs.sql');
         DB::unprepared(file_get_contents($sql));
 
-        Db::table('waka_publisher_contents')->truncate();
-        $sql = plugins_path('waka/publisher/updates/sql/waka_publisher_contents.sql');
-        DB::unprepared(file_get_contents($sql));
+        // Db::table('waka_publisher_contents')->truncate();
+        // $sql = plugins_path('waka/publisher/updates/sql/waka_publisher_contents.sql');
+        // DB::unprepared(file_get_contents($sql));
     }
 
 }

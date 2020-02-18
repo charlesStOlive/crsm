@@ -1,11 +1,8 @@
 <?php namespace Waka\Crsm;
 
 use Backend;
-use System\Classes\PluginBase;
-use Rainlab\User\Controllers\Users as UsersController;
-use Rainlab\User\Models\User as UserModel;
-use Event;
 use Lang;
+use System\Classes\PluginBase;
 
 /**
  * crsm Plugin Information File
@@ -25,8 +22,8 @@ class Plugin extends PluginBase
         'Waka.ImportExport',
         'Waka.Cloudis',
         'Waka.Informer',
-        'Waka.Publisher',
-        ];
+        'Waka.Compilator',
+    ];
     //
     public function pluginDetails()
     {
@@ -55,11 +52,9 @@ class Plugin extends PluginBase
      */
     public function boot()
     {
-        \Waka\Publisher\Controllers\Documents::extend(function($controller) {
-                $controller->implement[] = 'Waka.Crsm.Contents.ContentProjectMission';
-        });
-
-        
+        // \Waka\Publisher\Controllers\Documents::extend(function ($controller) {
+        //     $controller->implement[] = 'Waka.Crsm.Contents.ContentProjectMission';
+        // });
 
     }
 
@@ -110,36 +105,36 @@ class Plugin extends PluginBase
                 'order' => 001,
                 'sideMenu' => [
                     'side-menu-clients' => [
-                        'label'       => Lang::get('waka.crsm::lang.menu.clients'),
-                        'icon'        => 'icon-building',
-                        'url'         => Backend::url('waka/crsm/clients'),
+                        'label' => Lang::get('waka.crsm::lang.menu.clients'),
+                        'icon' => 'icon-building',
+                        'url' => Backend::url('waka/crsm/clients'),
                     ],
                     'side-menu-contacts' => [
-                        'label'       => Lang::get('waka.crsm::lang.menu.contacts'),
-                        'icon'        => 'icon-users',
-                        'url'         => Backend::url('waka/crsm/contacts'),
+                        'label' => Lang::get('waka.crsm::lang.menu.contacts'),
+                        'icon' => 'icon-users',
+                        'url' => Backend::url('waka/crsm/contacts'),
                     ],
                     'side-menu-projects' => [
-                        'label'       => Lang::get('waka.crsm::lang.menu.projects'),
-                        'icon'        => 'icon-briefcase',
-                        'url'         => Backend::url('waka/crsm/projects'),
+                        'label' => Lang::get('waka.crsm::lang.menu.projects'),
+                        'icon' => 'icon-briefcase',
+                        'url' => Backend::url('waka/crsm/projects'),
                     ],
                     'side-menu-missions' => [
-                        'label'       => Lang::get('waka.crsm::lang.menu.missions'),
-                        'icon'        => 'icon-road',
-                        'url'         => Backend::url('waka/crsm/missions'),
+                        'label' => Lang::get('waka.crsm::lang.menu.missions'),
+                        'icon' => 'icon-road',
+                        'url' => Backend::url('waka/crsm/missions'),
                         'permissions' => ['waka.crsm.admin'],
                     ],
                     'side-menu-sectors' => [
-                        'label'       => Lang::get('waka.crsm::lang.menu.sectors'),
-                        'icon'        => 'icon-users',
-                        'url'         => Backend::url('waka/crsm/sectors'),
+                        'label' => Lang::get('waka.crsm::lang.menu.sectors'),
+                        'icon' => 'icon-users',
+                        'url' => Backend::url('waka/crsm/sectors'),
                         'permissions' => ['waka.crsm.admin'],
                     ],
                     'side-menu-project_states' => [
-                        'label'       => Lang::get('waka.crsm::lang.menu.project_states'),
-                        'icon'        => 'icon-users',
-                        'url'         => Backend::url('waka/crsm/projectStates'),
+                        'label' => Lang::get('waka.crsm::lang.menu.project_states'),
+                        'icon' => 'icon-users',
+                        'url' => Backend::url('waka/crsm/projectStates'),
                     ],
                 ],
             ],
@@ -149,14 +144,14 @@ class Plugin extends PluginBase
     {
         return [
             'crsm_settings' => [
-                'label'       => Lang::get('waka.crsm::lang.settings.label'),
+                'label' => Lang::get('waka.crsm::lang.settings.label'),
                 'description' => Lang::get('waka.crsm::lang.settings.description'),
-                'category'    => Lang::get('waka.crsm::lang.settings.category'),
-                'icon'        => 'icon-cog',
-                'class'       => 'Waka\Crsm\Models\Settings',
-                'order'       => 1,
+                'category' => Lang::get('waka.crsm::lang.settings.category'),
+                'icon' => 'icon-cog',
+                'class' => 'Waka\Crsm\Models\Settings',
+                'order' => 1,
                 'permissions' => ['waka.crsm.admin'],
-            ]
+            ],
         ];
     }
 }

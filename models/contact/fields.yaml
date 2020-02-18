@@ -6,8 +6,8 @@
 
 tabs:
     icons:
-        waka.crsm::lang.client.colors: icon-user
-        waka.crsm::lang.client.details: icon-id-card
+        waka.crsm::lang.contact.crea: icon-user
+        waka.crsm::lang.contact.details: icon-id-card
     fields:
         name:
             label: waka.crsm::lang.contact.name
@@ -28,5 +28,23 @@ tabs:
             label: waka.crsm::lang.client.name
             placeholder: waka.crsm::lang.contact.client_placeholder
             tab: waka.crsm::lang.client.details 
+        
+        montages_list:
+            tab: waka.crsm::lang.contact.crea
+            label: waka.crsm::lang.client.montage_list
+            type: montagelist
+            span: full
+
+        profil:
+            tab: waka.crsm::lang.contact.crea
+            label: waka.crsm::lang.contact.profil
+            type: fileupload
+            mode: image
+            thumbOptions:
+                mode: fit
+            imageWidth: 300
+            imageHeight: 150
+            span: auto
+
     
         

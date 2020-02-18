@@ -16,7 +16,7 @@ class Projects extends Controller
         'Waka.Utils.Behaviors.SidebarInfoBehavior',
         'Waka.Utils.Behaviors.DuplicateModel',
         'Waka.Utils.Behaviors.PopupActions',
-        'Waka.Publisher.Behaviors.WordBehavior',
+        'Waka.Compilator.Behaviors.WordBehavior',
         'Waka.ImportExport.Behaviors.ExcelImport',
     ];
 
@@ -25,15 +25,15 @@ class Projects extends Controller
     public $relationConfig = 'config_relation.yaml';
     public $reorderConfig = 'config_reorder.yaml';
 
-    public $sidebarInfoConfig = 'config_sidebar_info.yaml'; 
+    public $sidebarInfoConfig = 'config_sidebar_info.yaml';
 
     public $duplicateConfig = 'config_duplicate.yaml';
-
 
     protected $missionTemplatesListWidget;
     protected $missionTemplatesFilterWidget;
 
-    public function update($id) {
+    public function update($id)
+    {
         $this->bodyClass = 'compact-container';
         return $this->asExtension('FormController')->update($id);
     }
@@ -48,7 +48,7 @@ class Projects extends Controller
     }
     public function relationExtendRefreshResults($field)
     {
-       //trace_log("refesh");
+        //trace_log("refesh");
         // Make sure the field is the expected one
         // if ($field != 'myField')
         //     return;
@@ -58,46 +58,46 @@ class Projects extends Controller
     /**
      * DEBUT REORDER
      * Partie pour le reorder. Non transformé en behavior à cause de reorderExtendQuery
-     * Il faut ajouter : 
+     * Il faut ajouter :
      *  un bouton _relation_button_reorder
      *  le config reorder : public $relationConfig = 'config_relation.yaml';
      *  le behavior 'Backend.Behaviors.RelationController'
-     * 
+     *
      */
 
-    public function onLoadReorder() {
-            $this->vars['manageId'] = post("manageId");
-            $this->reorder();
-            return $this->makePartial('reorder');
+    public function onLoadReorder()
+    {
+        $this->vars['manageId'] = post("manageId");
+        $this->reorder();
+        return $this->makePartial('reorder');
     }
 
     public function reorderExtendQuery($query)
     {
         if (isset($this->params[0])) {
             $query->where('project_id', (int) $this->params[0]);
-        }
-        else {
+        } else {
             throw new \Exception('Category\'s ID must be given for reordering of Projects.');
         }
     }
 
-    public function onCloseReorder() {
+    public function onCloseReorder()
+    {
         $modelId = post('manageId');
         $model = \Waka\Crsm\Models\Project::find($modelId);
         $this->initForm($model);
-        $this->initRelation($model,"missions");
+        $this->initRelation($model, "missions");
         return $this->relationRefresh("missions");
     }
 
     /**
      * FIN REORDER
      */
-    
 
     public function onAddMissionTemplates()
     {
         $manageId = post('manage_id');
-       //trace_log("id = ".$manageId); 
+        //trace_log("id = ".$manageId);
         $this->vars['manageId'] = $manageId;
         $this->vars['missionTemplatesListWidget'] = $this->missionTemplatesListWidget;
 
@@ -166,13 +166,13 @@ class Projects extends Controller
 
     public function onMissionTemplatesAdd()
     {
-       //trace_log("onMissionTemplateAdd");
+        //trace_log("onMissionTemplateAdd");
         $modelId = post('_manageId');
         $model = \Waka\Crsm\Models\Project::find($modelId);
         $checked = post('checked');
-        
-        if($checked ?? false) {
-            foreach($checked as $relationId) {
+
+        if ($checked ?? false) {
+            foreach ($checked as $relationId) {
                 $relation = \Waka\Crsm\Models\Mission::find($relationId);
                 $newRelation = $relation->replicate();
                 $newRelation->is_template = false;
@@ -181,7 +181,7 @@ class Projects extends Controller
             }
         }
         $this->initForm($model);
-        $this->initRelation($model,"missions");
+        $this->initRelation($model, "missions");
 
         return $this->relationRefresh("missions");
 

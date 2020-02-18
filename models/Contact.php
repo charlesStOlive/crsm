@@ -14,8 +14,8 @@ class Contact extends Model
 
     use \Waka\Informer\Classes\Traits\InformerTrait;
 
-    public $cloudiSlug = 'slug';
-    public $cloudiImages = [];
+    public $cloudiSlug = 'id';
+    public $cloudiImages = ['profil'];
 
     /**
      * @var string The database table used by the model.
@@ -78,7 +78,9 @@ class Contact extends Model
      * @var array Relations
      */
     public $hasOne = [];
-    public $hasMany = [];
+    public $hasMany = [
+        'projects' => ['Waka\Crsm\Models\Project'],
+    ];
     public $belongsTo = [
         'client' => ['Waka\Crsm\Models\Client'],
     ];
@@ -87,6 +89,10 @@ class Contact extends Model
     public $morphOne = [];
     public $morphMany = [
         'informs' => ['Waka\Informer\Models\Inform', 'name' => 'informeable'],
+        'cloudis_files' => [
+            'Waka\Cloudis\Models\CloudisFile',
+            'name' => 'cloudeable',
+        ],
     ];
     public $morphToMany = [
         'montages' => [
@@ -95,7 +101,9 @@ class Contact extends Model
             'table' => 'waka_cloudis_montageables',
         ],
     ];
-    public $attachOne = [];
+    public $attachOne = [
+        'profil' => 'System\Models\File',
+    ];
     public $attachMany = [];
 
     /**
@@ -108,8 +116,14 @@ class Contact extends Model
             $this->key = str_Random(15);
         }
     }
-    public function afterSave() {
+    public function afterSave()
+    {
+        $this->checkModelCloudisFilesChanges();
         $this->updateCloudiRelations('attach');
+    }
+    public function afterDelete()
+    {
+        $this->clouderDeleteAll();
     }
     /**
      * GETTER

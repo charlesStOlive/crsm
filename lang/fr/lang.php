@@ -8,7 +8,7 @@ return [
         'sectors' => 'Secteurs',
         'projects' => 'Projets',
         'missions' => 'Missions',
-        'project_states' => "Gerer les états d'un projet"
+        'project_states' => "Gerer les états d'un projet",
     ],
     'client' => [
         'name' => 'Nom du client',
@@ -46,6 +46,9 @@ return [
         'photo_client' => "Montage photo client",
         'data_contact' => "données du client",
         'placeholder' => '--Choisissez--',
+        'profil' => 'Photo de profil',
+        'details' => 'Détails',
+        'crea' => 'Créa',
     ],
     'project' => [
         'name' => "Nom du projet",
@@ -89,7 +92,7 @@ return [
     ],
     'sector' => [
         'name' => 'Secteur',
-        'details' => 'Détails'
+        'details' => 'Détails',
     ],
-   
+
 ];

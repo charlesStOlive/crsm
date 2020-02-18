@@ -24,7 +24,7 @@ fields:
         placeholder: waka.crsm::lang.project.cp_placeholder
         select: first_name
     
-    project_state@create:
+    project_state:
         label: waka.crsm::lang.project.project_state
         type: balloon-selector
         options: listProjectState
@@ -41,7 +41,7 @@ tabs:
         waka.crsm::lang.project.crea: icon-magic
     
     fields:
-        picture_1:
+        picture_1@create:
             tab: waka.crsm::lang.project.crea
             label: waka.crsm::lang.client.logo
             type: fileupload
@@ -52,7 +52,7 @@ tabs:
             imageHeight: 150
             span: storm
             cssClass: col-sm-4 col-xs-12
-        picture_2:
+        picture_2@create:
             tab: waka.crsm::lang.project.crea
             label: waka.crsm::lang.client.logo
             type: fileupload
@@ -63,7 +63,7 @@ tabs:
             imageHeight: 150
             span: storm
             cssClass: col-sm-4 col-xs-12
-        picture_3:
+        picture_3@create:
             tab: waka.crsm::lang.project.crea
             label: waka.crsm::lang.client.logo
             type: fileupload
@@ -74,7 +74,7 @@ tabs:
             imageHeight: 150
             span: storm
             cssClass: col-sm-4 col-xs-12
-        montages_list:
+        montages_list@create:
             tab: waka.crsm::lang.project.crea
             label: waka.crsm::lang.client.montage_list
             type: montagelist

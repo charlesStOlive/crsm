@@ -1,8 +1,8 @@
 <?php namespace Waka\Crsm\Updates;
 
-use Schema;
 use October\Rain\Database\Schema\Blueprint;
 use October\Rain\Database\Updates\Migration;
+use Schema;
 
 class CreateMissionsTable extends Migration
 {
@@ -15,8 +15,8 @@ class CreateMissionsTable extends Migration
             $table->integer('project_id')->unsigned()->nullable();
             $table->string('name');
             $table->text('description')->nullable();
-            $table->double('qty',10, 2)->default(1);
-            $table->double('amount', 10, 2)->default(100);               
+            $table->double('qty', 10, 2)->default(1);
+            $table->double('amount', 10, 2)->default(100);
             $table->integer('sort_order')->default(0);
         });
 
@@ -29,17 +29,14 @@ class CreateMissionsTable extends Migration
         //     $table->double('amount', 10, 2)->nullable();
         //     // $table->boolean('own_description')->default(false);
         //     $table->text('description')->nullable();
-        //     $table->double('qty', 5, 2)->nullable();  
+        //     $table->double('qty', 5, 2)->nullable();
         //     $table->primary(['mission_id', 'project_id'], 'mission_project');
         //     $table->timestamps();
         // });
     }
 
-    
-
     public function down()
     {
         Schema::dropIfExists('waka_crsm_missions');
-        Schema::dropIfExists('waka_crsm_missions_projects');
     }
 }

@@ -70,7 +70,7 @@ class Sector extends Model
     public $hasOne = [];
     public $hasMany = [
         'clients' => 'Waka\Crsm\Models\Client',
-        'contents' => 'Waka\Publisher\Models\Content'
+        //'contents' => 'Waka\Publisher\Models\Content'
     ];
     public $belongsTo = [];
     public $belongsToMany = [];
@@ -82,46 +82,50 @@ class Sector extends Model
 
     //
     //
-    public Function findParentId($searchedId) {
-        if($this->id == $searchedId ) {
+    public function findParentId($searchedId)
+    {
+        if ($this->id == $searchedId) {
             return $this;
         }
-        if(!$this->nested_depth) {
+        if (!$this->nested_depth) {
             // si pas de hierarchie retourne null
             return null;
         } else {
             $parents = $this->getParents()->sortByDesc('nest_depth');
-            foreach($parents as $parent) {
-                if($parent->id == $searchedId ) return $parent;
+            foreach ($parents as $parent) {
+                if ($parent->id == $searchedId) {
+                    return $parent;
+                }
+
             }
             // si on ne retrouve rien on retourne null
             return null;
         }
 
-
-
     }
-    public Function findParentIds($searchedIds) {
+    public function findParentIds($searchedIds)
+    {
         //transform array
         $searchedIds = array_pluck($searchedIds, 'sector_id');
-        if(in_array($this->id, $searchedIds)) {
+        if (in_array($this->id, $searchedIds)) {
             return $this;
         }
         // s il n'a pas de nest_depth c'est un root !
-        if(!$this->nest_depth) {
+        if (!$this->nest_depth) {
             //trace_log("c'est un root il n'exite pas de parent on retourne null");
             return null;
         } else {
             $parents = $this->getParents()->sortByDesc('nest_depth');
-            foreach($parents as $parent) {
-                if(in_array($parent->id, $searchedIds)) return $parent;
+            foreach ($parents as $parent) {
+                if (in_array($parent->id, $searchedIds)) {
+                    return $parent;
+                }
+
             }
             // si on ne retrouve rien on retourne null
             //trace_log("on a rien trouvé,  on retourne null");
             return null;
         }
-
-
 
     }
 }
