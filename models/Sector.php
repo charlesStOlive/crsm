@@ -11,6 +11,10 @@ class Sector extends Model
     use \October\Rain\Database\Traits\SoftDelete;
     use \October\Rain\Database\Traits\NestedTree;
 
+    use \Waka\Cloudis\Classes\Traits\CloudiTrait;
+    public $cloudiSlug = 'slug';
+    public $cloudiImages = ['main_image'];
+
     /**
      * @var string The database table used by the model.
      */
@@ -39,7 +43,7 @@ class Sector extends Model
     /**
      * @var array Attributes to be cast to JSON
      */
-    protected $jsonable = [];
+    protected $jsonable = ['content'];
 
     /**
      * @var array Attributes to be appended to the API representation of the model (ex. toArray())
@@ -76,12 +80,39 @@ class Sector extends Model
     public $belongsToMany = [];
     public $morphTo = [];
     public $morphOne = [];
-    public $morphMany = [];
-    public $attachOne = [];
+    public $morphMany = [
+        'cloudis_files' => [
+            'Waka\Cloudis\Models\CloudisFile',
+            'name' => 'cloudeable',
+        ],
+    ];
+    public $morphToMany = [
+        'montages' => [
+            'Waka\Cloudis\Models\Montage',
+            'name' => 'montageable',
+            'table' => 'waka_cloudis_montageables',
+        ],
+    ];
+    public $attachOne = [
+        'main_image' => 'System\Models\File',
+    ];
     public $attachMany = [];
 
     //
-    //
+    public function returnParentValue($value)
+    {
+        if ($this->{$value}) {
+            return $this;
+        } else {
+            $parents = $this->getParents()->sortByDesc('nest_depth');
+            foreach ($parents as $parent) {
+                if ($parent->{$value} != null) {
+                    return $parent;
+                }
+            }
+        }
+    }
+
     public function findParentId($searchedId)
     {
         if ($this->id == $searchedId) {

@@ -93,6 +93,25 @@ return [
     'sector' => [
         'name' => 'Secteur',
         'details' => 'Détails',
+        'content' => 'Contenu',
+        'description' => "Description",
+        'prompt' => "Contenu",
+        'crea' => "Images",
+        'main_image' => "Image principal",
+    ],
+    'repeater' => [
+        'code' => 'code du bloc ! UNIQUE',
+        'text' => [
+            'name' => "Bloc de texte",
+            'descrition' => "Bloc de texte marque down",
+            'text' => 'Votre texte',
+        ],
+        'list' => [
+            'name' => "Liste",
+            'descrition' => "Bloc de texte marque down",
+            'prompt' => 'Ajouter une ligne',
+            'line' => 'ligne de text',
+        ],
     ],
 
 ];

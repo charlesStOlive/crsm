@@ -1,19 +1,18 @@
 <?php namespace Waka\Crsm\Injectors;
 
-use Event;
-
-use Waka\Cloudis\Controllers\Montages as MontagesController;
 use Waka\Cloudis\Models\Montage as MontageModel;
 
 class ClientMontage
 {
 
-    static function inject()
+    public static function inject()
     {
 
         MontageModel::extend(function ($model) {
             $model->morphedByMany['clients'] = ['Waka\Crsm\Models\Client', 'table' => 'waka_cloudis_montageables'];
             $model->morphedByMany['contacts'] = ['Waka\Crsm\Models\Contact', 'table' => 'waka_cloudis_montageables'];
+            $model->morphedByMany['projects'] = ['Waka\Crsm\Models\Project', 'table' => 'waka_cloudis_montageables'];
+            $model->morphedByMany['sectors'] = ['Waka\Crsm\Models\Sector', 'table' => 'waka_cloudis_montageables'];
         });
 
         // MontagesController::extend(function ($controller) {

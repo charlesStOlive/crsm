@@ -1,10 +1,29 @@
 # ===================================
 #  Form Field Definitions
 # ===================================
-
 fields:
     name:
         label: waka.crsm::lang.sector.name
     slug:
         label: waka.utils::lang.global.slug
         preset: name
+tabs: 
+    waka.crsm::lang.sector.content: icon-pencil
+    waka.crsm::lang.sector.crea: icon-paint-brush
+    fields:
+        content:
+            tab: waka.crsm::lang.sector.content
+            label: waka.wcms::lang.sector.description
+            prompt: Contenu
+            type: repeater
+            groups: $/waka/crsm/models/config/repeater_fields.yaml
+        main_image:
+            tab: waka.crsm::lang.sector.crea
+            label: waka.crsm::lang.sector.main_image
+            type: fileupload
+            mode: image
+            thumbOptions:
+                mode: fit
+            imageWidth: 300
+            imageHeight: 150
+            

@@ -1,8 +1,8 @@
 <?php namespace Waka\Crsm\Updates;
 
-use Schema;
 use October\Rain\Database\Schema\Blueprint;
 use October\Rain\Database\Updates\Migration;
+use Schema;
 
 class CreateSectorsTable extends Migration
 {
@@ -18,6 +18,7 @@ class CreateSectorsTable extends Migration
             $table->string('name')->nullable();
             $table->string('slug')->nullable();
             $table->text('description')->nullable();
+            $table->text('content')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

@@ -20,6 +20,8 @@ contacts:
 
 
 projects:
+    manage:
+        form: $/waka/crsm/models/project/fields_for_client.yaml
     label: waka.crsm::lang.project.name
     view:
         list: $/waka/crsm/models/project/columns.yaml

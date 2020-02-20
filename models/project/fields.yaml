@@ -41,44 +41,6 @@ tabs:
         waka.crsm::lang.project.crea: icon-magic
     
     fields:
-        picture_1@create:
-            tab: waka.crsm::lang.project.crea
-            label: waka.crsm::lang.client.logo
-            type: fileupload
-            mode: image
-            thumbOptions:
-                mode: fit
-            imageWidth: 300
-            imageHeight: 150
-            span: storm
-            cssClass: col-sm-4 col-xs-12
-        picture_2@create:
-            tab: waka.crsm::lang.project.crea
-            label: waka.crsm::lang.client.logo
-            type: fileupload
-            mode: image
-            thumbOptions:
-                mode: fit
-            imageWidth: 300
-            imageHeight: 150
-            span: storm
-            cssClass: col-sm-4 col-xs-12
-        picture_3@create:
-            tab: waka.crsm::lang.project.crea
-            label: waka.crsm::lang.client.logo
-            type: fileupload
-            mode: image
-            thumbOptions:
-                mode: fit
-            imageWidth: 300
-            imageHeight: 150
-            span: storm
-            cssClass: col-sm-4 col-xs-12
-        montages_list@create:
-            tab: waka.crsm::lang.project.crea
-            label: waka.crsm::lang.client.montage_list
-            type: montagelist
-            span: full
         name@update:
             label: waka.crsm::lang.project.name
             tab: waka.crsm::lang.project.description
@@ -93,6 +55,44 @@ tabs:
             type: richeditor
             tab: waka.crsm::lang.project.brief
 
+        picture_1@update:
+            tab: waka.crsm::lang.project.crea
+            label: waka.crsm::lang.client.picture
+            type: fileupload
+            mode: image
+            thumbOptions:
+                mode: fit
+            imageWidth: 300
+            imageHeight: 150
+            span: storm
+            cssClass: col-sm-4 col-xs-12
+        picture_2@update:
+            tab: waka.crsm::lang.project.crea
+            label: waka.crsm::lang.client.picture
+            type: fileupload
+            mode: image
+            thumbOptions:
+                mode: fit
+            imageWidth: 300
+            imageHeight: 150
+            span: storm
+            cssClass: col-sm-4 col-xs-12
+        picture_3@update:
+            tab: waka.crsm::lang.project.crea
+            label: waka.crsm::lang.client.picture
+            type: fileupload
+            mode: image
+            thumbOptions:
+                mode: fit
+            imageWidth: 300
+            imageHeight: 150
+            span: storm
+            cssClass: col-sm-4 col-xs-12
+        montages_list@update:
+            tab: waka.crsm::lang.project.crea
+            label: waka.crsm::lang.client.montage_list
+            type: montagelist
+            span: full
 
         client@update:
             label: waka.crsm::lang.client.name

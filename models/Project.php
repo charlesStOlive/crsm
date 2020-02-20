@@ -47,7 +47,7 @@ class Project extends Model
     /**
      * @var array Attributes to be cast to JSON
      */
-    protected $jsonable = [];
+    protected $jsonable = ['content'];
 
     /**
      * @var array Attributes to be appended to the API representation of the model (ex. toArray())
