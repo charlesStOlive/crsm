@@ -1,0 +1,10 @@
+# ===================================
+# Filter Scope Definitions
+# ===================================
+
+scopes:
+    segments:
+        label: Filtrer par secteur
+        scope: sectorFilter
+        modelClass: Waka\Crsm\Models\Sector
+        nameFrom: name

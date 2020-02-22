@@ -79,12 +79,22 @@ class Plugin extends PluginBase
      */
     public function registerPermissions()
     {
-        return []; // Remove this line to activate
-
         return [
-            'waka.crsm.some_permission' => [
-                'tab' => 'crsm',
-                'label' => 'Some permission',
+            'waka.crsm.user.admin' => [
+                'tab' => 'Waka CRSM',
+                'label' => 'Administrateur de CRSM',
+            ],
+            'waka.crsm.user.manager' => [
+                'tab' => 'Waka CRSM',
+                'label' => 'Manager de CRSM',
+            ],
+            'waka.crsm.user' => [
+                'tab' => 'Waka CRSM',
+                'label' => 'Utilisateur de CRSM',
+            ],
+            'waka.crsm.reader' => [
+                'tab' => 'Waka CRSM',
+                'label' => 'Peut lire mais pas modifier CRSM',
             ],
         ];
     }
@@ -135,6 +145,7 @@ class Plugin extends PluginBase
                         'label' => Lang::get('waka.crsm::lang.menu.project_states'),
                         'icon' => 'icon-users',
                         'url' => Backend::url('waka/crsm/projectStates'),
+                        'permissions' => ['waka.crsm.admin'],
                     ],
                 ],
             ],

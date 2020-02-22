@@ -1,16 +1,13 @@
 <?php namespace Waka\Crsm\Models;
 
 use Model;
-use Config;
-use \ToughDeveloper\ImageResizer\Classes\Image;
+
 /**
  * Client Model
  */
 class Client extends Model
 {
     use \October\Rain\Database\Traits\Validation;
-
-
 
     use \Waka\Cloudis\Classes\Traits\CloudiTrait;
     public $cloudiSlug = 'slug';
@@ -86,30 +83,41 @@ class Client extends Model
     public $morphMany = [
         'cloudis_files' => [
             'Waka\Cloudis\Models\CloudisFile',
-            'name' => 'cloudeable'
-        ] 
+            'name' => 'cloudeable',
+        ],
     ];
     public $morphToMany = [
         'montages' => [
             'Waka\Cloudis\Models\Montage',
             'name' => 'montageable',
-            'table' => 'waka_cloudis_montageables'
-            ]
+            'table' => 'waka_cloudis_montageables',
+        ],
     ];
     public $attachOne = [
-        'logo_c' => 'System\Models\File'
+        'logo_c' => 'System\Models\File',
     ];
     public $attachMany = [];
 
+    /**
+     * SCOPES
+     */
+    public function scopeSectorFilter($query, $filtered)
+    {
+        return $query->whereHas('sector', function ($q) use ($filtered) {
+            $q->whereIn('id', $filtered);
+        });
+    }
 
     /**
-     * 
+     *
      */
-    public function afterSave() {
+    public function afterSave()
+    {
         $this->checkModelCloudisFilesChanges();
         $this->updateCloudiRelations('attach');
     }
-    public function afterDelete() {
+    public function afterDelete()
+    {
         $this->clouderDeleteAll();
     }
     /**
@@ -117,12 +125,12 @@ class Client extends Model
      */
     public function getCloudiThumbAttribute()
     {
-        if($this->getCloudiExiste('logo_c')) {
+        if ($this->getCloudiExiste('logo_c')) {
             return '<img src="' . $this->getCloudiBaseUrl('logo_c') . '">';
         } else {
             return "Pas d'image";
         }
-        
+
     }
     public function getDefaultCountryAttribute()
     {
