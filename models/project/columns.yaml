@@ -3,6 +3,13 @@
 # ===================================
 
 columns:
+    action:
+        type: waka-btn-actions
+        icon: icon-wrench
+        clickable: false
+        searchable: false
+        sortable: false
+        width: 25px
     
     name:
         label: waka.crsm::lang.project.name
