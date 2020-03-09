@@ -25,6 +25,10 @@ class Missions extends Controller
         parent::__construct();
 
         BackendMenu::setContext('Waka.Crsm', 'crsm', 'missions');
-    } 
+    }
+    public function listExtendQuery($query)
+    {
+        return $query->where('is_template', true);
+    }
 
 }
