@@ -18,6 +18,7 @@ class Projects extends Controller
         'Waka.Utils.Behaviors.PopupActions',
         'Waka.Compilator.Behaviors.WordBehavior',
         'Waka.ImportExport.Behaviors.ExcelImport',
+        'Waka.Mailer.Behaviors.MailBehavior',
     ];
 
     public $formConfig = 'config_form.yaml';
@@ -48,11 +49,6 @@ class Projects extends Controller
     }
     public function relationExtendRefreshResults($field)
     {
-        //trace_log("refesh");
-        // Make sure the field is the expected one
-        // if ($field != 'myField')
-        //     return;
-
         return ['#sidebar_info' => $this->makePartial('sidebar_info')];
     }
     /**
