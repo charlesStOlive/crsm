@@ -103,6 +103,7 @@ class Project extends Model
             'Waka\Cloudis\Models\Montage',
             'name' => 'montageable',
             'table' => 'waka_cloudis_montageables',
+            'pivot' => ['errors'],
         ],
     ];
     public $attachOne = [
