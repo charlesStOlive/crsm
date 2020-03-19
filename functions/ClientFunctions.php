@@ -14,21 +14,40 @@ class ClientFunctions extends BaseFunction
             'ProjectActifsOrClosed' => [
                 'name' => "Tous les projet actifs OU fermés",
                 'attributes' => [
-                    'v1' => 'Laisser vide pour false sinon : vrai',
+                    'active' => [
+                        'label' => "Active",
+                        'type' => "checkbox",
+                    ],
                 ],
             ],
             'ProjectByState' => [
                 'name' => "Tous les projet filtré sur un état",
                 'attributes' => [
-                    'v1' => 'Etat attendu',
+                    'project_state' => [
+                        'label' => "Etat d'un projet",
+                        'type' => "dropdown",
+                        'options' => ['fuck', 'fiesta'],
+                    ],
                 ],
             ],
             'ProjectByStateByDate' => [
                 'name' => "Tous les projet filtré sur un état sur une période",
                 'attributes' => [
-                    'v1' => 'Etat attendu',
-                    'v2' => 'Date de départ',
-                    'v3' => 'Date de fin',
+                    'project_state' => [
+                        'label' => "Etat d'un projet",
+                        'type' => "dropdown",
+                        'options' => ['fuck', 'fiesta'],
+                    ],
+                    'start_date' => [
+                        'label' => "Date de debut",
+                        'type' => "dropdown",
+                        'options' => ['fuck', 'fiesta'],
+                    ],
+                    'end_date' => [
+                        'label' => "date de fin",
+                        'type' => "dropdown",
+                        'options' => ['fuck', 'fiesta'],
+                    ],
                 ],
             ],
         ];
