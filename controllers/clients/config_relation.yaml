@@ -13,6 +13,7 @@ contacts:
     view:
         
         list: $/waka/crsm/models/contact/columns.yaml
+        recordUrl: waka/crsm/contacts/update/:id
         toolbarButtons: create|delete
         defaultSort:
             column: sort_order
