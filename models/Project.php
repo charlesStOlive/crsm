@@ -11,13 +11,10 @@ class Project extends Model
     use \October\Rain\Database\Traits\SoftDelete;
 
     use \October\Rain\Database\Traits\Sluggable;
+    use \Waka\Cloudis\Classes\Traits\CloudiTrait;
     protected $slugs = [
         'slug' => ['name', 'id'],
     ];
-
-    use \Waka\Cloudis\Classes\Traits\CloudiTrait;
-    public $cloudiSlug = 'slug';
-    public $cloudiImages = ['picture_1', 'picture_2', 'picture_3'];
 
     /**
      * @var string The database table used by the model.
@@ -92,12 +89,7 @@ class Project extends Model
     ];
     public $morphTo = [];
     public $morphOne = [];
-    public $morphMany = [
-        'cloudis_files' => [
-            'Waka\Cloudis\Models\CloudisFile',
-            'name' => 'cloudeable',
-        ],
-    ];
+    public $morphMany = [];
     public $morphToMany = [
         'montages' => [
             'Waka\Cloudis\Models\Montage',
@@ -107,9 +99,9 @@ class Project extends Model
         ],
     ];
     public $attachOne = [
-        'picture_1' => 'System\Models\File',
-        'picture_2' => 'System\Models\File',
-        'picture_3' => 'System\Models\File',
+        'picture_1' => 'Waka\Cloudis\Models\CloudiFile',
+        'picture_2' => 'Waka\Cloudis\Models\CloudiFile',
+        'picture_3' => 'Waka\Cloudis\Models\CloudiFile',
     ];
     public $attachMany = [];
 
@@ -130,7 +122,6 @@ class Project extends Model
     }
     public function afterSave()
     {
-        $this->checkModelCloudisFilesChanges();
         $this->updateCloudiRelations('attach');
     }
     public function afterDelete()

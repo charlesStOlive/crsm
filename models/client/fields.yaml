@@ -50,17 +50,16 @@ tabs:
 
         
         
-        logo_c:
+        logo:
             tab: waka.crsm::lang.client.colors
             label: waka.crsm::lang.client.logo
-            type: fileupload
+            type: cloudifileupload
             mode: image
-            thumbOptions:
-                mode: fit
-            imageWidth: 300
-            imageHeight: 150
             span: storm
             cssClass: col-sm-4 col-xs-12
+            imageHeight: 100
+            imageWidth: 260
+            
         
         primary_color:
             tab: waka.crsm::lang.client.colors
@@ -68,9 +67,9 @@ tabs:
             type: colorpickeranalyser
             span: storm
             cssClass: col-sm-4 col-xs-12
-            colorsFrom: logo_c
+            colorsFrom: logo
             #fromMedia: true
-            dependsOn: logo_c
+            dependsOn: logo
 
         secondary_color:
             tab: waka.crsm::lang.client.colors
@@ -78,9 +77,9 @@ tabs:
             type: colorpickeranalyser
             span: storm
             cssClass: col-sm-4 col-xs-12
-            colorsFrom: logo_c
+            colorsFrom: logo
             #fromMedia: true
-            dependsOn: logo_c
+            dependsOn: logo
         
         
         

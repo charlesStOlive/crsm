@@ -9,13 +9,8 @@ class Contact extends Model
 {
     use \October\Rain\Database\Traits\Validation;
     use \October\Rain\Database\Traits\SoftDelete;
-
-    use \Waka\Cloudis\Classes\Traits\CloudiTrait;
-
     use \Waka\Informer\Classes\Traits\InformerTrait;
-
-    public $cloudiSlug = 'id';
-    public $cloudiImages = ['profil'];
+    use \Waka\Cloudis\Classes\Traits\CloudiTrait;
 
     /**
      * @var string The database table used by the model.
@@ -89,10 +84,6 @@ class Contact extends Model
     public $morphOne = [];
     public $morphMany = [
         'informs' => ['Waka\Informer\Models\Inform', 'name' => 'informeable'],
-        'cloudis_files' => [
-            'Waka\Cloudis\Models\CloudisFile',
-            'name' => 'cloudeable',
-        ],
     ];
     public $morphToMany = [
         'montages' => [
@@ -103,7 +94,7 @@ class Contact extends Model
         ],
     ];
     public $attachOne = [
-        'profil' => 'System\Models\File',
+        'profil' => 'Waka\Cloudis\Models\CloudiFile',
     ];
     public $attachMany = [];
 
@@ -119,7 +110,6 @@ class Contact extends Model
     }
     public function afterSave()
     {
-        $this->checkModelCloudisFilesChanges();
         $this->updateCloudiRelations('attach');
     }
     public function afterDelete()

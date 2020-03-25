@@ -20,10 +20,6 @@ tabs:
         main_image:
             tab: waka.crsm::lang.sector.crea
             label: waka.crsm::lang.sector.main_image
-            type: fileupload
+            type: cloudifileupload
             mode: image
-            thumbOptions:
-                mode: fit
-            imageWidth: 300
-            imageHeight: 150
             

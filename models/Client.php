@@ -8,10 +8,7 @@ use Model;
 class Client extends Model
 {
     use \October\Rain\Database\Traits\Validation;
-
     use \Waka\Cloudis\Classes\Traits\CloudiTrait;
-    public $cloudiSlug = 'slug';
-    public $cloudiImages = ['logo_c'];
     /**
      * @var string The database table used by the model.
      */
@@ -95,9 +92,22 @@ class Client extends Model
         ],
     ];
     public $attachOne = [
-        'logo_c' => 'System\Models\File',
+        'logo' => 'Waka\Cloudis\Models\CloudiFile',
     ];
     public $attachMany = [];
+
+    /**
+     *
+     */
+    public function afterSave()
+    {
+        //$this->testCloudis();
+        $this->updateCloudiRelations('attach');
+    }
+    public function afterDelete()
+    {
+        //$this->clouderDeleteAll();
+    }
 
     /**
      * SCOPES
@@ -110,29 +120,17 @@ class Client extends Model
     }
 
     /**
-     *
-     */
-    public function afterSave()
-    {
-        $this->checkModelCloudisFilesChanges();
-        $this->updateCloudiRelations('attach');
-    }
-    public function afterDelete()
-    {
-        $this->clouderDeleteAll();
-    }
-    /**
      * Attribute
      */
     public function getCloudiThumbAttribute()
     {
-        if ($this->getCloudiExiste('logo_c')) {
-            return '<img src="' . $this->getCloudiBaseUrl('logo_c') . '">';
+        if ($this->logo) {
+            return '<img src="' . $this->logo->getColumnThumb() . '">';
         } else {
             return "Pas d'image";
         }
-
     }
+
     public function getDefaultCountryAttribute()
     {
         return Settings::get('country');
