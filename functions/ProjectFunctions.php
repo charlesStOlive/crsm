@@ -4,6 +4,7 @@ namespace Waka\Crsm\Functions;
 
 use Waka\Crsm\Models\Mission;
 use Waka\Utils\Classes\BaseFunction;
+use Waka\Wcms\Models\Solution;
 
 class ProjectFunctions extends BaseFunction
 {
@@ -20,7 +21,7 @@ class ProjectFunctions extends BaseFunction
             'allMissions' => [
                 'name' => "Liste des missions du projet",
             ],
-            'MissionsTemplate' => [
+            'missionsTemplate' => [
                 'name' => "Liste des missions template",
                 'attributes' => [
                     'missions' => [
@@ -30,6 +31,25 @@ class ProjectFunctions extends BaseFunction
                     ],
                 ],
             ],
+            'solutionsFiltered' => [
+                'name' => "Liste des solutions",
+                'attributes' => [
+                    'solutions' => [
+                        'label' => "Choisissez une ou plusieurs solutions",
+                        'type' => "taglist",
+                        'options' => Solution::lists('name', 'id'),
+                    ],
+                    'width' => [
+                        'label' => "Largeur de l'image solution",
+                        'type' => "text",
+                    ],
+                    'height' => [
+                        'label' => "hauteur de l'image solution",
+                        'type' => "text",
+                    ],
+                ],
+            ],
+
             'allContacts' => [
                 'name' => "Tous les contacts du projet",
             ],
@@ -63,6 +83,23 @@ class ProjectFunctions extends BaseFunction
     {
         $result = Mission::whereIn('id', $attributes['missions'])->get()->toArray();
         return $result;
+    }
+    public function solutionsFiltered($attributes)
+    {
+        $results = Solution::whereIn('id', $attributes['solutions'])->with('main_image')->get()->toArray();
+        $finalResult;
+        foreach ($results as $key => $result) {
+            $finalResult[$key] = $result;
+            $finalResult[$key]['main_image'] = [
+                'path' => $result['main_image']['path'],
+                'width' => $attributes['width'],
+                'height' => $attributes['height'],
+            ];
+        }
+        trace_log('solutionsFiltered in ProjectFunctions---------------------------------');
+        trace_log($finalResult);
+
+        return $finalResult;
     }
 
     public function allContacts($attributes)
