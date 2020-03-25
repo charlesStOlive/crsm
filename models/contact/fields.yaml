@@ -38,12 +38,8 @@ tabs:
         profil:
             tab: waka.crsm::lang.contact.crea
             label: waka.crsm::lang.contact.profil
-            type: fileupload
+            type: cloudifileupload
             mode: image
-            thumbOptions:
-                mode: fit
-            imageWidth: 300
-            imageHeight: 150
             span: auto
 
     

@@ -10,10 +10,7 @@ class Sector extends Model
     use \October\Rain\Database\Traits\Validation;
     use \October\Rain\Database\Traits\SoftDelete;
     use \October\Rain\Database\Traits\NestedTree;
-
     use \Waka\Cloudis\Classes\Traits\CloudiTrait;
-    public $cloudiSlug = 'slug';
-    public $cloudiImages = ['main_image'];
 
     /**
      * @var string The database table used by the model.
@@ -80,12 +77,7 @@ class Sector extends Model
     public $belongsToMany = [];
     public $morphTo = [];
     public $morphOne = [];
-    public $morphMany = [
-        'cloudis_files' => [
-            'Waka\Cloudis\Models\CloudisFile',
-            'name' => 'cloudeable',
-        ],
-    ];
+    public $morphMany = [];
     public $morphToMany = [
         'montages' => [
             'Waka\Cloudis\Models\Montage',
@@ -94,9 +86,18 @@ class Sector extends Model
         ],
     ];
     public $attachOne = [
-        'main_image' => 'System\Models\File',
+        'main_image' => 'Waka\Cloudis\Models\CloudiFile',
     ];
     public $attachMany = [];
+
+    public function afterSave()
+    {
+        $this->updateCloudiRelations('attach');
+    }
+    public function afterDelete()
+    {
+        $this->clouderDeleteAll();
+    }
 
     //
     public function returnParentValue($value)

@@ -58,7 +58,7 @@ tabs:
         picture_1@update:
             tab: waka.crsm::lang.project.crea
             label: waka.crsm::lang.client.picture
-            type: fileupload
+            type: cloudifileupload
             mode: image
             thumbOptions:
                 mode: fit
@@ -69,7 +69,7 @@ tabs:
         picture_2@update:
             tab: waka.crsm::lang.project.crea
             label: waka.crsm::lang.client.picture
-            type: fileupload
+            type: cloudifileupload
             mode: image
             thumbOptions:
                 mode: fit
@@ -80,7 +80,7 @@ tabs:
         picture_3@update:
             tab: waka.crsm::lang.project.crea
             label: waka.crsm::lang.client.picture
-            type: fileupload
+            type: cloudifileupload
             mode: image
             thumbOptions:
                 mode: fit
