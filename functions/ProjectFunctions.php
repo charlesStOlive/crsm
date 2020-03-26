@@ -96,8 +96,8 @@ class ProjectFunctions extends BaseFunction
                 'height' => $attributes['height'],
             ];
         }
-        trace_log('solutionsFiltered in ProjectFunctions---------------------------------');
-        trace_log($finalResult);
+        // trace_log('solutionsFiltered in ProjectFunctions---------------------------------');
+        // trace_log($finalResult);
 
         return $finalResult;
     }

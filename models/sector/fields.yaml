@@ -22,4 +22,6 @@ tabs:
             label: waka.crsm::lang.sector.main_image
             type: cloudifileupload
             mode: image
+            imageHeight: 200
+            imageWidth: 400
             
