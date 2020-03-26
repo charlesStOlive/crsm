@@ -3,7 +3,10 @@
 # ===================================
 
 columns:
-    
+    id: 
+        label: ID
+        invisible: true
+        width: 20px
     action:
         type: waka-btn-actions
         icon: icon-wrench

@@ -3,6 +3,10 @@
 # ===================================
 
 columns:
+    id: 
+        label: ID
+        invisible: true
+        width: 20px
     name:
         label: waka.crsm::lang.client.name
         searchable: true

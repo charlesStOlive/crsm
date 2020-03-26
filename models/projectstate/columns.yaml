@@ -3,7 +3,10 @@
 # ===================================
 
 columns:
-    
+    id: 
+        label: ID
+        invisible: true
+        width: 20px
     sort_order:
         label: waka.utils::lang.global.sort_order
         invisible: true
