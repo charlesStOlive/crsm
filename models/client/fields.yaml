@@ -64,21 +64,19 @@ tabs:
         primary_color:
             tab: waka.crsm::lang.client.colors
             label: waka.crsm::lang.client.primary_color
-            type: colorpickeranalyser
+            type: colorpickercloudi
             span: storm
             cssClass: col-sm-4 col-xs-12
             colorsFrom: logo
-            #fromMedia: true
             dependsOn: logo
 
         secondary_color:
             tab: waka.crsm::lang.client.colors
             label: waka.crsm::lang.client.secondary_color
-            type: colorpickeranalyser
+            type: colorpickercloudi
             span: storm
             cssClass: col-sm-4 col-xs-12
             colorsFrom: logo
-            #fromMedia: true
             dependsOn: logo
         
         
