@@ -157,7 +157,7 @@ class Plugin extends PluginBase
             'crsm_settings' => [
                 'label' => Lang::get('waka.crsm::lang.settings.label'),
                 'description' => Lang::get('waka.crsm::lang.settings.description'),
-                'category' => Lang::get('waka.crsm::lang.settings.category'),
+                'category' => Lang::get('waka.utils::lang.menu.settings_category'),
                 'icon' => 'icon-cog',
                 'class' => 'Waka\Crsm\Models\Settings',
                 'order' => 1,
