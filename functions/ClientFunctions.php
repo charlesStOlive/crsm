@@ -57,7 +57,7 @@ class ClientFunctions extends BaseFunction
         $result = $this->model->projects()->whereHas('project_state', function ($query) use ($attributes) {
             $query->where('is_running', boolval($attributes['active']));
         })->with('project_state')->get()->toArray();
-        trace_log($result);
+        //trace_log($result);
         return $result;
     }
 
@@ -66,7 +66,7 @@ class ClientFunctions extends BaseFunction
         $result = $this->model->projects()->whereHas('project_state', function ($query) use ($attributes) {
             $query->whereIn('id', $attributes['project_state']);
         })->with('project_state')->get()->toArray();
-        trace_log($result);
+        //trace_log($result);
         return $result;
     }
 
