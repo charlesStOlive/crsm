@@ -16,7 +16,7 @@ class Projects extends Controller
         'Waka.Utils.Behaviors.SidebarInfoBehavior',
         'Waka.Utils.Behaviors.DuplicateModel',
         'Waka.Utils.Behaviors.PopupActions',
-        'Waka.Compilator.Behaviors.WordBehavior',
+        'Waka.Worder.Behaviors.WordBehavior',
         'Waka.ImportExport.Behaviors.ExcelImport',
         'Waka.Mailer.Behaviors.MailBehavior',
     ];

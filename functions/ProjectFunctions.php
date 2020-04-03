@@ -86,19 +86,20 @@ class ProjectFunctions extends BaseFunction
     }
     public function solutionsFiltered($attributes)
     {
-        $results = Solution::whereIn('id', $attributes['solutions'])->with('main_image')->get()->toArray();
+        $results = Solution::whereIn('id', $attributes['solutions'])->with('main_image')->get();
         $finalResult;
         foreach ($results as $key => $result) {
-            $finalResult[$key] = $result;
+            $finalResult[$key] = $result->toArray();
+            $options = [
+                'width' => $attributes['width'],
+                'height' => $attributes['height'],
+            ];
             $finalResult[$key]['main_image'] = [
-                'path' => $result['main_image']['path'],
+                'path' => $result->main_image->getUrl($options),
                 'width' => $attributes['width'],
                 'height' => $attributes['height'],
             ];
         }
-        // trace_log('solutionsFiltered in ProjectFunctions---------------------------------');
-        // trace_log($finalResult);
-
         return $finalResult;
     }
 

@@ -22,7 +22,7 @@ class Plugin extends PluginBase
         'Waka.ImportExport',
         'Waka.Cloudis',
         'Waka.Informer',
-        'Waka.Compilator',
+        'Waka.Worder',
     ];
     //
     public function pluginDetails()

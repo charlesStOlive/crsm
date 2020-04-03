@@ -13,7 +13,7 @@ class Clients extends Controller
         'Backend.Behaviors.ListController',
         'Backend.Behaviors.RelationController',
         'Waka.Utils.Behaviors.PopupActions',
-        'Waka.Compilator.Behaviors.WordBehavior',
+        'Waka.Worder.Behaviors.WordBehavior',
         'Waka.ImportExport.Behaviors.ExcelImport',
         'Waka.ImportExport.Behaviors.ExcelExport',
         'Waka.Mailer.Behaviors.MailBehavior',

@@ -14,7 +14,7 @@ class Contacts extends Controller
         'Waka.Utils.Behaviors.SidebarInfoBehavior',
         'Waka.Utils.Behaviors.DuplicateModel',
         'Waka.Utils.Behaviors.PopupActions',
-        'Waka.Compilator.Behaviors.WordBehavior',
+        'Waka.Worder.Behaviors.WordBehavior',
         'Waka.ImportExport.Behaviors.ExcelImport',
         'Waka.ImportExport.Behaviors.ExcelExport',
         'Waka.Cloudis.Behaviors.PopupCloudis',

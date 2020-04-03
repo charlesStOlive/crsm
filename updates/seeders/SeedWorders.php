@@ -2,9 +2,9 @@
 
 use DB;
 use Seeder;
-use Waka\Compilator\Models\Document;
+use Waka\Worder\Models\Document;
 
-class SeedCompilators extends Seeder
+class SeedWorders extends Seeder
 {
     public function run()
     {
@@ -24,16 +24,9 @@ class SeedCompilators extends Seeder
         /**
          * Création des documents
          */
-        Db::table('waka_compilator_bloc_types')->truncate();
-        $sql = plugins_path('waka/crsm/updates/sql/waka_compilator_bloc_types.sql');
-        DB::unprepared(file_get_contents($sql));
 
-        Db::table('waka_compilator_blocs')->truncate();
-        $sql = plugins_path('waka/crsm/updates/sql/waka_compilator_blocs.sql');
-        DB::unprepared(file_get_contents($sql));
-
-        Db::table('waka_compilator_documents')->truncate();
-        $sql = plugins_path('waka/crsm/updates/sql/waka_compilator_documents.sql');
+        Db::table('waka_worder_documents')->truncate();
+        $sql = plugins_path('waka/crsm/updates/sql/waka_worder_documents.sql');
         DB::unprepared(file_get_contents($sql));
 
     }
