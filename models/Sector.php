@@ -87,6 +87,7 @@ class Sector extends Model
     ];
     public $attachOne = [
         'main_image' => 'Waka\Cloudis\Models\CloudiFile',
+        'masque' => 'Waka\Cloudis\Models\CloudiFile',
     ];
     public $attachMany = [];
 
@@ -97,6 +98,20 @@ class Sector extends Model
     public function afterDelete()
     {
         $this->clouderDeleteAll();
+    }
+
+    /**
+     * LIST
+     */
+    public function contentCodeList()
+    {
+        trace_log(Settings::get('content_codes'));
+        $codes = Settings::get('content_codes');
+        $options = [];
+        foreach ($codes as $code) {
+            $options[$code] = $code;
+        }
+        return $options;
     }
 
     //

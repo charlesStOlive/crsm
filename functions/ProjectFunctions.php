@@ -3,6 +3,7 @@
 namespace Waka\Crsm\Functions;
 
 use Waka\Crsm\Models\Mission;
+use Waka\Crsm\Models\Sector;
 use Waka\Utils\Classes\BaseFunction;
 use Waka\Wcms\Models\Solution;
 
@@ -71,6 +72,16 @@ class ProjectFunctions extends BaseFunction
                     ],
                 ],
             ],
+            'getSectorContent' => [
+                'name' => "Prendre un bloc de contenu du secteur",
+                'attributes' => [
+                    'codes' => [
+                        'label' => "Code du bloc à utilser",
+                        'type' => "taglist",
+                        'options' => Sector::first()->contentCodeList(),
+                    ],
+                ],
+            ],
         ];
     }
 
@@ -111,6 +122,18 @@ class ProjectFunctions extends BaseFunction
         return $result;
     }
 
+    public function getSectorContent($attributes)
+    {
+        $contents = $this->model->client->sector->content;
+        $result = [];
+        foreach ($contents as $content) {
+            if (in_array($content['code'], $attributes['codes'])) {
+                array_push($result, $content);
+            }
+        }
+        return $result;
+    }
+
     public function getCloudiList()
     {
         $dataSource = $this->getDataSource();
@@ -118,10 +141,10 @@ class ProjectFunctions extends BaseFunction
 
     }
 
-    public function getCloudiImage($attributes)
-    {
-        $result = "";
-        return $result;
-    }
+    // public function getCloudiImage($attributes)
+    // {
+    //     $result = "";
+    //     return $result;
+    // }
 
 }

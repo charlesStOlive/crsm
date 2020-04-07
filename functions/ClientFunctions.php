@@ -3,6 +3,7 @@
 namespace Waka\Crsm\Functions;
 
 use Waka\Crsm\Models\ProjectState;
+use Waka\Crsm\Models\Sector;
 use Waka\Utils\Classes\BaseFunction;
 
 class ClientFunctions extends BaseFunction
@@ -49,6 +50,16 @@ class ClientFunctions extends BaseFunction
                     ],
                 ],
             ],
+            'getSectorContent' => [
+                'name' => "Prendre un bloc de contenu du secteur",
+                'attributes' => [
+                    'codes' => [
+                        'label' => "Code du bloc à utilser",
+                        'type' => "taglist",
+                        'options' => Sector::first()->contentCodeList(),
+                    ],
+                ],
+            ],
         ];
     }
 
@@ -76,6 +87,17 @@ class ClientFunctions extends BaseFunction
             $query->whereIn('id', $attributes['project_state']);
         })->whereBetween('updated_at', [$attributes['start_date'], $attributes['end_date']])
             ->with('project_state')->get()->toArray();
+    }
+    public function getSectorContent($attributes)
+    {
+        $contents = $this->model->client->sector->content;
+        $result = [];
+        foreach ($contents as $content) {
+            if (in_array($content['code'], $attributes['codes'])) {
+                array_push($result, $content);
+            }
+        }
+        return $result;
     }
 
 }
