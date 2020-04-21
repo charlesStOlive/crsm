@@ -50,7 +50,14 @@ class Client extends Model
     /**
      * @var array Attributes to be removed from the API representation of the model (ex. toArray())
      */
-    protected $hidden = ['id', 'country_id', 'sector_id', 'type_id', 'deleted_at'];
+    protected $hidden = [
+        'id',
+        'country_id',
+        'sector_id',
+        'type_id',
+        'deleted_at',
+        'cloudi_ready',
+    ];
 
     /**
      * @var array Attributes to be cast to Argon (Carbon) instances

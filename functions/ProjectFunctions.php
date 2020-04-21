@@ -21,6 +21,11 @@ class ProjectFunctions extends BaseFunction
         return [
             'allMissions' => [
                 'name' => "Liste des missions du projet",
+                'outputs' => [
+                    'relations' => [
+                        'missions' => [],
+                    ],
+                ],
             ],
             'missionsTemplate' => [
                 'name' => "Liste des missions template",
@@ -29,6 +34,11 @@ class ProjectFunctions extends BaseFunction
                         'label' => "Choisissez une ou plusieurs mission",
                         'type' => "taglist",
                         'options' => Mission::where('is_template', true)->lists('name', 'id'),
+                    ],
+                ],
+                'outputs' => [
+                    'models' => [
+                        Mission::where('is_template', true)->first()->toArray(),
                     ],
                 ],
             ],
@@ -40,19 +50,28 @@ class ProjectFunctions extends BaseFunction
                         'type' => "taglist",
                         'options' => Solution::lists('name', 'id'),
                     ],
-                    'width' => [
-                        'label' => "Largeur de l'image solution",
-                        'type' => "text",
+                    'width' => \Config::get('waka.cloudis::ImageOptions.width'),
+                    'height' => \Config::get('waka.cloudis::ImageOptions.height'),
+                    'crop' => \Config::get('waka.cloudis::ImageOptions.crop'),
+                    'gravity' => \Config::get('waka.cloudis::ImageOptions.gravity'),
+                ],
+                'outputs' => [
+                    'models' => [
+                        Solution::first()->toArray(),
                     ],
-                    'height' => [
-                        'label' => "hauteur de l'image solution",
-                        'type' => "text",
+                    'images' => [
+                        'main_image',
                     ],
                 ],
             ],
 
             'allContacts' => [
                 'name' => "Tous les contacts du projet",
+                'outputs' => [
+                    'relations' => [
+                        'client.contacts' => [],
+                    ],
+                ],
             ],
             'getCloudiImage' => [
                 'name' => "Choisissez un montage",
@@ -62,14 +81,10 @@ class ProjectFunctions extends BaseFunction
                         'type' => "dropdown",
                         'options' => $this->getCloudiList(),
                     ],
-                    'width' => [
-                        'label' => "Largeur",
-                        'type' => "text",
-                    ],
-                    'height' => [
-                        'label' => "hauteur",
-                        'type' => "text",
-                    ],
+                    'width' => \Config::get('waka.cloudis::ImageOptions.width'),
+                    'height' => \Config::get('waka.cloudis::ImageOptions.height'),
+                    'crop' => \Config::get('waka.cloudis::ImageOptions.crop'),
+                    'gravity' => \Config::get('waka.cloudis::ImageOptions.gravity'),
                 ],
             ],
             'getSectorContent' => [
@@ -79,6 +94,12 @@ class ProjectFunctions extends BaseFunction
                         'label' => "Code du bloc à utilser",
                         'type' => "taglist",
                         'options' => Sector::first()->contentCodeList(),
+                    ],
+                ],
+                'outputs' => [
+                    'values' => [
+                        'text',
+                        'text_html',
                     ],
                 ],
             ],
@@ -102,13 +123,15 @@ class ProjectFunctions extends BaseFunction
         foreach ($results as $key => $result) {
             $finalResult[$key] = $result->toArray();
             $options = [
-                'width' => $attributes['width'],
-                'height' => $attributes['height'],
+                'width' => $attributes['width'] ?? null,
+                'height' => $attributes['height'] ?? null,
+                'crop' => $attributes['crop'] ?? 'fit',
+                'gravity' => $attributes['gravity'] ?? 'center',
             ];
             $finalResult[$key]['main_image'] = [
                 'path' => $result->main_image->getUrl($options),
-                'width' => $attributes['width'],
-                'height' => $attributes['height'],
+                'width' => $attributes['width'] ?? null,
+                'height' => $attributes['height'] ?? null,
             ];
         }
         return $finalResult;
@@ -116,9 +139,7 @@ class ProjectFunctions extends BaseFunction
 
     public function allContacts($attributes)
     {
-        $result = $this->model->client->contacts->get()->toArray();
-        $result['cp'] = $this->model->cp;
-        $result['main'] = $this->model->contact;
+        $result = $this->model->client->contacts->toArray();
         return $result;
     }
 

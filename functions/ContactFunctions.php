@@ -23,6 +23,11 @@ class ContactFunctions extends BaseFunction
                         'options' => ProjectState::lists('name', 'id'),
                     ],
                 ],
+                'outputs' => [
+                    'relations' => [
+                        'projects' => ['project_state'],
+                    ],
+                ],
             ],
             'solutionsFiltered' => [
                 'name' => "Liste de besoins",
@@ -32,34 +37,43 @@ class ContactFunctions extends BaseFunction
                         'type' => "taglist",
                         'options' => Solution::lists('name', 'id'),
                     ],
-                    'width' => [
-                        'label' => "Largeur de l'image solution",
-                        'type' => "text",
+                    'width' => \Config::get('waka.cloudis::ImageOptions.width'),
+                    'height' => \Config::get('waka.cloudis::ImageOptions.height'),
+                    'crop' => \Config::get('waka.cloudis::ImageOptions.crop'),
+                    'gravity' => \Config::get('waka.cloudis::ImageOptions.gravity'),
+                ],
+                'outputs' => [
+                    'models' => [
+                        Solution::first()->toArray(),
                     ],
-                    'height' => [
-                        'label' => "hauteur de l'image solution",
-                        'type' => "text",
+                    'images' => [
+                        'main_image',
                     ],
                 ],
             ],
             'needsFiltered' => [
                 'name' => "Liste de solutions",
                 'attributes' => [
-                    'solutions' => [
+                    'needs' => [
                         'label' => "Choisissez une ou plusieurs solutions",
                         'type' => "taglist",
                         'options' => Need::lists('name', 'id'),
                     ],
-                    'width' => [
-                        'label' => "Largeur de l'image solution",
-                        'type' => "text",
+                    'width' => \Config::get('waka.cloudis::ImageOptions.width'),
+                    'height' => \Config::get('waka.cloudis::ImageOptions.height'),
+                    'crop' => \Config::get('waka.cloudis::ImageOptions.crop'),
+                    'gravity' => \Config::get('waka.cloudis::ImageOptions.gravity'),
+                ],
+                'outputs' => [
+                    'models' => [
+                        Need::first()->toArray(),
                     ],
-                    'height' => [
-                        'label' => "hauteur de l'image solution",
-                        'type' => "text",
+                    'images' => [
+                        'main_image',
                     ],
                 ],
             ],
+
         ];
     }
 
@@ -79,8 +93,10 @@ class ContactFunctions extends BaseFunction
         foreach ($results as $key => $result) {
             $finalResult[$key] = $result->toArray();
             $options = [
-                'width' => $attributes['width'],
-                'height' => $attributes['height'],
+                'width' => $attributes['width'] ?? null,
+                'height' => $attributes['height'] ?? null,
+                'crop' => $attributes['crop'] ?? 'fit',
+                'gravity' => $attributes['gravity'] ?? 'center',
             ];
             $finalResult[$key]['main_image'] = [
                 'path' => $result->main_image->getUrl($options),
@@ -98,8 +114,10 @@ class ContactFunctions extends BaseFunction
         foreach ($results as $key => $result) {
             $finalResult[$key] = $result->toArray();
             $options = [
-                'width' => $attributes['width'],
-                'height' => $attributes['height'],
+                'width' => $attributes['width'] ?? null,
+                'height' => $attributes['height'] ?? null,
+                'crop' => $attributes['crop'] ?? 'fit',
+                'gravity' => $attributes['gravity'] ?? 'center',
             ];
             $finalResult[$key]['main_image'] = [
                 'path' => $result->main_image->getUrl($options),

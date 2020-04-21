@@ -47,7 +47,9 @@ class Country extends Model
     /**
      * @var array Attributes to be removed from the API representation of the model (ex. toArray())
      */
-    protected $hidden = [];
+    protected $hidden = [
+        'id',
+    ];
 
     public $timestamps = false;
 
@@ -60,7 +62,7 @@ class Country extends Model
      */
     public $hasOne = [];
     public $hasMany = [
-        'clients' => 'Waka\Crsm\Models\Client'
+        'clients' => 'Waka\Crsm\Models\Client',
     ];
     public $belongsTo = [];
     public $belongsToMany = [];

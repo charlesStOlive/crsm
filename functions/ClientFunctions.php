@@ -21,6 +21,11 @@ class ClientFunctions extends BaseFunction
                         'type' => "checkbox",
                     ],
                 ],
+                'outputs' => [
+                    'relations' => [
+                        'projects' => ['project_state'],
+                    ],
+                ],
             ],
             'ProjectByState' => [
                 'name' => "Tous les projet filtré sur un ou plusieurs états",
@@ -29,6 +34,11 @@ class ClientFunctions extends BaseFunction
                         'label' => "Etat d'un projet",
                         'type' => "taglist",
                         'options' => ProjectState::lists('name', 'id'),
+                    ],
+                ],
+                'outputs' => [
+                    'relations' => [
+                        'projects' => ['project_state'],
                     ],
                 ],
             ],
@@ -49,6 +59,11 @@ class ClientFunctions extends BaseFunction
                         'type' => "datepicker",
                     ],
                 ],
+                'outputs' => [
+                    'relations' => [
+                        'projects' => ['project_state'],
+                    ],
+                ],
             ],
             'getSectorContent' => [
                 'name' => "Prendre un bloc de contenu du secteur",
@@ -57,6 +72,11 @@ class ClientFunctions extends BaseFunction
                         'label' => "Code du bloc à utilser",
                         'type' => "taglist",
                         'options' => Sector::first()->contentCodeList(),
+                    ],
+                    'outputs' => [
+                        'infos' => [
+                            '**nomBlocSecteur**',
+                        ],
                     ],
                 ],
             ],

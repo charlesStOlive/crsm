@@ -54,6 +54,11 @@ class Sector extends Model
         'created_at',
         'updated_at',
         'deleted_at',
+        'parent_id',
+        'nest_left',
+        'nest_right',
+        'nest_depth',
+
     ];
 
     /**
