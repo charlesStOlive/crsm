@@ -84,12 +84,7 @@ class Client extends Model
     public $belongsToMany = [];
     public $morphTo = [];
     public $morphOne = [];
-    public $morphMany = [
-        'cloudis_files' => [
-            'Waka\Cloudis\Models\CloudisFile',
-            'name' => 'cloudeable',
-        ],
-    ];
+    public $morphMany = [];
     public $morphToMany = [
         'montages' => [
             'Waka\Cloudis\Models\Montage',
