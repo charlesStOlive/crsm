@@ -6,7 +6,7 @@ class SeedProjects extends Seeder
 {
     public function run()
     {
-        $this->call('Waka\Crsm\Updates\Seeders\SeedProjectsMissions');
+        //$this->call('Waka\Crsm\Updates\Seeders\SeedProjectsMissions');
 
     }
 }
