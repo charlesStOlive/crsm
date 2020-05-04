@@ -1,8 +1,8 @@
 <?php namespace Waka\Crsm\Updates;
 
-use Schema;
 use October\Rain\Database\Schema\Blueprint;
 use October\Rain\Database\Updates\Migration;
+use Schema;
 
 class CreateProjectsTable extends Migration
 {
@@ -19,11 +19,12 @@ class CreateProjectsTable extends Migration
             $table->integer('project_state_id')->unsigned();
             $table->double('total', 15, 2)->nullable();
             $table->text('description')->nullable();
+            $table->integer('nb_user_pot')->nullable();
             $table->date('closed_at')->nullable();
             $table->date('closed_presvision_at')->nullable();
-                                                
+
             $table->softDeletes();
-                        
+
             $table->timestamps();
         });
     }

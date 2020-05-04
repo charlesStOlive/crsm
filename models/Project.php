@@ -49,12 +49,12 @@ class Project extends Model
     /**
      * @var array Attributes to be appended to the API representation of the model (ex. toArray())
      */
-    protected $appends = [];
+    protected $appends = ['projectPeriodTotal', 'mensuelPeriodTotal', 'mensuelPeriod', 'mensuelUser'];
 
     /**
      * @var array Attributes to be removed from the API representation of the model (ex. toArray())
      */
-    protected $hidden = [];
+    protected $hidden = ['missions'];
 
     /**
      * @var array Attributes to be cast to Argon (Carbon) instances
@@ -110,12 +110,12 @@ class Project extends Model
      */
     public function beforeSave()
     {
-        $calcul = new \Waka\Utils\Classes\Aggregator();
-        $rowAmount = $this->missions->lists('amount') ?? null;
-        $rowQty = $this->missions->lists('qty') ?? null;
-        if ($rowAmount && $rowQty) {
-            $this->total = $calcul->operate2Rows($rowAmount, $rowQty);
-        }
+        // $calcul = new \Waka\Utils\Classes\Aggregator();
+        // $rowAmount = $this->missions->lists('amount') ?? null;
+        // $rowQty = $this->missions->lists('qty') ?? null;
+        // if ($rowAmount && $rowQty) {
+        //     $this->total = $calcul->operate2Rows($rowAmount, $rowQty);
+        // }
 
         //
 
@@ -151,6 +151,29 @@ class Project extends Model
     public function listBU()
     {
         return \Backend\Models\User::lists('first_name', 'id');
+
+    }
+    public function getProjectPeriodTotalAttribute()
+    {
+        return $this->missions->where('period_id', 1)->sum('total');
+    }
+    public function getMensuelPeriodAttribute()
+    {
+        return $this->missions->where('period_id', '<>', 1)->sum('total');
+    }
+    public function getMensuelPeriodTotalAttribute()
+    {
+        return $this->mensuelPeriod * 12;
+    }
+    public function getMensuelUserAttribute()
+    {
+        $user_pot = $this->nb_user_pot;
+        if ($user_pot) {
+            $total = ($this->mensuelPeriod * 12 * 3 + $this->projectPeriodTotal) / 3 / 12 / $user_pot;
+            return round($total, 2);
+
+        }
+        return null;
 
     }
 }

@@ -27,6 +27,7 @@ fields:
     project_state:
         label: waka.crsm::lang.project.project_state
         type: balloon-selector
+        default: 1
         options: listProjectState
 
     description@create:
@@ -113,6 +114,10 @@ tabs:
             placeholder: waka.crsm::lang.project.cp_placeholder
             select: first_name
             tab: waka.crsm::lang.project.team
+        nb_user_pot@update:
+            tab: waka.crsm::lang.project.team
+            label: waka.crsm::lang.project.nb_user_pot
+            span: auto 
 
         
         

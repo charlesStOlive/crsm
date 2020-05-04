@@ -32,6 +32,8 @@ return [
         'montage_list' => 'Montage photo client',
         'contacts' => 'Contacts',
         'projects' => 'Liste des Projets',
+        'nb_collab' => 'Nb Collaborateurs',
+
     ],
     'contact' => [
         'name' => 'Nom',
@@ -68,6 +70,12 @@ return [
         'theproject' => "Le projet",
         'closed_at' => 'Date fin',
         'crea' => 'Création',
+        'totalProjectsRunning' => 'Total projets en cours',
+        'totalProjects' => 'Total projets',
+        'projectPeriodTotal' => 'Montant du projet',
+        'mensuelPeriodTotal' => 'Maintenance annuel du projet',
+        'mensuelPeriod' => 'cout mensuel',
+        'nb_user_pot' => 'Nb utilisateurs potentiels',
     ],
     'mission' => [
         'name' => "Nom de la mission",
@@ -79,6 +87,9 @@ return [
         'description' => 'Description',
         'own_description' => 'Remplacer la description de base',
         'show_origin_description' => "Montrer la description originale",
+        'is_template' => "faire de cette mission un template ?",
+        'period' => "Periode de facturation",
+        'total' => 'Total',
 
     ],
     'settings' => [

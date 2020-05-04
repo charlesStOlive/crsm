@@ -173,14 +173,13 @@ class Projects extends Controller
                 $newRelation = $relation->replicate();
                 $newRelation->is_template = false;
                 $model->missions()->add($newRelation);
-
+                $newRelation->sort_order = $newRelation->id;
+                $newRelation->save();
             }
         }
         $this->initForm($model);
         $this->initRelation($model, "missions");
 
         return $this->relationRefresh("missions");
-
-        //return $this->relationRefresh();
     }
 }

@@ -17,6 +17,9 @@ class CreateMissionsTable extends Migration
             $table->text('description')->nullable();
             $table->double('qty', 10, 2)->default(1);
             $table->double('amount', 10, 2)->default(100);
+            $table->double('total', 15, 2)->nullable();
+            $table->double('final_total', 15, 2)->nullable();
+            $table->integer('period_id')->unsigned()->nullable();
             $table->integer('sort_order')->default(0);
         });
 

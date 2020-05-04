@@ -18,12 +18,6 @@ fields:
         cssClass: col-sm-6 col-xs-12
         type: relation
         defaultFrom: defaultCountry
-    type:
-        label: waka.crsm::lang.client.type
-        span: storm
-        cssClass: col-sm-6 col-xs-12
-        type: relation
-        defaultFrom: defaultCountry
 
 tabs:
     icons:
@@ -79,7 +73,10 @@ tabs:
             colorsFrom: logo
             dependsOn: logo
         
-        
+        nb_collab:
+            tab: waka.crsm::lang.client.details
+            label: waka.crsm::lang.client.nb_collab
+            span: auto
         
         address:
             tab: waka.crsm::lang.client.details

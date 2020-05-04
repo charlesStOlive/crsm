@@ -68,7 +68,8 @@ class Mission extends Model
         // ],
     ];
     public $belongsTo = [
-        'project' => 'Waka\Crsm\Models\Project'
+        'project' => 'Waka\Crsm\Models\Project',
+        'period' => 'Waka\Crsm\Models\Period',
     ];
     public $belongsToMany = [];
     public $morphTo = [];
@@ -76,4 +77,25 @@ class Mission extends Model
     public $morphMany = [];
     public $attachOne = [];
     public $attachMany = [];
+
+    public function getPeriodOptions()
+    {
+        return Period::lists('name', 'id');
+    }
+
+    public function beforeSave()
+    {
+        trace_log("before save mission " . $this->name);
+        if (is_numeric($this->amount) && is_numeric($this->qty)) {
+            $this->total = $this->amount * $this->qty;
+        }
+    }
+
+    public function filterFields($fields, $context = null)
+    {
+
+        if (is_numeric($fields->qty->value) && is_numeric($fields->amount->value)) {
+            $fields->total->value = $fields->qty->value * $fields->amount->value;
+        }
+    }
 }

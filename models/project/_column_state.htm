@@ -1,4 +1,4 @@
-<?php if ($record->project_state->id == '1') { ?>
+<?php trace_log($record->toArray()); if ($record->project_state->id == '1') { ?>
 <span class="oc-icon-circle text-info">
     <?= $record->project_state->name; ?>
 </span>

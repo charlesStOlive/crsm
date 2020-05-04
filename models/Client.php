@@ -35,7 +35,7 @@ class Client extends Model
     /**
      * @var array Attributes to be cast to native types
      */
-    protected $casts = [];
+    protected $casts = ['totalProjectsRunning', 'TotalProjects'];
 
     /**
      * @var array Attributes to be cast to JSON
@@ -45,13 +45,12 @@ class Client extends Model
     /**
      * @var array Attributes to be appended to the API representation of the model (ex. toArray())
      */
-    protected $appends = [];
+    protected $appends = ['totalProjectsRunning'];
 
     /**
      * @var array Attributes to be removed from the API representation of the model (ex. toArray())
      */
     protected $hidden = [
-        'id',
         'country_id',
         'sector_id',
         'type_id',
@@ -131,6 +130,17 @@ class Client extends Model
         } else {
             return "Pas d'image";
         }
+    }
+    public function getTotalProjectsRunningAttribute()
+    {
+        return $this->projects()->whereHas('project_state', function ($query) {
+            $query->where('is_running', true);
+        })->count();
+    }
+    public function getTotalProjectsAttribute()
+    {
+        return $this->projects->count();
+
     }
 
     public function getDefaultCountryAttribute()

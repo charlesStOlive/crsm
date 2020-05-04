@@ -3,6 +3,7 @@
 namespace Waka\Crsm\Functions;
 
 use Waka\Crsm\Models\Mission;
+use Waka\Crsm\Models\Period;
 use Waka\Crsm\Models\Sector;
 use Waka\Utils\Classes\BaseFunction;
 use Waka\Wcms\Models\Solution;
@@ -21,6 +22,21 @@ class ProjectFunctions extends BaseFunction
         return [
             'allMissions' => [
                 'name' => "Liste des missions du projet",
+                'outputs' => [
+                    'relations' => [
+                        'missions' => [],
+                    ],
+                ],
+            ],
+            'missionsByPeriod' => [
+                'name' => "Liste des missions du projet par periode",
+                'attributes' => [
+                    'periods' => [
+                        'label' => "Choisissez une ou plusieurs periodes",
+                        'type' => "taglist",
+                        'options' => Period::lists('name', 'id'),
+                    ],
+                ],
                 'outputs' => [
                     'relations' => [
                         'missions' => [],
@@ -109,6 +125,11 @@ class ProjectFunctions extends BaseFunction
     public function allMissions($attributes)
     {
         $result = $this->model->missions()->get()->toArray();
+        return $result;
+    }
+    public function missionsByPeriod($attributes)
+    {
+        $result = $this->model->missions()->whereIn('period_id', $attributes['periods'])->get()->toArray();
         return $result;
     }
     public function missionsTemplate($attributes)

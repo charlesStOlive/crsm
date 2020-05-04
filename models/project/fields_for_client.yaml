@@ -22,6 +22,7 @@ fields:
         label: waka.crsm::lang.project.project_state
         type: balloon-selector
         options: listProjectState
+        default: 1
 
     description:
         type: richeditor

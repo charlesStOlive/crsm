@@ -1,8 +1,8 @@
 <?php namespace Waka\Crsm\Updates;
 
-use Schema;
 use October\Rain\Database\Schema\Blueprint;
 use October\Rain\Database\Updates\Migration;
+use Schema;
 
 class CreateClientsTable extends Migration
 {
@@ -15,15 +15,16 @@ class CreateClientsTable extends Migration
             $table->string('name');
             $table->string('slug');
             $table->integer('sector_id')->unsigned();
-            $table->integer('type_id')->unsigned()->nullable();
-            
+
             $table->boolean('cloudi_ready')->default(false);
 
             $table->string('primary_color')->nullable();
             $table->string('secondary_color')->nullable();
 
             $table->text('description')->nullable();
-            
+
+            $table->integer('nb_collab')->nullable();
+
             $table->string('address')->nullable();
             $table->string('cp')->nullable();
             $table->string('city')->nullable();

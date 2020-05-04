@@ -5,10 +5,10 @@
   - create_countries_table.php
   - create_sectors_table.php
   - extend_users_table.php
-  - create_types_table.php
   - create_missions_table.php
   - create_project_states_table.php
   - create_projects_table.php
+  - create_periods_table.php
 1.0.2:
   - 'injection de base'
   - seed_bases.php

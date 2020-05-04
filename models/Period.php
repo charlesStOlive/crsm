@@ -3,16 +3,16 @@
 use Model;
 
 /**
- * Type Model
+ * Period Model
  */
-class Type extends Model
+class Period extends Model
 {
     use \October\Rain\Database\Traits\Validation;
 
     /**
      * @var string The database table used by the model.
      */
-    public $table = 'waka_crsm_types';
+    public $table = 'waka_crsm_periods';
 
     /**
      * @var array Guarded fields

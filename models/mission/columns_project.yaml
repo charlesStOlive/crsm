@@ -13,6 +13,11 @@ columns:
         label: waka.crsm::lang.mission.qty
     amount:
         label: waka.crsm::lang.mission.unit_amount
+    period_label:
+        label: waka.crsm::lang.mission.period
+        relation: period
+        select: name
+    
     total:
         label: total
         type: waka-calcul
