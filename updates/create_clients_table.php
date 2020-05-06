@@ -31,6 +31,7 @@ class CreateClientsTable extends Migration
             $table->string('tel')->nullable();
             $table->string('email')->nullable();
             $table->integer('country_id')->unsigned();
+            $table->boolean('is_ex')->default(false);
             //
             $table->softDeletes();
             $table->timestamps();

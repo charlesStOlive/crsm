@@ -13,67 +13,67 @@
 
 -- Listage des données de la table notilac.waka_crsm_clients : ~9 rows (environ)
 /*!40000 ALTER TABLE `waka_crsm_clients` DISABLE KEYS */;
-INSERT INTO `waka_crsm_clients` (`id`, `name`, `slug`, `sector_id`, `cloudi_ready`, `primary_color`, `secondary_color`, `description`, `nb_collab`, `nb_user_pot`, `address`, `cp`, `city`, `tel`, `email`, `country_id`, `deleted_at`, `created_at`, `updated_at`) VALUES
-	(1, 'London', 'london', 14, 0, '#D04437', NULL, NULL, NULL, NULL, '861 Enim Rd.', '90680', 'Shikarpur', '95557039', NULL, 74, NULL, '2020-02-22 11:30:52', '2020-03-25 20:55:53'),
-	(2, 'FHYSIQ', 'fhysiq', 6, 0, '#18012D', NULL, NULL, NULL, NULL, 'P.O. Box 218, 6340 Non, Street', '23412', 'Klagenfurt', '5353645', NULL, 74, NULL, '2020-02-22 11:30:56', '2020-03-25 21:13:02'),
-	(3, 'Isle_royale.png', 'isle-royale', 14, 0, '#033162', NULL, NULL, NULL, NULL, 'P.O. Box 613, 8584 Vel Ave', '66745', 'San Massimo', '55214051', NULL, 74, NULL, '2020-02-22 11:30:59', '2020-03-25 21:12:24'),
-	(4, 'Jungle', 'jungle', 10, 0, '#004C54', '#F94D2A', NULL, NULL, NULL, '882-9640 Diam Street', '78485', 'Capestrano', '19635118', NULL, 74, NULL, '2020-02-22 11:31:15', '2020-03-25 21:12:05'),
-	(5, 'Rapid', 'rapid', 17, 0, '#181066', '#0FC9F5', NULL, NULL, NULL, 'P.O. Box 847, 3407 Quisque Ave', '34982', 'Valledupar', '74289367', NULL, 74, NULL, '2020-02-22 11:31:17', '2020-03-25 20:50:19'),
-	(6, 'Alligator', 'alligator', 11, 0, '#456D00', NULL, NULL, NULL, NULL, '138-7014 Volutpat. Rd.', '18314', 'Mathura', '30457241', NULL, 74, NULL, '2020-02-22 11:31:19', '2020-03-25 21:13:14'),
-	(7, 'Goose_bakery', 'goose-bakery', 2, 0, '#312539', '#E29E48', NULL, NULL, NULL, '279-2233 Tellus Avenue', '00322', 'Buner', '785325', NULL, 74, NULL, '2020-02-22 11:31:21', '2020-03-25 21:12:46'),
-	(8, 'Synro', 'synro', 5, 0, '#F93122', '#292939', NULL, NULL, NULL, 'P.O. Box 430, 2988 Ante Rd.', '40849', 'Hamilton', '80069598', NULL, 74, NULL, '2020-02-22 11:31:26', '2020-03-18 13:35:56'),
-	(9, 'Immob', 'immob', 7, 0, '#8d2535', '#dca4ac', NULL, 75, 35, '763-5092 Nascetur St.', '27791', 'Sangju', '75787343', NULL, 74, NULL, '2020-02-22 11:31:28', '2020-05-01 16:48:09');
+INSERT INTO `waka_crsm_clients` (`id`, `name`, `slug`, `sector_id`, `cloudi_ready`, `primary_color`, `secondary_color`, `description`, `nb_collab`, `address`, `cp`, `city`, `tel`, `email`, `country_id`, `is_ex`, `deleted_at`, `created_at`, `updated_at`) VALUES
+	(1, 'London', 'london', 14, 0, '#D04437', NULL, NULL, NULL, '861 Enim Rd.', '90680', 'Shikarpur', '95557039', NULL, 74, 1, NULL, '2020-02-22 11:30:52', '2020-03-25 20:55:53'),
+	(2, 'FHYSIQ', 'fhysiq', 6, 0, '#18012D', NULL, NULL, NULL, 'P.O. Box 218, 6340 Non, Street', '23412', 'Klagenfurt', '5353645', NULL, 74, 1, NULL, '2020-02-22 11:30:56', '2020-03-25 21:13:02'),
+	(3, 'Isle_royale.png', 'isle-royale', 14, 0, '#033162', NULL, NULL, NULL, 'P.O. Box 613, 8584 Vel Ave', '66745', 'San Massimo', '55214051', NULL, 74, 1, NULL, '2020-02-22 11:30:59', '2020-03-25 21:12:24'),
+	(4, 'Jungle', 'jungle', 10, 0, '#004C54', '#F94D2A', NULL, NULL, '882-9640 Diam Street', '78485', 'Capestrano', '19635118', NULL, 74, 1, NULL, '2020-02-22 11:31:15', '2020-03-25 21:12:05'),
+	(5, 'Rapid', 'rapid', 17, 0, '#181066', '#0FC9F5', NULL, NULL, 'P.O. Box 847, 3407 Quisque Ave', '34982', 'Valledupar', '74289367', NULL, 74, 1, NULL, '2020-02-22 11:31:17', '2020-03-25 20:50:19'),
+	(6, 'Alligator', 'alligator', 11, 0, '#456D00', NULL, NULL, NULL, '138-7014 Volutpat. Rd.', '18314', 'Mathura', '30457241', NULL, 74, 1, NULL, '2020-02-22 11:31:19', '2020-03-25 21:13:14'),
+	(7, 'Goose_bakery', 'goose-bakery', 2, 0, '#312539', '#E29E48', NULL, NULL, '279-2233 Tellus Avenue', '00322', 'Buner', '785325', NULL, 74, 1, NULL, '2020-02-22 11:31:21', '2020-03-25 21:12:46'),
+	(8, 'Synro', 'synro', 5, 0, '#F93122', '#292939', NULL, NULL, 'P.O. Box 430, 2988 Ante Rd.', '40849', 'Hamilton', '80069598', NULL, 74, 1, NULL, '2020-02-22 11:31:26', '2020-03-18 13:35:56'),
+	(9, 'Immob', 'immob', 7, 0, '#8d2535', '#dca4ac', NULL, 75, '763-5092 Nascetur St.', '27791', 'Sangju', '75787343', NULL, 74, 1, NULL, '2020-02-22 11:31:28', '2020-05-01 16:48:09');
 /*!40000 ALTER TABLE `waka_crsm_clients` ENABLE KEYS */;
 
 -- Listage des données de la table notilac.waka_crsm_contacts : ~46 rows (environ)
 /*!40000 ALTER TABLE `waka_crsm_contacts` DISABLE KEYS */;
-INSERT INTO `waka_crsm_contacts` (`id`, `name`, `surname`, `email`, `tel`, `tel_perso`, `key`, `client_id`, `deleted_at`, `created_at`, `updated_at`) VALUES
-	(1, 'Steve', 'Wolf', 'inc@inc.com', NULL, NULL, 'YYtshfd9T4ZO1bC', 1, NULL, '2020-02-22 11:31:30', '2020-02-22 11:31:30'),
-	(2, 'Elif', 'Kamesoglu', 'inc@inc.com', NULL, NULL, 'bdDtDUZDcDo6jhn', 2, NULL, '2020-02-22 11:31:30', '2020-02-22 11:31:30'),
-	(3, 'Humginder', 'Sons', 'inc@inc.com', NULL, NULL, 'ynrExbFcb87ydw7', 3, NULL, '2020-02-22 11:31:30', '2020-02-22 11:31:30'),
-	(4, 'Milos', 'Djuric', 'inc@inc.com', NULL, NULL, 'Yyv5tIXGt8gaQim', 4, NULL, '2020-02-22 11:31:30', '2020-02-22 11:31:30'),
-	(5, 'Gurvinder', 'Deividas', 'inc@inc.com', NULL, NULL, 'OrjGyecCX27SI5r', 5, NULL, '2020-02-22 11:31:30', '2020-02-22 11:31:30'),
-	(6, 'Rilla', 'Logo', 'inc@inc.com', NULL, NULL, 'CTjMM4KZyCAvv5p', 6, NULL, '2020-02-22 11:31:30', '2020-02-22 11:31:30'),
-	(7, 'Badr', 'Edd (logorilla)', 'inc@inc.com', NULL, NULL, 'BRMK46RzR8M8FSk', 7, NULL, '2020-02-22 11:31:30', '2020-02-22 11:31:30'),
-	(8, 'Dimitri', 'Lepisov', 'inc@inc.com', NULL, NULL, 'BtITjmpKAAFvXGq', 8, NULL, '2020-02-22 11:31:31', '2020-02-22 11:31:31'),
-	(9, 'Pavlov', 'Plakhotia', 'inc@inc.com', NULL, NULL, 'LwzENkudsrq00S4', 9, NULL, '2020-02-22 11:31:31', '2020-02-22 11:31:31'),
-	(10, 'Joshua', 'Haynes', 'in@nibhlaciniaorci.net', NULL, NULL, 'SFHAekZZZuqiVWS', 3, NULL, '2020-02-22 11:31:31', '2020-02-22 11:31:31'),
-	(11, 'Georgia', 'Sweeney', 'a.magna@nuncinterdum.ca', NULL, NULL, 'I84ANgtNS4mUA1O', 6, NULL, '2020-02-22 11:31:31', '2020-02-22 11:31:31'),
-	(12, 'September', 'Cameron', 'eu.ligula.Aenean@venenatis.ca', NULL, NULL, 'q22sAYAb4eJOD9a', 1, NULL, '2020-02-22 11:31:31', '2020-02-22 11:31:31'),
-	(13, 'Ann', 'Allison', 'sit@non.edu', NULL, NULL, '91bRO5ttPkXkQe7', 7, NULL, '2020-02-22 11:31:31', '2020-02-22 11:31:31'),
-	(14, 'Maris', 'Reed', 'diam.dictum.sapien@purus.co.uk', NULL, NULL, 'QF1mpznlMIbkS2z', 3, NULL, '2020-02-22 11:31:31', '2020-02-22 11:31:31'),
-	(15, 'Thaddeus', 'Chang', 'arcu@semperpretiumneque.org', NULL, NULL, 'wyv9wkiEvk0tH2o', 4, NULL, '2020-02-22 11:31:31', '2020-02-22 11:31:31'),
-	(16, 'Zeus', 'Zimmerman', 'arcu.Vestibulum.ut@utcursusluctus.edu', NULL, NULL, 'hUjbwIc0d4Igo60', 8, NULL, '2020-02-22 11:31:31', '2020-02-22 11:31:31'),
-	(17, 'Emmanuel', 'Owen', 'eu@inconsequat.co.uk', NULL, NULL, 'Qi7NZ5Z6RB0umht', 2, NULL, '2020-02-22 11:31:31', '2020-02-22 11:31:31'),
-	(18, 'Uriel', 'Gould', 'magna@egetvariusultrices.ca', NULL, NULL, 'zbmkb42SI2rNqxm', 8, NULL, '2020-02-22 11:31:31', '2020-02-22 11:31:31'),
-	(19, 'Rajah', 'Webster', 'ut.cursus@ligula.com', NULL, NULL, 'HZ683FxZlvVICDV', 4, NULL, '2020-02-22 11:31:31', '2020-02-22 11:31:31'),
-	(20, 'Geraldine', 'Baldwin', 'Fusce.aliquam@semper.org', NULL, NULL, 'JQT9phVPhy9LLjU', 6, NULL, '2020-02-22 11:31:31', '2020-02-22 11:31:31'),
-	(21, 'Julie', 'Odom', 'accumsan.sed.facilisis@Vivamusnonlorem.ca', NULL, NULL, 'YE9YQUqW4zTjd1S', 9, NULL, '2020-02-22 11:31:31', '2020-02-22 11:31:31'),
-	(22, 'Keefe', 'Adams', 'Sed.id.risus@id.org', NULL, NULL, 'iz5Yu2hfe83Uz1w', 2, NULL, '2020-02-22 11:31:31', '2020-02-22 11:31:31'),
-	(23, 'Tamara', 'Greene', 'Nullam.scelerisque@diamPellentesque.edu', NULL, NULL, 'ZqwtQDHZEYl3qHB', 8, NULL, '2020-02-22 11:31:31', '2020-02-22 11:31:31'),
-	(24, 'Stephanie', 'Beck', 'faucibus@scelerisquescelerisquedui.org', NULL, NULL, 'utzo19FhCP4ygWT', 9, NULL, '2020-02-22 11:31:31', '2020-02-22 11:31:31'),
-	(25, 'Emi', 'Valencia', 'ligula@placerataugueSed.com', NULL, NULL, 'zvW3akCtiMK7gFU', 1, NULL, '2020-02-22 11:31:31', '2020-02-22 11:31:31'),
-	(26, 'Travis', 'Frank', 'mattis.semper.dui@Donectempuslorem.net', NULL, NULL, 'GUqeRcngRZle91R', 8, NULL, '2020-02-22 11:31:31', '2020-02-22 11:31:31'),
-	(27, 'Upton', 'Cannon', 'augue@arcuVestibulum.com', NULL, NULL, 'xp5FgcbYox3nTN0', 8, NULL, '2020-02-22 11:31:31', '2020-02-22 11:31:31'),
-	(28, 'Chadwick', 'Hensley', 'sociis.natoque.penatibus@famesacturpis.net', NULL, NULL, 'XA1trP8s6Q9iHgd', 4, NULL, '2020-02-22 11:31:31', '2020-02-22 11:31:31'),
-	(29, 'Noble', 'Sexton', 'a.malesuada@vitaesemper.ca', NULL, NULL, 'yR2S7I7bkOjlKuE', 2, NULL, '2020-02-22 11:31:31', '2020-02-22 11:31:31'),
-	(30, 'Gage', 'Mayer', 'felis.Nulla@consectetuermaurisid.ca', NULL, NULL, 'EhEVrH3jRwRhyQQ', 4, NULL, '2020-02-22 11:31:31', '2020-02-22 11:31:31'),
-	(31, 'Duncan', 'Dickson', 'risus.Morbi.metus@Fuscefeugiat.ca', NULL, NULL, '6mwisGFmIHZSaf2', 3, NULL, '2020-02-22 11:31:32', '2020-02-22 11:31:32'),
-	(32, 'Elvis', 'Steele', 'pharetra@ullamcorper.net', NULL, NULL, 'ZCwg21f7nEp7AmD', 9, NULL, '2020-02-22 11:31:32', '2020-02-22 11:31:32'),
-	(33, 'Patrick', 'Woods', 'erat.eget@Aliquamgravidamauris.org', NULL, NULL, '9pxCEv0oCNI8M2n', 1, NULL, '2020-02-22 11:31:32', '2020-02-22 11:31:32'),
-	(34, 'Tarik', 'Mcintosh', 'massa.Suspendisse@Aliquam.edu', NULL, NULL, 'P663Cf3fpaF5rRK', 8, NULL, '2020-02-22 11:31:32', '2020-02-22 11:31:32'),
-	(35, 'Gray', 'Henry', 'volutpat.nunc@dolorQuisquetincidunt.com', NULL, NULL, '8WpRQpGVEx1pgAJ', 4, NULL, '2020-02-22 11:31:32', '2020-02-22 11:31:32'),
-	(36, 'Martin', 'Sweet', 'commodo@Craseget.com', NULL, NULL, 'FAXUe2HlshUP0Ge', 3, NULL, '2020-02-22 11:31:32', '2020-02-22 11:31:32'),
-	(37, 'Signe', 'Small', 'diam.lorem@purus.com', NULL, NULL, '02XVeHCrBdCSRXO', 1, NULL, '2020-02-22 11:31:32', '2020-02-22 11:31:32'),
-	(38, 'Chantale', 'Dudley', 'est.mauris.rhoncus@libero.edu', NULL, NULL, '926RzlPPwqusRWq', 3, NULL, '2020-02-22 11:31:32', '2020-02-22 11:31:32'),
-	(39, 'Garrison', 'Garrison', 'est.Nunc@et.co.uk', NULL, NULL, 'PIc3h6AlVik6BXK', 5, NULL, '2020-02-22 11:31:32', '2020-02-22 11:31:32'),
-	(40, 'Harper', 'Rollins', 'Nam@sedsapien.ca', NULL, NULL, 'zaYxD2PpSiG5lvT', 6, NULL, '2020-02-22 11:31:32', '2020-02-22 11:31:32'),
-	(41, 'Chaim', 'Osborn', 'est.tempor@Nuncac.net', NULL, NULL, 'HmQE1ag27jTEOAN', 9, NULL, '2020-02-22 11:31:32', '2020-02-22 11:31:32'),
-	(42, 'Carolyn', 'Fuentes', 'elit.sed@risus.org', NULL, NULL, 'UmSdXuwVX93M9bc', 8, NULL, '2020-02-22 11:31:32', '2020-02-22 11:31:32'),
-	(43, 'test', 'Charles Saint-Olive', 'charles.stolive@gmail.com', NULL, NULL, 'l0O2dXBu8Ih8Ofn', 10, '2020-03-27 14:31:04', '2020-03-27 14:26:03', '2020-03-27 14:31:04'),
-	(44, 'Charles Saint-Olive', 'Charles Saint-Olive', 'charles.stolive@gmail.com', NULL, NULL, 'H8GwEBflh7dgeG8', 10, '2020-03-27 14:36:26', '2020-03-27 14:35:58', '2020-03-27 14:36:26'),
-	(45, 'qsdqsdqd', 'qdsqsd', 'qsdqsdqsd', NULL, NULL, 'jjixJzXGeFwrCgH', 10, '2020-03-27 14:36:26', '2020-03-27 14:36:12', '2020-03-27 14:36:26'),
-	(46, 'Charles Saint-Olive', 'Charles Saint-Olive', 'charles.stolive@gmail.com', NULL, NULL, 'ze7kpDwQtPsCfwU', 10, NULL, '2020-03-27 14:39:23', '2020-03-27 14:39:23');
+INSERT INTO `waka_crsm_contacts` (`id`, `name`, `surname`, `email`, `tel`, `tel_perso`, `key`, `client_id`, `content_linkedin`, `content_email`, `content_word`, `content_lp`, `is_ex`, `deleted_at`, `created_at`, `updated_at`) VALUES
+	(1, 'Steve', 'Wolf', 'inc@inc.com', NULL, NULL, 'YYtshfd9T4ZO1bC', 1, NULL, NULL, NULL, NULL, 1, NULL, '2020-02-22 11:31:30', '2020-02-22 11:31:30'),
+	(2, 'Elif', 'Kamesoglu', 'inc@inc.com', NULL, NULL, 'bdDtDUZDcDo6jhn', 2, NULL, NULL, NULL, NULL, 1, NULL, '2020-02-22 11:31:30', '2020-02-22 11:31:30'),
+	(3, 'Humginder', 'Sons', 'inc@inc.com', NULL, NULL, 'ynrExbFcb87ydw7', 3, NULL, NULL, NULL, NULL, 1, NULL, '2020-02-22 11:31:30', '2020-02-22 11:31:30'),
+	(4, 'Milos', 'Djuric', 'inc@inc.com', NULL, NULL, 'Yyv5tIXGt8gaQim', 4, NULL, NULL, NULL, NULL, 1, NULL, '2020-02-22 11:31:30', '2020-02-22 11:31:30'),
+	(5, 'Gurvinder', 'Deividas', 'inc@inc.com', NULL, NULL, 'OrjGyecCX27SI5r', 5, NULL, NULL, NULL, NULL, 1, NULL, '2020-02-22 11:31:30', '2020-02-22 11:31:30'),
+	(6, 'Rilla', 'Logo', 'inc@inc.com', NULL, NULL, 'CTjMM4KZyCAvv5p', 6, NULL, NULL, NULL, NULL, 1, NULL, '2020-02-22 11:31:30', '2020-02-22 11:31:30'),
+	(7, 'Badr', 'Edd (logorilla)', 'inc@inc.com', NULL, NULL, 'BRMK46RzR8M8FSk', 7, NULL, NULL, NULL, NULL, 1, NULL, '2020-02-22 11:31:30', '2020-02-22 11:31:30'),
+	(8, 'Dimitri', 'Lepisov', 'inc@inc.com', NULL, NULL, 'BtITjmpKAAFvXGq', 8, NULL, NULL, NULL, NULL, 1, NULL, '2020-02-22 11:31:31', '2020-02-22 11:31:31'),
+	(9, 'Pavlov', 'Plakhotia', 'inc@inc.com', NULL, NULL, 'LwzENkudsrq00S4', 9, NULL, NULL, NULL, NULL, 1, NULL, '2020-02-22 11:31:31', '2020-02-22 11:31:31'),
+	(10, 'Joshua', 'Haynes', 'in@nibhlaciniaorci.net', NULL, NULL, 'SFHAekZZZuqiVWS', 3, NULL, NULL, NULL, NULL, 1, NULL, '2020-02-22 11:31:31', '2020-02-22 11:31:31'),
+	(11, 'Georgia', 'Sweeney', 'a.magna@nuncinterdum.ca', NULL, NULL, 'I84ANgtNS4mUA1O', 6, NULL, NULL, NULL, NULL, 1, NULL, '2020-02-22 11:31:31', '2020-02-22 11:31:31'),
+	(12, 'September', 'Cameron', 'eu.ligula.Aenean@venenatis.ca', NULL, NULL, 'q22sAYAb4eJOD9a', 1, NULL, NULL, NULL, NULL, 1, NULL, '2020-02-22 11:31:31', '2020-02-22 11:31:31'),
+	(13, 'Ann', 'Allison', 'sit@non.edu', NULL, NULL, '91bRO5ttPkXkQe7', 7, NULL, NULL, NULL, NULL, 1, NULL, '2020-02-22 11:31:31', '2020-02-22 11:31:31'),
+	(14, 'Maris', 'Reed', 'diam.dictum.sapien@purus.co.uk', NULL, NULL, 'QF1mpznlMIbkS2z', 3, NULL, NULL, NULL, NULL, 1, NULL, '2020-02-22 11:31:31', '2020-02-22 11:31:31'),
+	(15, 'Thaddeus', 'Chang', 'arcu@semperpretiumneque.org', NULL, NULL, 'wyv9wkiEvk0tH2o', 4, NULL, NULL, NULL, NULL, 1, NULL, '2020-02-22 11:31:31', '2020-02-22 11:31:31'),
+	(16, 'Zeus', 'Zimmerman', 'arcu.Vestibulum.ut@utcursusluctus.edu', NULL, NULL, 'hUjbwIc0d4Igo60', 8, NULL, NULL, NULL, NULL, 1, NULL, '2020-02-22 11:31:31', '2020-02-22 11:31:31'),
+	(17, 'Emmanuel', 'Owen', 'eu@inconsequat.co.uk', NULL, NULL, 'Qi7NZ5Z6RB0umht', 2, NULL, NULL, NULL, NULL, 1, NULL, '2020-02-22 11:31:31', '2020-02-22 11:31:31'),
+	(18, 'Uriel', 'Gould', 'magna@egetvariusultrices.ca', NULL, NULL, 'zbmkb42SI2rNqxm', 8, NULL, NULL, NULL, NULL, 1, NULL, '2020-02-22 11:31:31', '2020-02-22 11:31:31'),
+	(19, 'Rajah', 'Webster', 'ut.cursus@ligula.com', NULL, NULL, 'HZ683FxZlvVICDV', 4, NULL, NULL, NULL, NULL, 1, NULL, '2020-02-22 11:31:31', '2020-02-22 11:31:31'),
+	(20, 'Geraldine', 'Baldwin', 'Fusce.aliquam@semper.org', NULL, NULL, 'JQT9phVPhy9LLjU', 6, NULL, NULL, NULL, NULL, 1, NULL, '2020-02-22 11:31:31', '2020-02-22 11:31:31'),
+	(21, 'Julie', 'Odom', 'accumsan.sed.facilisis@Vivamusnonlorem.ca', NULL, NULL, 'YE9YQUqW4zTjd1S', 9, NULL, NULL, NULL, NULL, 1, NULL, '2020-02-22 11:31:31', '2020-02-22 11:31:31'),
+	(22, 'Keefe', 'Adams', 'Sed.id.risus@id.org', NULL, NULL, 'iz5Yu2hfe83Uz1w', 2, NULL, NULL, NULL, NULL, 1, NULL, '2020-02-22 11:31:31', '2020-02-22 11:31:31'),
+	(23, 'Tamara', 'Greene', 'Nullam.scelerisque@diamPellentesque.edu', NULL, NULL, 'ZqwtQDHZEYl3qHB', 8, NULL, NULL, NULL, NULL, 1, NULL, '2020-02-22 11:31:31', '2020-02-22 11:31:31'),
+	(24, 'Stephanie', 'Beck', 'faucibus@scelerisquescelerisquedui.org', NULL, NULL, 'utzo19FhCP4ygWT', 9, NULL, NULL, NULL, NULL, 1, NULL, '2020-02-22 11:31:31', '2020-02-22 11:31:31'),
+	(25, 'Emi', 'Valencia', 'ligula@placerataugueSed.com', NULL, NULL, 'zvW3akCtiMK7gFU', 1, NULL, NULL, NULL, NULL, 1, NULL, '2020-02-22 11:31:31', '2020-02-22 11:31:31'),
+	(26, 'Travis', 'Frank', 'mattis.semper.dui@Donectempuslorem.net', NULL, NULL, 'GUqeRcngRZle91R', 8, NULL, NULL, NULL, NULL, 1, NULL, '2020-02-22 11:31:31', '2020-02-22 11:31:31'),
+	(27, 'Upton', 'Cannon', 'augue@arcuVestibulum.com', NULL, NULL, 'xp5FgcbYox3nTN0', 8, NULL, NULL, NULL, NULL, 1, NULL, '2020-02-22 11:31:31', '2020-02-22 11:31:31'),
+	(28, 'Chadwick', 'Hensley', 'sociis.natoque.penatibus@famesacturpis.net', NULL, NULL, 'XA1trP8s6Q9iHgd', 4, NULL, NULL, NULL, NULL, 1, NULL, '2020-02-22 11:31:31', '2020-02-22 11:31:31'),
+	(29, 'Noble', 'Sexton', 'a.malesuada@vitaesemper.ca', NULL, NULL, 'yR2S7I7bkOjlKuE', 2, NULL, NULL, NULL, NULL, 1, NULL, '2020-02-22 11:31:31', '2020-02-22 11:31:31'),
+	(30, 'Gage', 'Mayer', 'felis.Nulla@consectetuermaurisid.ca', NULL, NULL, 'EhEVrH3jRwRhyQQ', 4, NULL, NULL, NULL, NULL, 1, NULL, '2020-02-22 11:31:31', '2020-02-22 11:31:31'),
+	(31, 'Duncan', 'Dickson', 'risus.Morbi.metus@Fuscefeugiat.ca', NULL, NULL, '6mwisGFmIHZSaf2', 3, NULL, NULL, NULL, NULL, 1, NULL, '2020-02-22 11:31:32', '2020-02-22 11:31:32'),
+	(32, 'Elvis', 'Steele', 'pharetra@ullamcorper.net', NULL, NULL, 'ZCwg21f7nEp7AmD', 9, NULL, NULL, NULL, NULL, 1, NULL, '2020-02-22 11:31:32', '2020-02-22 11:31:32'),
+	(33, 'Patrick', 'Woods', 'erat.eget@Aliquamgravidamauris.org', NULL, NULL, '9pxCEv0oCNI8M2n', 1, NULL, NULL, NULL, NULL, 1, NULL, '2020-02-22 11:31:32', '2020-02-22 11:31:32'),
+	(34, 'Tarik', 'Mcintosh', 'massa.Suspendisse@Aliquam.edu', NULL, NULL, 'P663Cf3fpaF5rRK', 8, NULL, NULL, NULL, NULL, 1, NULL, '2020-02-22 11:31:32', '2020-02-22 11:31:32'),
+	(35, 'Gray', 'Henry', 'volutpat.nunc@dolorQuisquetincidunt.com', NULL, NULL, '8WpRQpGVEx1pgAJ', 4, NULL, NULL, NULL, NULL, 1, NULL, '2020-02-22 11:31:32', '2020-02-22 11:31:32'),
+	(36, 'Martin', 'Sweet', 'commodo@Craseget.com', NULL, NULL, 'FAXUe2HlshUP0Ge', 3, NULL, NULL, NULL, NULL, 1, NULL, '2020-02-22 11:31:32', '2020-02-22 11:31:32'),
+	(37, 'Signe', 'Small', 'diam.lorem@purus.com', NULL, NULL, '02XVeHCrBdCSRXO', 1, NULL, NULL, NULL, NULL, 1, NULL, '2020-02-22 11:31:32', '2020-02-22 11:31:32'),
+	(38, 'Chantale', 'Dudley', 'est.mauris.rhoncus@libero.edu', NULL, NULL, '926RzlPPwqusRWq', 3, NULL, NULL, NULL, NULL, 1, NULL, '2020-02-22 11:31:32', '2020-02-22 11:31:32'),
+	(39, 'Garrison', 'Garrison', 'est.Nunc@et.co.uk', NULL, NULL, 'PIc3h6AlVik6BXK', 5, NULL, NULL, NULL, NULL, 1, NULL, '2020-02-22 11:31:32', '2020-02-22 11:31:32'),
+	(40, 'Harper', 'Rollins', 'Nam@sedsapien.ca', NULL, NULL, 'zaYxD2PpSiG5lvT', 6, NULL, NULL, NULL, NULL, 1, NULL, '2020-02-22 11:31:32', '2020-02-22 11:31:32'),
+	(41, 'Chaim', 'Osborn', 'est.tempor@Nuncac.net', NULL, NULL, 'HmQE1ag27jTEOAN', 9, NULL, NULL, NULL, NULL, 1, NULL, '2020-02-22 11:31:32', '2020-02-22 11:31:32'),
+	(42, 'Carolyn', 'Fuentes', 'elit.sed@risus.org', NULL, NULL, 'UmSdXuwVX93M9bc', 8, NULL, NULL, NULL, NULL, 1, NULL, '2020-02-22 11:31:32', '2020-02-22 11:31:32'),
+	(43, 'test', 'Charles Saint-Olive', 'charles.stolive@gmail.com', NULL, NULL, 'l0O2dXBu8Ih8Ofn', 10, NULL, NULL, NULL, NULL, 1, '2020-03-27 14:31:04', '2020-03-27 14:26:03', '2020-03-27 14:31:04'),
+	(44, 'Charles Saint-Olive', 'Charles Saint-Olive', 'charles.stolive@gmail.com', NULL, NULL, 'H8GwEBflh7dgeG8', 10, NULL, NULL, NULL, NULL, 1, '2020-03-27 14:36:26', '2020-03-27 14:35:58', '2020-03-27 14:36:26'),
+	(45, 'qsdqsdqd', 'qdsqsd', 'qsdqsdqsd', NULL, NULL, 'jjixJzXGeFwrCgH', 10, NULL, NULL, NULL, NULL, 1, '2020-03-27 14:36:26', '2020-03-27 14:36:12', '2020-03-27 14:36:26'),
+	(46, 'Charles Saint-Olive', 'Charles Saint-Olive', 'charles.stolive@gmail.com', NULL, NULL, 'ze7kpDwQtPsCfwU', 10, NULL, NULL, NULL, NULL, 1, NULL, '2020-03-27 14:39:23', '2020-03-27 14:39:23');
 /*!40000 ALTER TABLE `waka_crsm_contacts` ENABLE KEYS */;
 
 -- Listage des données de la table notilac.waka_crsm_countries : ~241 rows (environ)
@@ -360,10 +360,10 @@ INSERT INTO `waka_crsm_periods` (`id`, `name`, `slug`, `repeat`) VALUES
 	(3, 'Mensuel', 'mensuel', 12);
 /*!40000 ALTER TABLE `waka_crsm_periods` ENABLE KEYS */;
 
--- Listage des données de la table notilac.waka_crsm_projects : ~0 rows (environ)
+-- Listage des données de la table notilac.waka_crsm_projects : ~1 rows (environ)
 /*!40000 ALTER TABLE `waka_crsm_projects` DISABLE KEYS */;
-INSERT INTO `waka_crsm_projects` (`id`, `name`, `slug`, `client_id`, `contact_id`, `cp_id`, `project_state_id`, `total`, `description`, `closed_at`, `closed_presvision_at`, `deleted_at`, `created_at`, `updated_at`) VALUES
-	(1, 'Gestion projets immobiliers', 'gestion-projets-immobiliers', 9, 24, 1, 1, NULL, '<p>Pres</p>', NULL, NULL, NULL, '2020-05-01 16:42:08', '2020-05-01 16:42:08');
+INSERT INTO `waka_crsm_projects` (`id`, `name`, `slug`, `client_id`, `contact_id`, `cp_id`, `project_state_id`, `total`, `description`, `nb_user_pot`, `closed_at`, `closed_presvision_at`, `is_ex`, `deleted_at`, `created_at`, `updated_at`) VALUES
+	(1, 'Gestion projets immobiliers', 'gestion-projets-immobiliers', 9, 24, 1, 1, NULL, '<p>Presentation et brief</p>', 25, NULL, NULL, 1, NULL, '2020-05-01 16:42:08', '2020-05-03 15:37:13');
 /*!40000 ALTER TABLE `waka_crsm_projects` ENABLE KEYS */;
 
 -- Listage des données de la table notilac.waka_crsm_project_states : ~6 rows (environ)

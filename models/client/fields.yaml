@@ -89,7 +89,12 @@ tabs:
         city:
             tab: waka.crsm::lang.client.details
             label: waka.crsm::lang.client.city
-            span: auto 
+            span: auto
+        is_ex:
+            tab: waka.crsm::lang.client.details
+            label: waka.utils::lang.global.is_ex
+            span: auto  
+            type: checkbox
         country:
             tab: waka.crsm::lang.client.details
             label: waka.crsm::lang.client.country

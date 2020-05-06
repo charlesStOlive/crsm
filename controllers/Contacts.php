@@ -18,6 +18,7 @@ class Contacts extends Controller
         'Waka.ImportExport.Behaviors.ExcelImport',
         'Waka.ImportExport.Behaviors.ExcelExport',
         'Waka.Cloudis.Behaviors.PopupCloudis',
+        'Waka.Mailtoer.Behaviors.MailtoBehavior',
     ];
 
     public $formConfig = 'config_form.yaml';

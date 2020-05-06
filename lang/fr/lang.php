@@ -36,6 +36,7 @@ return [
 
     ],
     'contact' => [
+        'civ' => "Civilité",
         'name' => 'Nom',
         'surname' => 'Nom de famille',
         'contacts' => 'Contacts',
@@ -51,6 +52,10 @@ return [
         'profil' => 'Photo de profil',
         'details' => 'Détails',
         'crea' => 'Créa',
+        'content_lp' => "Contenu pour Landing Page",
+        'content_linkedin' => "Contenu pour LinkedIn",
+        'content_email' => "Contenu pour Email",
+        'content_word' => "Contenu pour Word",
     ],
     'project' => [
         'name' => "Nom du projet",

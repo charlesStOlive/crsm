@@ -3,11 +3,16 @@
 # ===================================
 
 fields:
+    is_ex@create:
+        label: waka.utils::lang.global.is_ex
+        span: auto  
+        type: checkbox
+        default: 0
     name@create:
         label: waka.crsm::lang.project.name
     
     client@create:
-        label: waka.crsm::lang.project.name
+        label: waka.crsm::lang.project.client
         type: relation
         placeholder: waka.crsm::lang.project.client_placeholder
 
@@ -118,6 +123,12 @@ tabs:
             tab: waka.crsm::lang.project.team
             label: waka.crsm::lang.project.nb_user_pot
             span: auto 
+        is_ex@update:
+            tab: waka.crsm::lang.project.team
+            label: waka.utils::lang.global.is_ex
+            span: auto  
+            type: checkbox
+            default: 0
 
         
         

@@ -3,6 +3,15 @@
 # ===================================
 
 fields:
+    is_ex:
+        label: waka.utils::lang.global.is_ex
+        span: auto  
+        type: checkbox
+        default: 0
+    civ:
+        label: waka.crsm::lang.contact.civ
+        type: balloon-selector
+        default: 1 
     name:
         label: waka.crsm::lang.contact.name
         span: auto

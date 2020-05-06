@@ -18,6 +18,7 @@ class Clients extends Controller
         'Waka.ImportExport.Behaviors.ExcelExport',
         'Waka.Mailer.Behaviors.MailBehavior',
         'Waka.Pdfer.Behaviors.PdfBehavior',
+        'Waka.Mailtoer.Behaviors.MailtoBehavior',
     ];
 
     public $formConfig = 'config_form.yaml';

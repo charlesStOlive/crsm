@@ -84,6 +84,7 @@ class Contact extends Model
     public $morphOne = [];
     public $morphMany = [
         'informs' => ['Waka\Informer\Models\Inform', 'name' => 'informeable'],
+        'sends' => ['Waka\Utils\Models\SourceLog', 'name' => 'send_targeteable'],
     ];
     public $morphToMany = [
         'montages' => [
@@ -101,13 +102,13 @@ class Contact extends Model
     /**
      * MODEL EVENT
      */
-    public function beforeSave()
-    {
+    // public function beforeSave()
+    // {
 
-        if (!$this->key) {
-            $this->key = str_Random(15);
-        }
-    }
+    //     if (!$this->key) {
+    //         $this->key = str_Random(15);
+    //     }
+    // }
     public function afterSave()
     {
         $this->updateCloudiRelations('attach');
@@ -122,5 +123,14 @@ class Contact extends Model
     public function getCompleteNameAttribute()
     {
         return $this->name . ' ' . $this->surname;
+    }
+    public function getCivNameAttribute()
+    {
+        return $this->civ . ' ' . $this->surname;
+    }
+
+    public function getCivOptions()
+    {
+        return \Config::get('waka.crsm::civ');
     }
 }

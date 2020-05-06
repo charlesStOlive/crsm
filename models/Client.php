@@ -83,7 +83,9 @@ class Client extends Model
     public $belongsToMany = [];
     public $morphTo = [];
     public $morphOne = [];
-    public $morphMany = [];
+    public $morphMany = [
+        'sends' => ['Waka\Utils\Models\SourceLog', 'name' => 'send_targeteable'],
+    ];
     public $morphToMany = [
         'montages' => [
             'Waka\Cloudis\Models\Montage',

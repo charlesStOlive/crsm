@@ -22,7 +22,7 @@ class CreateProjectsTable extends Migration
             $table->integer('nb_user_pot')->nullable();
             $table->date('closed_at')->nullable();
             $table->date('closed_presvision_at')->nullable();
-
+            $table->boolean('is_ex')->default(false);
             $table->softDeletes();
 
             $table->timestamps();
