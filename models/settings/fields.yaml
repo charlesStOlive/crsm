@@ -12,11 +12,11 @@ tabs:
             comment: waka.crsm::lang.settings.sector_com
             type: dropdown
             options: listSectors
-        type:
-            label: waka.crsm::lang.settings.type
-            comment: waka.crsm::lang.settings.type_com
-            type: dropdown
-            options: listTypes
+        # type:
+        #     label: waka.crsm::lang.settings.type
+        #     comment: waka.crsm::lang.settings.type_com
+        #     type: dropdown
+        #     options: listTypes
         content_codes:
             label: waka.crsm::lang.settings.content_codes
             comment: waka.crsm::lang.settings.content_codes_com

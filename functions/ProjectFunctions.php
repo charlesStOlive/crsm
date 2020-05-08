@@ -89,20 +89,6 @@ class ProjectFunctions extends BaseFunction
                     ],
                 ],
             ],
-            'getCloudiImage' => [
-                'name' => "Choisissez un montage",
-                'attributes' => [
-                    'cloudiId' => [
-                        'label' => "Choisissez une image",
-                        'type' => "dropdown",
-                        'options' => $this->getCloudiList(),
-                    ],
-                    'width' => \Config::get('waka.cloudis::ImageOptions.width'),
-                    'height' => \Config::get('waka.cloudis::ImageOptions.height'),
-                    'crop' => \Config::get('waka.cloudis::ImageOptions.crop'),
-                    'gravity' => \Config::get('waka.cloudis::ImageOptions.gravity'),
-                ],
-            ],
             'getSectorContent' => [
                 'name' => "Prendre un bloc de contenu du secteur",
                 'attributes' => [
@@ -174,13 +160,6 @@ class ProjectFunctions extends BaseFunction
             }
         }
         return $result;
-    }
-
-    public function getCloudiList()
-    {
-        $dataSource = $this->getDataSource();
-        return $dataSource->getImagesList();
-
     }
 
     // public function getCloudiImage($attributes)
