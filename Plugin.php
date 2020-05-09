@@ -2,6 +2,7 @@
 
 use Backend;
 use Lang;
+use System\Classes\CombineAssets;
 use System\Classes\PluginBase;
 
 /**
@@ -42,6 +43,10 @@ class Plugin extends PluginBase
      */
     public function register()
     {
+
+        CombineAssets::registerCallback(function ($combiner) {
+            $combiner->registerBundle('$/waka/crsm/assets/css/simple_grid/simple-table.less');
+        });
 
     }
 

@@ -2,7 +2,6 @@
 
 use Model;
 
-
 class Settings extends Model
 {
     public $implement = ['System.Behaviors.SettingsModel'];
@@ -17,14 +16,13 @@ class Settings extends Model
     {
         return Country::lists('name', 'id');
     }
-    public function listTypes()
-    {
-        return Type::lists('name', 'id');
-    }
+    // public function listTypes()
+    // {
+    //     return Type::lists('name', 'id');
+    // }
     public function listSectors()
     {
         return Sector::lists('name', 'id');
     }
 
-    
 }
