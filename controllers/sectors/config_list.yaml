@@ -30,6 +30,7 @@ showSetup: true
 showSorting: true
 
 showTree: true
+treeExpanded: true
 
 # Default sorting column
 # defaultSort:
