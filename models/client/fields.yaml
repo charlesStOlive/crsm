@@ -76,6 +76,8 @@ tabs:
         nb_collab:
             tab: waka.crsm::lang.client.details
             label: waka.crsm::lang.client.nb_collab
+            type: number
+            default: 10
             span: auto
         
         address:
