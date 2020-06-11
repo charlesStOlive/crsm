@@ -27,6 +27,8 @@
             data-load-indicator="Deleting Client..." data-request-confirm="Delete this client?">
         </button>
         <?= $this->fireViewEvent('backend.down.update') ?>
+        <?= $this->fireViewEvent('backend.update.prod') ?>
+
         <span class="btn-text">
             or <a href="<?= Backend::url('waka/crsm/clients') ?>">Cancel</a>
         </span>
