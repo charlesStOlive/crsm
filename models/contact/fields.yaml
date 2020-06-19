@@ -52,7 +52,10 @@ tabs:
             label: waka.crsm::lang.contact.profil
             type: cloudifileupload
             mode: image
-            span: full
+            span: storm
+            cssClass: col-sm-4 col-xs-12
+            imageHeight: 100
+            imageWidth: 260
 
         content_lp:
             label: waka.crsm::lang.contact.content_lp
